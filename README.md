@@ -1,2 +1,2 @@
-# gora
+# GORA
 Website for artist
