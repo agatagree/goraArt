@@ -1,0 +1,148 @@
+@use "../Helpers" as *;
+
+.H06 {
+  font-weight: $fontWeights400;
+  font-size: $fontSize24;
+  letter-spacing: $fontLs4;
+  color: $darkGrey500;
+
+  @include sm {
+        font-size: $fontSize16;
+      }
+}
+
+
+body {
+  letter-spacing: 0;
+  color: $darkGrey500;
+  font-family: "Heebo", sans-serif !important;
+}
+
+// //Header
+// .H01 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size56;
+//   letter-spacing: $font-ls-2;
+
+//   &--bold {
+//     @extend .H01;
+//     font-weight: $font-weights700;
+//   }
+
+//   @include sm {
+//     font-size: $font-size36;
+//   }
+// }
+
+// .H03 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size48;
+//   letter-spacing: $font-ls-4;
+
+//   &--bold {
+//     @extend .H03;
+//     font-weight: $font-weights700;
+//   }
+
+//   @include sm {
+//     font-size: $font-size24;
+//   }
+// }
+
+// .H04 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size36;
+//   letter-spacing: $font-ls-4;
+
+//   &--bold {
+//     @extend .H04;
+//     font-weight: $font-weights700;
+//   }
+
+//   @include sm {
+//     font-size: $font-size24;
+//   }
+// }
+
+// .H05 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size30;
+//   letter-spacing: $font-ls2;
+
+//   &--bold {
+//     @extend .H04;
+//     font-weight: $font-weights700;
+//     @include sm {
+//       font-size: $font-size18;
+//     }
+//   }
+
+//   @include sm {
+//     font-size: $font-size18;
+//   }
+// }
+
+// // .H06 {
+// //   font-weight: $font-weights400;
+// //   font-size: $font-size24;
+// //   letter-spacing: $font-ls-4;
+
+// //   @include sm {
+// //     font-size: $font-size16;
+// //   }
+// // }
+
+
+
+// .H07 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size18;
+
+//   &--bold {
+//     @extend .H07;
+//     font-weight: $font-weights700;
+//   }
+// }
+
+// .H08 {
+//   font-weight: $font-weights400;
+//   font-size: $font-size14;
+// }
+
+//Body
+@mixin text {
+  letter-spacing: 0;
+  font-weight: $fontWeights500;
+}
+
+@mixin body-text {
+  @include text();
+  font-size: $fontSize16;
+}
+
+// @mixin body-text-sm {
+//   @include text();
+//   font-size: $font-size14;
+// }
+
+// @mixin body-text-xs {
+//   @include text();
+//   font-size: $font-size12;
+// }
+
+// .body-text {
+//   @include body-text();
+// }
+
+// .body-text-sm {
+//   @include body-text-sm();
+
+//   &--bold {
+//     @include body-text-sm();
+//     font-weight: $font-weights700;
+//   }
+// }
+
+// .body-text-xs {
+//   @include body-text-xs();
+// }

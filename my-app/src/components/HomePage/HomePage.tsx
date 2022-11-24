@@ -1,5 +1,11 @@
+import { NavBar } from "../NavBar/NavBar";
+import styles from "./HomePage.module.scss";
+
 export const HomePage = () => {
   return (
-    <div>homapge</div>
-  )
-}
+    <>
+      <NavBar />
+      <div className={styles.HomePageIntro}>intro</div>
+    </>
+  );
+};

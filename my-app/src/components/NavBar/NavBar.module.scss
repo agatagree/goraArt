@@ -1,0 +1,29 @@
+@use "../../styles/Basics" as *;
+@use "../../styles/Helpers/" as *;
+
+.navBarLayout {
+  top: 34px;
+  width: 540px;
+  min-height: 34px;
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 80px 1px;
+  border-radius: 2px;
+}
+
+.navBarLinksContainer {
+  display: flex;
+}
+
+.linkNav {
+  @include link();
+  @include body-text();
+  padding: 8px;
+    &:hover{
+      color: $primaryOrange;
+  }
+}
