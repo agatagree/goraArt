@@ -1,11 +1,12 @@
-import { NavBar } from "../NavBar/NavBar";
 import styles from "./HomePage.module.scss";
+import { MainSlider } from "./MainSlider/MainSlider";
 
 export const HomePage = () => {
   return (
     <>
-      <NavBar />
-      <div className={styles.HomePageIntro}>intro</div>
+      <div className={styles.HomePageIntro}>
+        <MainSlider />
+      </div>
     </>
   );
 };

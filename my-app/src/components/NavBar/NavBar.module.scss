@@ -1,29 +1,88 @@
 @use "../../styles/Basics" as *;
 @use "../../styles/Helpers/" as *;
 
-.navBarLayout {
-  top: 34px;
+.navBarWrapper {
+  display: flex;
+  flex-direction: column;
   width: 540px;
-  min-height: 34px;
+  margin: 34px;
+  position: absolute;
+  z-index: 10;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 80px 1px;
+  border-radius: 2px;
+  box-sizing: border-box;
+
+  @include sm {
+    width: calc(100% - 48px);
+    margin: 24px;
+    // height: calc(100vh - 48px);
+  }
+}
+
+.navBarLayout {
+  width: 100%;
+  min-height: 40px;
   background-color: white;
-  position: fixed;
-  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 80px 1px;
-  border-radius: 2px;
 }
 
 .navBarLinksContainer {
   display: flex;
+  align-items: center;
+  padding: 0 16px 0 8px;
+}
+
+.navBarLinksWrapperDesktop {
+  display: flex;
+  align-items: center;
+
+  @include sm {
+    display: none;
+  }
+}
+
+.navBarLinksWrapperMobile {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
 }
 
 .linkNav {
   @include link();
   @include body-text();
   padding: 8px;
-    &:hover{
-      color: $primaryOrange;
+
+  &:hover {
+    color: $primaryOrange;
+  }
+}
+
+.linkNavToggleMenu {
+  @extend .linkNav;
+  padding: 0 8px;
+  @include sm {
+    @include H03();
+  }
+}
+
+.navBarIcon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.navBarToggleMenu {
+  width: 100%;
+  height: calc(100vh - 108px);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+
+  @include sm {
+    height: calc(100vh - 88px);
   }
 }

@@ -7,10 +7,9 @@
   color: $darkGrey500;
 
   @include sm {
-        font-size: $fontSize16;
-      }
+    font-size: $fontSize16;
+  }
 }
-
 
 body {
   letter-spacing: 0;
@@ -18,7 +17,14 @@ body {
   font-family: "Heebo", sans-serif !important;
 }
 
-// //Header
+//Header
+@mixin header {
+  font-weight: $fontWeights500;
+  letter-spacing: $fontLs4;
+  &--bold {
+    font-weight: $fontWeights700;
+  }
+}
 // .H01 {
 //   font-weight: $font-weights400;
 //   font-size: $font-size56;
@@ -34,35 +40,23 @@ body {
 //   }
 // }
 
-// .H03 {
-//   font-weight: $font-weights400;
-//   font-size: $font-size48;
-//   letter-spacing: $font-ls-4;
+@mixin H03 {
+  @include header();
+  font-size: $fontSize48;
 
-//   &--bold {
-//     @extend .H03;
-//     font-weight: $font-weights700;
-//   }
+  @include sm {
+    font-size: $fontSize30;
+  }
+}
 
-//   @include sm {
-//     font-size: $font-size24;
-//   }
-// }
+@mixin H04 {
+  @include header();
+  font-size: $fontSize36;
 
-// .H04 {
-//   font-weight: $font-weights400;
-//   font-size: $font-size36;
-//   letter-spacing: $font-ls-4;
-
-//   &--bold {
-//     @extend .H04;
-//     font-weight: $font-weights700;
-//   }
-
-//   @include sm {
-//     font-size: $font-size24;
-//   }
-// }
+  @include sm {
+    font-size: $fontSize24;
+  }
+}
 
 // .H05 {
 //   font-weight: $font-weights400;
@@ -91,8 +85,6 @@ body {
 // //     font-size: $font-size16;
 // //   }
 // // }
-
-
 
 // .H07 {
 //   font-weight: $font-weights400;
