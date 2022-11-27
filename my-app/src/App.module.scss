@@ -1,23 +1,9 @@
-@import "./styles/variables.module.scss";
-
-* {
-  color: inherit;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Heebo', sans-serif !important;
-}
-
-.layout{
+.layout {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: lightpink;
+  background-color: lightgreen;
 }
 
 .content {
@@ -26,5 +12,6 @@ body {
   align-items: center;
   flex: 1;
   width: 100%;
+  margin: 0 auto;
   background-color: lightgray;
 }

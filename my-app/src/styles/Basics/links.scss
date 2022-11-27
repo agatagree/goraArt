@@ -1,0 +1,65 @@
+@use "../Helpers" as *;
+@use "./typography.scss" as *;
+
+@mixin link {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+
+  // &:hover{
+
+  // }
+}
+
+// .link14 {
+//   @include link();
+//   @include body-text-sm();
+// }
+
+
+
+// .link18 {
+//   @include link();
+//   @extend .H07;
+//   border: none;
+// }
+
+// .link18-logo {
+//   @extend .link18;
+
+//   &--bold {
+//     @extend .H07;
+//     font-weight: $font-weights700;
+//   }
+//   &:hover{
+//     background-image: none;
+//     border: none;
+//   }
+// }
+
+// .link24 {
+//   @include link();
+//   @extend .H06;
+//   &:hover{
+//     background-position: 0 90%;
+//   }
+// }
+
+// .link24-t {
+//   @include link();
+//   @extend .H04;
+//   border: none;
+//   &:hover{
+//     background-position: 0 86%;
+//   }
+// }
+
+// .link48-t {
+//   @include link();
+//   @extend .H03;
+//   border: none;
+//   &:hover{
+//     background-position: 0 85%;
+//   }
+
+
