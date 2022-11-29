@@ -1,0 +1,35 @@
+@use "../../../styles/Basics" as *;
+@use "../../../styles/Helpers" as *;
+
+.SelectedMainText {
+  @include H02();
+  padding: $spacing120 0 $spacing60 0;
+  align-self: flex-start;
+
+  @include sm {
+    padding: $spacing80 0 $spacing40 0;
+  }
+}
+
+.SelectedCardWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: $spacing60;
+  margin-bottom: $spacing180;
+  @include md {
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: $spacing120;
+  }
+  @include sm {
+    gap: $spacing30;
+    margin-bottom: $spacing60;
+  }
+}
+
+.SelectedCardWrapper:nth-of-type(even) {
+  flex-direction: row-reverse;
+}

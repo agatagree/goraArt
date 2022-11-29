@@ -1,0 +1,64 @@
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers" as *;
+
+.SelectedWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: $spacing60;
+  margin-bottom: $spacing180;
+  @include md {
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: $spacing120;
+  }
+  @include sm {
+    gap: $spacing30;
+    margin-bottom: $spacing60;
+  }
+}
+
+.SelectedDescription {
+  width: 50%;
+  padding: 0 $spacing60 0 $spacing120;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing24;
+
+  @include lg {
+    padding: 0;
+  }
+  @include md {
+    width: 100%;
+  }
+}
+
+.SelectedTitleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing16;
+  align-items: center;
+}
+
+.SelectedTitle {
+  white-space: nowrap;
+}
+
+.SelectedImgContainer {
+  width: 50%;
+  min-height: 300px;
+  display: block;
+  background-color: $grey100;
+  @include md {
+    width: 100%;
+  }
+}
+
+.SelectedImgSide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: $grey100;
+}
