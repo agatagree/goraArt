@@ -15,7 +15,6 @@
   @include sm {
     width: calc(100% - 48px);
     margin: 24px;
-    // height: calc(100vh - 48px);
   }
 }
 
@@ -51,8 +50,8 @@
 
 .linkNav {
   @include link();
-  @include body-text();
   padding: 8px;
+  font-weight: $fontWeights500;
 
   &:hover {
     color: $primaryOrange;

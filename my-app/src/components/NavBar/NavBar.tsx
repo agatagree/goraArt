@@ -20,7 +20,6 @@ export const NavBar = () => {
     } else {
       document.body.style.overflow = "visible";
     }
-    console.log(toggle);
   }, [toggle]);
 
   return (
@@ -28,7 +27,7 @@ export const NavBar = () => {
       <div className={styles.navBarLayout}>
         <div className={styles.navBarLinksContainer}>
           <NavLink className={styles.linkNav} to="/">
-            HOME
+          <img className={styles.navBarIcon} src="/assets/logo.svg" alt="logo" />
           </NavLink>
           <div className={styles.navBarLinksWrapperDesktop}>
             <NavBarMainLinks />

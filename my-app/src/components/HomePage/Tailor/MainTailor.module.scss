@@ -1,0 +1,44 @@
+@use "../../../styles/Basics" as *;
+@use "../../../styles/Helpers" as *;
+
+.MainInfoLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  padding: 0 $spacing60;
+
+  @include sm {
+    padding: 0 $spacing24;
+  }
+}
+
+.IntroText {
+  @include H03();
+  max-width: 760px;
+  text-align: center;
+  padding: $spacing120 0;
+  @include sm {
+    padding: $spacing60 0;
+  }
+}
+
+.IntroImg {
+  width: 100%;
+  padding: 0 $spacing120;
+  max-height: 80vh;
+  @include md {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.SelectedMainText {
+  @include H02();
+  padding: $spacing120 0 $spacing60 0;
+  align-self: flex-start;
+
+  @include sm {
+    padding: $spacing80 0 $spacing40 0;
+  }
+}

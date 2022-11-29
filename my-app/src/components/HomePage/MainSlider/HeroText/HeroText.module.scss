@@ -1,0 +1,24 @@
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers/" as *;
+
+.HeroTextContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  z-index: 3;
+  position: absolute;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: $white100;
+}
+
+.HeroTextMessage {
+  line-height: 1.2;
+
+}
+
+.HeroSubtextContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

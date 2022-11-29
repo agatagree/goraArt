@@ -2,8 +2,12 @@
 
 .MainSliderLayout {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $grey100;
 }
 
 .MainSliderCard {
@@ -15,7 +19,7 @@
 
 .progressBar {
   width: 70%;
-  left:15%;
+  left: 15%;
   height: 25px;
   background-color: transparent;
   z-index: 3;
@@ -26,9 +30,22 @@
 }
 
 .progressBarBtn {
- height: 3px;
- width: 100%;
- gap: 5px;
- background-color: $grey100;
+  height: 3px;
+  width: 100%;
+  gap: 5px;
+  background-color: $grey100;
+
+  &Active {
+    @extend .progressBarBtn;
+    background-color: $darkGrey500;
+  }
 }
 
+.MainSliderOverlay {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+}

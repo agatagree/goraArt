@@ -1,46 +1,29 @@
 import styles from "./MainSlider.module.scss";
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { getDataFromSnapshot } from "../../../api/firebaseGetData";
-import { galleryCollection } from "../../../api/firebaseIndex";
+import { bannerCollection } from "../../../api/firebaseIndex";
 import { Loader } from "../../utils/messages/Loader/Loader";
 import { BtnSlider } from "./BtnSlider/BtnSlider";
+import { HeroText } from "./HeroText/HeroText";
 
 interface galleryType {
-  code: string;
-  color: string;
-  dimension: {
-    width: number;
-    height: number;
-  };
-  img: {
-    cover?: string;
-    wiz?: string;
-    zoom?: string;
-  };
+  order: number;
+  img?: string;
 }
 
 export const MainSlider = () => {
   const [gallery, setGallery] = useState<galleryType[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [load, setLoad] = useState(false);
-  const delay = 4500;
 
   useEffect(() => {
-    onSnapshot(galleryCollection, (art) => {
+    const q = query(bannerCollection, orderBy("order"));
+    onSnapshot(q, (art) => {
       setGallery(getDataFromSnapshot(art));
       setLoad(true);
     });
-
-    setTimeout(
-      () =>
-        setCurrentSlideIndex((prevIndex) =>
-          prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
-    return () => {};
-  }, [load, currentSlideIndex]);
+  }, [load]);
 
   if (load === false) {
     return <Loader />;
@@ -62,32 +45,35 @@ export const MainSlider = () => {
     }
   };
 
-  console.log(gallery.length);
   return (
     <>
-      <div className={styles.MainSliderLayout}>
-        <BtnSlider onClick={goToNextSlide} direction={"right"} />
-        <BtnSlider onClick={goToPreviousSlide} direction={"left"} />
-        <div className={styles.progressBar}>
-          {gallery
-            ? gallery.map((_, index) => (
-                <div className={styles.progressBarBtn} key={index}></div>
-              ))
-            : null}
-        </div>
-        {gallery ? (
+      {gallery ? (
+        <div className={styles.MainSliderLayout}>
+          <BtnSlider onClick={goToNextSlide} direction={"right"} />
+          <BtnSlider onClick={goToPreviousSlide} direction={"left"} />
+          <HeroText />
+          <div className={styles.progressBar}>
+            {gallery.map((_, index) => (
+              <div
+                className={
+                  currentSlideIndex === index
+                    ? styles.progressBarBtnActive
+                    : styles.progressBarBtn
+                }
+                key={index}
+              ></div>
+            ))}
+          </div>
+          <div className={styles.MainSliderOverlay}></div>
           <img
-            src={gallery[currentSlideIndex].img.cover}
-            alt={gallery[currentSlideIndex].color}
+            src={gallery[currentSlideIndex].img}
+            alt="art"
             className={styles.MainSliderCard}
-            style={{
-              transform: `translate3d(${currentSlideIndex} * 100}%, 0, 0)`,
-            }}
           />
-        ) : (
-          <Loader />
-        )}
-      </div>
+        </div>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

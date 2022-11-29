@@ -18,8 +18,8 @@ function App() {
     <>
       <BrowserRouter>
         <div className={styles.layout}>
+          <NavBar />
           <div className={styles.content}>
-            <NavBar />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/gallery" element={<Gallery />} />
