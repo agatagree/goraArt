@@ -11,7 +11,7 @@
   }
 }
 
-.SelectedCardWrapper {
+@mixin SelectedCardWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,7 +29,11 @@
     margin-bottom: $spacing60;
   }
 }
+.SelectedCardWrapper {
+@include SelectedCardWrapper();
+}
 
 .SelectedCardWrapper:nth-of-type(even) {
+  @include SelectedCardWrapper();
   flex-direction: row-reverse;
 }
