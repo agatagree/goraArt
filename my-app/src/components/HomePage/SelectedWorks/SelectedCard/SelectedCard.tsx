@@ -45,9 +45,9 @@ export const SelectedCard = ({
         <p className={styles.SelectedMessageText}>{description}</p>
       </div>
       <Link to={`/gallery/${cardId}`} className={styles.SelectedImgWrapper}>
-        <div className={styles.SelectedImgContainer}>
+
           <img className={styles.SelectedImgSide} src={img} alt={title} />
-        </div>
+
         <div className={styles.SelectedImgDescription}>
           <p>
             {title} {code} / {technique} / {width}x{height}cm / {year}

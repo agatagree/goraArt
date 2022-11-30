@@ -3,7 +3,7 @@ import { SelectedCard } from "./SelectedCard/SelectedCard";
 import { galleryType } from "../HomePage";
 import { Link } from "react-router-dom";
 
-export const SelectedWorks = ({ selected }: { selected: galleryType[] }) => {
+export const SelectedWorks = ({ data}: { data: galleryType[] }) => {
   return (
     <>
       <div>
@@ -12,7 +12,7 @@ export const SelectedWorks = ({ selected }: { selected: galleryType[] }) => {
           <br />
           through selected artworks
         </h3>
-        {selected.map((card) => (
+        {data.map((card) => (
           <div key={card.id} className={styles.SelectedCardWrapper}>
             <SelectedCard
               cardId={card.id}

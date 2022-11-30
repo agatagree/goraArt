@@ -1,31 +1,7 @@
 import styles from "./MainTailor.module.scss";
-import { where, onSnapshot, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { getDataFromSnapshot } from "../../../api/firebaseGetData";
-import { galleryCollection } from "../../../api/firebaseIndex";
 import { galleryType } from "../HomePage";
-import { Loader } from "../../utils/Loader/Loader";
 
-export interface TailorProps {
-  img: string;
-  title: string;
-}
-
-export const MainTailor = ({img, title} : TailorProps) => {
-  // const [gallery, setGallery] = useState<galleryType[]>([]);
-  // const [load, setLoad] = useState(false);
-
-  // useEffect(() => {
-  //   const q = query(galleryCollection, where("mainPage", "==", "true"));
-  //   onSnapshot(q, (art) => {
-  //     setGallery(getDataFromSnapshot(art));
-  //     setLoad(true);
-  //   });
-  // }, [load]);
-
-  // if (load === false) {
-  //   return <Loader />;
-  // }
+export const MainTailor = ({data} : {data: galleryType[]}) => {
 
   return (
     <>
@@ -38,8 +14,8 @@ export const MainTailor = ({img, title} : TailorProps) => {
 
           <img
             className={styles.IntroImg}
-            src={img}
-            alt={title}
+            src={data[0].img.wiz}
+            alt={data[0].title}
           />
         </div>
     </>

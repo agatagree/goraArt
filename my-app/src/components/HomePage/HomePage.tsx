@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { getDataFromSnapshot } from "../../api/firebaseGetData";
 import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
+import { Detail } from "./Detail/Detail";
 
 export interface galleryType {
   id:string;
@@ -60,16 +61,20 @@ export const HomePage = () => {
     );
   });
 
+  const detailSectionData = gallery.filter((obj) => {
+    return obj.mainPageData.mainPagePosition == 5;
+  });
+
   return (
     <>
       <MainSlider />
       <div className={styles.HomePageContent}>
-        <MainTailor
-          img={tailorSectionData[0].img.wiz}
-          title={tailorSectionData[0].title}
+        <MainTailor data={tailorSectionData}
+
         />
-        <SelectedWorks selected={selectedSectionData} />
+        <SelectedWorks data={selectedSectionData} />
       </div>
+      <Detail data={detailSectionData}/>
     </>
   );
 };
