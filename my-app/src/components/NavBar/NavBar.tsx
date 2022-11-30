@@ -27,7 +27,11 @@ export const NavBar = () => {
       <div className={styles.navBarLayout}>
         <div className={styles.navBarLinksContainer}>
           <NavLink className={styles.linkNav} to="/">
-          <img className={styles.navBarIcon} src="/assets/logo.svg" alt="logo" />
+            <img
+              className={styles.navBarIcon}
+              src="/assets/logo.svg"
+              alt="logo"
+            />
           </NavLink>
           <div className={styles.navBarLinksWrapperDesktop}>
             <NavBarMainLinks />

@@ -1,20 +1,24 @@
 import styles from "./HomePage.module.scss";
 import { MainSlider } from "./MainSlider/MainSlider";
 import { SelectedWorks } from "./SelectedWorks/SelectedWorks";
-import { MainTailor } from "./Tailor/MainTailor";
+import { Tailor } from "./Tailor/Tailor";
 import { onSnapshot, where, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { getDataFromSnapshot } from "../../api/firebaseGetData";
 import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
+import { Detail } from "./Detail/Detail";
 
 export interface galleryType {
+  id: string;
   title: string;
   code: string;
   color: string[];
+  technique: string;
+  year: number;
   dimensions: {
     width: number;
-    height: string;
+    height: number;
   };
   img: {
     cover: string;
@@ -57,18 +61,18 @@ export const HomePage = () => {
     );
   });
 
-  console.log(selectedSectionData);
+  const detailSectionData = gallery.filter((obj) => {
+    return obj.mainPageData.mainPagePosition == 5;
+  });
 
   return (
     <>
       <MainSlider />
       <div className={styles.HomePageContent}>
-        <MainTailor
-          img={tailorSectionData[0].img.wiz}
-          title={tailorSectionData[0].title}
-        />
-        <SelectedWorks selected={selectedSectionData} />
+        <Tailor data={tailorSectionData} />
+        <SelectedWorks data={selectedSectionData} />
       </div>
+      <Detail data={detailSectionData} />
     </>
   );
 };

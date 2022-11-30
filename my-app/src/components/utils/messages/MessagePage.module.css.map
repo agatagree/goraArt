@@ -1,1 +1,14 @@
-{"version":3,"sources":["../../../styles/Basics/typography.scss","../../../styles/Helpers/font.scss","../../../styles/Helpers/colors.scss","MessagePage.module.css","../../../styles/Helpers/breakpoints.scss","MessagePage.module.scss"],"names":[],"mappings":"AAEA;EACE,gBCOe;EDNf,eAAA;EACA,uBCaQ;EDZR,cEFY;ACCd;ACUE;EJbF;IAOQ,eCPK;EEOX;AACF;;AHIA;EACE,iBAAA;EACA,cEZY;EFaZ,2CAAA;AGDF;;AEdA;EACE,aAAA;EACA,sBAAA;EACA,YAAA;EACA,WAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;AFiBF;;AEdA;EACE,eAAA;EACA,cAAA;EACA,sBAAA;KAAA,mBAAA;AFiBF","file":"MessagePage.module.css"}
+{
+  "version": 3,
+  "sources": [
+    "../../../styles/Basics/typography.scss",
+    "../../../styles/Helpers/font.scss",
+    "../../../styles/Helpers/colors.scss",
+    "MessagePage.module.css",
+    "../../../styles/Helpers/breakpoints.scss",
+    "MessagePage.module.scss"
+  ],
+  "names": [],
+  "mappings": "AAEA;EACE,gBCOe;EDNf,eAAA;EACA,uBCaQ;EDZR,cEFY;ACCd;ACUE;EJbF;IAOQ,eCPK;EEOX;AACF;;AHIA;EACE,iBAAA;EACA,cEZY;EFaZ,2CAAA;AGDF;;AEdA;EACE,aAAA;EACA,sBAAA;EACA,YAAA;EACA,WAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;AFiBF;;AEdA;EACE,eAAA;EACA,cAAA;EACA,sBAAA;KAAA,mBAAA;AFiBF",
+  "file": "MessagePage.module.css"
+}

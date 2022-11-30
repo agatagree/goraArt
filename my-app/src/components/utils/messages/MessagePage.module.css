@@ -30,5 +30,5 @@ body {
   max-height: 80%;
   max-width: 80%;
   -o-object-fit: contain;
-     object-fit: contain;
-}/*# sourceMappingURL=MessagePage.module.css.map */
+  object-fit: contain;
+}

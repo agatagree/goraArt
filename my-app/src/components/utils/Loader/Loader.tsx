@@ -7,5 +7,5 @@ export const Loader = () => {
         <span className={styles.progress}></span>
       </span>
     </div>
-  )
-}
+  );
+};

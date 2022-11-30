@@ -52,10 +52,6 @@
   @include link();
   padding: 8px;
   font-weight: $fontWeights500;
-
-  &:hover {
-    color: $primaryOrange;
-  }
 }
 
 .linkNavToggleMenu {
@@ -63,6 +59,11 @@
   padding: 0 8px;
   @include sm {
     @include H03();
+  }
+
+  &Active {
+    @extend .linkNavToggleMenu;
+    font-weight: $fontWeights700;
   }
 }
 

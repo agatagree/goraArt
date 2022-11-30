@@ -1,0 +1,59 @@
+@use "../../../styles/Basics" as *;
+@use "../../../styles/Helpers" as *;
+
+.DetailSectionLayout {
+  width: 100%;
+  background-color: $lightGrey100;
+  margin: $spacing120 0;
+  padding: $spacing120 0 0 $spacing60;
+  position: relative;
+  max-width: 1440px;
+  @include sm {
+    padding: 0 $spacing24;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.DetailSectionMessage {
+  padding-left: $spacing120;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: $spacing24;
+  max-width: 40%;
+  text-align: left;
+  position: absolute;
+  z-index: 4;
+  @include sm {
+    position: inherit;
+    max-width: 100%;
+  }
+  @include lg {
+    padding: 0;
+  }
+}
+
+.DetailTitle {
+  @include H03();
+  white-space: nowrap;
+  @include sm {
+    padding-top: $spacing60;
+  }
+}
+
+.DetailImg {
+  width: 65%;
+  float: right;
+  padding-top: $spacing80;
+  background-color: $grey100;
+  min-height: 200px;
+  @include sm {
+    align-self: flex-end;
+    padding-top: 0;
+  }
+}
+
+.DetailDescription {
+  padding-bottom: $spacing20;
+}

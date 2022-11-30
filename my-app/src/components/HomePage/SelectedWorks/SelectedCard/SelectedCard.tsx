@@ -1,13 +1,33 @@
 import styles from "./SelectedCard.module.scss";
+import { Link } from "react-router-dom";
 
 interface SelectedTypes {
-  title: string;
+  cardId: string;
+  pageTitle: string;
   icon: string;
   description: string;
   img: string;
+  year: number;
+  technique: string;
+  title: string;
+  code: string;
+  width: number;
+  height: number;
 }
 
-export const SelectedCard = ({ title, icon, description, img}: SelectedTypes ) => {
+export const SelectedCard = ({
+  cardId,
+  pageTitle,
+  icon,
+  description,
+  img,
+  year,
+  technique,
+  title,
+  code,
+  width,
+  height,
+}: SelectedTypes) => {
   return (
     <>
       <div className={styles.SelectedDescription}>
@@ -18,18 +38,20 @@ export const SelectedCard = ({ title, icon, description, img}: SelectedTypes ) =
             alt={title}
           />
           <h4 className={`${styles.H05} ${styles.SelectedTitle}`}>
-            {title}
+            {pageTitle}
           </h4>
         </div>
         <p className={styles.SelectedMessageText}>{description}</p>
       </div>
-      <div className={styles.SelectedImgContainer}>
-        <img
-          className={styles.SelectedImgSide}
-          src={img}
-          alt={title}
-        />
-      </div>
+      <Link to={`/gallery/${cardId}`} className={styles.SelectedImgWrapper}>
+        <img className={styles.SelectedImgSide} src={img} alt={title} />
+
+        <div className={styles.SelectedImgDescription}>
+          <p>
+            {title} {code} / {technique} / {width}x{height}cm / {year}
+          </p>
+        </div>
+      </Link>
     </>
   );
 };
