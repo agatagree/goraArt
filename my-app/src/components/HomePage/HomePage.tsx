@@ -9,12 +9,15 @@ import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
 
 export interface galleryType {
+  id:string;
   title: string;
   code: string;
   color: string[];
+  technique: string;
+  year: number;
   dimensions: {
     width: number;
-    height: string;
+    height: number;
   };
   img: {
     cover: string;
@@ -56,8 +59,6 @@ export const HomePage = () => {
       obj.mainPageData.mainPagePosition <= 4
     );
   });
-
-  console.log(selectedSectionData);
 
   return (
     <>

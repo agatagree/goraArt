@@ -17,23 +17,29 @@
   align-items: center;
   width: 100%;
   gap: $spacing60;
-  margin-bottom: $spacing180;
+  margin-bottom: $spacing60;
   @include md {
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    margin-bottom: $spacing120;
   }
   @include sm {
     gap: $spacing30;
-    margin-bottom: $spacing60;
+    margin-bottom: $spacing30;
   }
 }
 .SelectedCardWrapper {
-@include SelectedCardWrapper();
+  @include SelectedCardWrapper();
 }
 
 .SelectedCardWrapper:nth-of-type(even) {
   @include SelectedCardWrapper();
   flex-direction: row-reverse;
+}
+
+.SelectedLink {
+  padding-left:$spacing120;
+  @include lg {
+    padding: 0;
+  }
 }

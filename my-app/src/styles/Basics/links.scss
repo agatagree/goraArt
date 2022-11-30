@@ -6,17 +6,25 @@
   display: inline-block;
   width: fit-content;
 
+  &:hover {
+    color: $primaryOrange;
+  }
+}
+
+  .link30 {
+    @include link();
+    @include H05M();
+  }
+
   // &:hover{
 
   // }
-}
+
 
 // .link14 {
 //   @include link();
 //   @include body-text-sm();
 // }
-
-
 
 // .link18 {
 //   @include link();
@@ -61,5 +69,3 @@
 //   &:hover{
 //     background-position: 0 85%;
 //   }
-
-

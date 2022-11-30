@@ -16,7 +16,7 @@ body {
 @mixin header {
   font-weight: $fontWeights500;
   letter-spacing: $fontLs4;
-  &--bold {
+  &Bold {
     font-weight: $fontWeights700;
   }
 }
@@ -61,7 +61,7 @@ body {
   }
 }
 
-.H05 {
+@mixin H05M {
   @include header();
   font-size: $fontSize30;
   letter-spacing: $fontLs2;
@@ -69,6 +69,10 @@ body {
   @include sm {
     font-size: $fontSize18;
   }
+}
+
+.H05 {
+  @include H05M();
 }
 
 .H06 {

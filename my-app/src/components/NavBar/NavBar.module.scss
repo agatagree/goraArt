@@ -52,10 +52,6 @@
   @include link();
   padding: 8px;
   font-weight: $fontWeights500;
-
-  &:hover {
-    color: $primaryOrange;
-  }
 }
 
 .linkNavToggleMenu {
