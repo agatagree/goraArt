@@ -3,7 +3,7 @@ import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { getDataFromSnapshot } from "../../../api/firebaseGetData";
 import { bannerCollection } from "../../../api/firebaseIndex";
-import { Loader } from "../../utils/messages/Loader/Loader";
+import { Loader } from "../../utils/Loader/Loader";
 import { BtnSlider } from "./BtnSlider/BtnSlider";
 import { HeroText } from "./HeroText/HeroText";
 

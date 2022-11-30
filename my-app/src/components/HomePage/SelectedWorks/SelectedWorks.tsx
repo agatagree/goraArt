@@ -1,8 +1,8 @@
 import styles from "./SeletedWorks.module.scss";
 import { SelectedCard } from "./SelectedCard/SelectedCard";
-import { SelectedWorksData } from "./SelectedWorksData";
+import { galleryType } from "../HomePage";
 
-export const SelectedWorks = () => {
+export const SelectedWorks = ({ selected }: { selected: galleryType[] }) => {
   return (
     <>
       <div>
@@ -11,15 +11,14 @@ export const SelectedWorks = () => {
           <br />
           through selected artworks
         </h3>
-
-        {SelectedWorksData.map((card, index) => (
+        {selected.map((card, index) => (
           <div className={styles.SelectedCardWrapper}>
             <SelectedCard
               key={index}
-              title={card.title}
-              icon={card.icon}
-              description={card.description}
-              img={card.img}
+              title={card.mainPageData.title}
+              icon={card.mainPageData.icon}
+              description={card.mainPageData.description}
+              img={card.img.cover}
             />
           </div>
         ))}
