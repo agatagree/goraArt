@@ -1,0 +1,27 @@
+@use "../../styles/Basics" as *;
+@use "../../styles/Helpers/" as *;
+
+.FooterLayout {
+  width: 100%;
+  border-top: 1px solid $grey200;
+  padding: $spacing30 $spacing24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FooterMediaLink {
+  display: flex;
+  gap: $spacing24;
+  align-items: center;
+}
+
+.FooterIcon {
+  font-size: $fontSize30;
+  vertical-align: middle;
+
+  &Facebook {
+    @extend .FooterIcon;
+    font-size: $fontSize36;
+  }
+}

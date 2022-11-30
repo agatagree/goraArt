@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type DirectionProps = {
   direction: string;
-  onClick:()=>void
+  onClick: () => void;
 };
 
 export const BtnSlider = (props: DirectionProps) => {
@@ -22,7 +22,11 @@ export const BtnSlider = (props: DirectionProps) => {
         onMouseLeave={handleArrow}
         onClick={props.onClick}
       >
-        {showArrow ? <VscArrowRight className={`${styles.btnSliderIcon} ${styles[props.direction]}`}/> : null}
+        {showArrow ? (
+          <VscArrowRight
+            className={`${styles.btnSliderIcon} ${styles[props.direction]}`}
+          />
+        ) : null}
       </button>
     </>
   );

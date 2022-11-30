@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.scss";
 import { MainSlider } from "./MainSlider/MainSlider";
 import { SelectedWorks } from "./SelectedWorks/SelectedWorks";
-import { MainTailor } from "./Tailor/MainTailor";
+import { Tailor } from "./Tailor/Tailor";
 import { onSnapshot, where, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { getDataFromSnapshot } from "../../api/firebaseGetData";
@@ -10,7 +10,7 @@ import { Loader } from "../utils/Loader/Loader";
 import { Detail } from "./Detail/Detail";
 
 export interface galleryType {
-  id:string;
+  id: string;
   title: string;
   code: string;
   color: string[];
@@ -69,12 +69,10 @@ export const HomePage = () => {
     <>
       <MainSlider />
       <div className={styles.HomePageContent}>
-        <MainTailor data={tailorSectionData}
-
-        />
+        <Tailor data={tailorSectionData} />
         <SelectedWorks data={selectedSectionData} />
       </div>
-      <Detail data={detailSectionData}/>
+      <Detail data={detailSectionData} />
     </>
   );
 };

@@ -37,8 +37,8 @@
   flex-direction: row-reverse;
 }
 
-.SelectedLink {
-  padding-left:$spacing120;
+.SelectedButton {
+  padding-left: $spacing120;
   @include lg {
     padding: 0;
   }

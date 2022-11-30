@@ -7,7 +7,6 @@ type Props = {
 };
 
 export const BurgerMenu = ({ toggle, setToggle }: Props) => {
-
   const handleToggle = () => {
     setToggle(!toggle);
   };
@@ -15,8 +14,8 @@ export const BurgerMenu = ({ toggle, setToggle }: Props) => {
   return (
     <>
       <button
-      className={!toggle ? styles.burgerWrapper : styles.burgerWrapperActive}
-      onClick={handleToggle}
+        className={!toggle ? styles.burgerWrapper : styles.burgerWrapperActive}
+        onClick={handleToggle}
       >
         <div className={styles.burgerContent}>
           <div className={`${styles.line} ${styles.top}`} />

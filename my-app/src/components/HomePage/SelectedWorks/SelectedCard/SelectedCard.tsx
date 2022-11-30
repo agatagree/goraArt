@@ -1,6 +1,5 @@
 import styles from "./SelectedCard.module.scss";
 import { Link } from "react-router-dom";
-import { SingleArtWork } from "../../../SingleArtWork/SingleArtWork";
 
 interface SelectedTypes {
   cardId: string;
@@ -45,8 +44,7 @@ export const SelectedCard = ({
         <p className={styles.SelectedMessageText}>{description}</p>
       </div>
       <Link to={`/gallery/${cardId}`} className={styles.SelectedImgWrapper}>
-
-          <img className={styles.SelectedImgSide} src={img} alt={title} />
+        <img className={styles.SelectedImgSide} src={img} alt={title} />
 
         <div className={styles.SelectedImgDescription}>
           <p>
@@ -57,4 +55,3 @@ export const SelectedCard = ({
     </>
   );
 };
-

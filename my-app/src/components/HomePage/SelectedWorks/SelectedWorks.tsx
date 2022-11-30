@@ -1,9 +1,9 @@
 import styles from "./SeletedWorks.module.scss";
 import { SelectedCard } from "./SelectedCard/SelectedCard";
 import { galleryType } from "../HomePage";
-import { Link } from "react-router-dom";
+import { Button } from "../../utils/Button/Button";
 
-export const SelectedWorks = ({ data}: { data: galleryType[] }) => {
+export const SelectedWorks = ({ data }: { data: galleryType[] }) => {
   return (
     <>
       <div>
@@ -29,12 +29,9 @@ export const SelectedWorks = ({ data}: { data: galleryType[] }) => {
             />
           </div>
         ))}
-        <Link
-          className={`${styles.link30} ${styles.SelectedLink}`}
-          to="/gallery"
-        >
-          See all works
-        </Link>
+        <div className={styles.SelectedButton}>
+          <Button linkTo={"/gallery"} text={"See all works"} />
+        </div>
       </div>
     </>
   );

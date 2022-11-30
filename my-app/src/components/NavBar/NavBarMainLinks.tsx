@@ -4,10 +4,20 @@ import { NavLink } from "react-router-dom";
 export const NavBarMainLinks = () => {
   return (
     <>
-      <NavLink className={styles.linkNavToggleMenu} to="/gallery">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
+        }
+        to="/gallery"
+      >
         Gallery
       </NavLink>
-      <NavLink className={styles.linkNavToggleMenu} to="/about">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
+        }
+        to="/about"
+      >
         About
       </NavLink>
     </>

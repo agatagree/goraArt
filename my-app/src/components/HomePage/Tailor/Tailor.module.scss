@@ -27,6 +27,9 @@
   width: 100%;
   padding: 0 $spacing120;
   max-height: 80vh;
+  background-color: $grey100;
+  min-height: 200px;
+
   @include md {
     max-width: 100%;
     padding: 0;
