@@ -1,0 +1,19 @@
+@use "../../../styles/Basics" as *;
+@use "../../../styles/Helpers/" as *;
+@use "../NavBar.module.scss" as *;
+
+.navBarLinksWrapperMobile {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.navBarToggleMenu {
+  @include navBarToggleLayout();
+  height: calc(100vh - 108px);
+  justify-content: space-between;
+
+  @include sm {
+    height: calc(100vh - 88px);
+  }
+}

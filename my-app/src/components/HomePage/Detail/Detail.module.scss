@@ -47,7 +47,7 @@
   float: right;
   padding-top: $spacing80;
   background-color: transparent;
-  min-height: 200px;
+  min-height: 100px;
   @include sm {
     align-self: flex-end;
     padding-top: 0;

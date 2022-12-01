@@ -1,0 +1,46 @@
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers/" as *;
+@use "../../NavBar.module.scss" as *;
+
+.navBarFilterlayout {
+  @include navBarToggleLayout();
+  height: calc(100vh - 170px);
+  // overflow-y: scroll;
+  justify-content: space-between;
+
+  @include sm {
+    height: calc(100vh - 160px);
+  }
+}
+
+.navBarCategoryContainer {
+  border-top: 1px solid $grey200;
+  padding-top: $spacing10;
+  margin: $spacing16;
+  margin-top: 0;
+}
+
+.categoryTitle {
+  @include text();
+  text-transform: uppercase;
+  font-weight: $fontWeights500;
+  padding-bottom: $spacing10;
+}
+
+.categoryContainer {
+  padding-bottom: $spacing10;
+
+  &Color {
+    @extend .categoryContainer;
+    display: flex;
+  }
+}
+
+.filterCheckbox {
+  margin-right: $spacing10;
+  &Color {
+    @extend .filterCheckbox ;
+    width: 15px;
+    height: 15px;
+  }
+}

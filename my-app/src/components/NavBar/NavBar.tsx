@@ -1,26 +1,36 @@
 import styles from "./NavBar.module.scss";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { NavBarMainLinks } from "./NavBarMainLinks";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import { MobileMenu } from "./MobileMenu/MobileMenu";
+import { GalleryMenu } from "./GalleryMenu/GalleryMenu";
 
 export const NavBar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const [toggleFilter, setToggleFilter] = useState<boolean>(false);
+  const [galleryMenuState, setGallerymenuState] = useState(false);
 
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
+  const pageName = useLocation();
 
   useEffect(() => {
-    if (!toggle) {
+    if (pageName.pathname === "/gallery") {
+      setGallerymenuState(true);
+    } else setGallerymenuState(false);
+  }, [pageName]);
+
+  useEffect(() => {
+    if (!toggle || !toggleFilter) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-  }, [toggle]);
+    if (toggle) {
+      setGallerymenuState(!galleryMenuState);
+    }
+  }, [toggle, toggleFilter]);
 
   return (
     <div className={styles.navBarWrapper}>
@@ -34,7 +44,26 @@ export const NavBar = () => {
             />
           </NavLink>
           <div className={styles.navBarLinksWrapperDesktop}>
-            <NavBarMainLinks />
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? styles.linkNavToggleMenuActive
+                  : styles.linkNavToggleMenu
+              }
+              to="/gallery"
+            >
+              Gallery
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? styles.linkNavToggleMenuActive
+                  : styles.linkNavToggleMenu
+              }
+              to="/about"
+            >
+              About
+            </NavLink>
           </div>
         </div>
         <div className={styles.navBarLinksContainer}>
@@ -52,16 +81,12 @@ export const NavBar = () => {
           <BurgerMenu toggle={toggle} setToggle={setToggle} />
         </div>
       </div>
-
-      {toggle && (
-        <div className={styles.navBarToggleMenu}>
-          <div className={styles.navBarLinksWrapperMobile}>
-            <NavBarMainLinks />
-          </div>
-          <NavLink className={styles.linkNav} to="/login">
-            Account
-          </NavLink>
-        </div>
+      {toggle && <MobileMenu toggle={toggle} setToggle={setToggle} />}
+      {galleryMenuState && (
+        <GalleryMenu
+          toggleFilter={toggleFilter}
+          setToggleFilter={setToggleFilter}
+        />
       )}
     </div>
   );
