@@ -1,6 +1,7 @@
 import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
 import { VscArrowRight } from "react-icons/vsc";
+import { useState } from "react";
 
 interface buttonProps {
   linkTo: string;
@@ -8,9 +9,17 @@ interface buttonProps {
 }
 
 export const Button = ({ linkTo, text }: buttonProps) => {
+  const [hoverState, setHoverState] = useState(false);
   return (
-    <Link className={styles.buttonText} to={linkTo}>
-      <VscArrowRight />
+    <Link
+      className={styles.buttonText}
+      to={linkTo}
+      onMouseEnter={() => setHoverState(true)}
+      onMouseLeave={() => setHoverState(false)}
+    >
+      <VscArrowRight
+        className={hoverState ? styles.buttonIconRotate : styles.buttonIcon}
+      />
       <p>{text}</p>
     </Link>
   );

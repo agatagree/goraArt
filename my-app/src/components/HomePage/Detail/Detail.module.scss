@@ -46,7 +46,7 @@
   width: 65%;
   float: right;
   padding-top: $spacing80;
-  background-color: $grey100;
+  background-color: transparent;
   min-height: 200px;
   @include sm {
     align-self: flex-end;

@@ -9,3 +9,12 @@
   align-items: center;
   gap: $spacing10;
 }
+
+.buttonIcon {
+  transform: rotate(0deg);
+}
+
+.buttonIconRotate {
+  transition: transform 0.5s ease-in-out 0s;
+  transform: rotate(360deg);
+}
