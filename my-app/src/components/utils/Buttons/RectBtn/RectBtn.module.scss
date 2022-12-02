@@ -1,13 +1,15 @@
-@use "../../../styles/Basics/" as *;
-@use "../../../styles/Helpers" as *;
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers" as *;
 
 .buttonText {
   @include link();
-  @include H05M();
+  @include textXS();
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: $spacing10;
+  padding: 0 6px;
+  letter-spacing: $fontLs2;
+  text-transform: capitalize;
 }
 
 .buttonIcon {

@@ -1,12 +1,13 @@
-import { MessagePage } from "../utils/messages/MessagePage";
+import styles from "./Gallery.module.scss";
 import { useEffect, useState } from "react";
 import { onSnapshot } from "firebase/firestore";
 import { getDataFromSnapshot } from "../../api/firebaseGetData";
 import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
+import { galleryType } from "../HomePage/HomePage";
 
 export const Gallery = () => {
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState<galleryType[]>([]);
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
@@ -22,7 +23,22 @@ export const Gallery = () => {
 
   return (
     <>
-      <MessagePage message={"underConstruction"} />;
+      <div className={styles.galleryLayout}>
+        {gallery.map((singleArt) => (
+          <div className={styles.art} key={singleArt.id}>
+            <img className={styles.artImg} src={singleArt.img.cover} alt={singleArt.title} />
+            <div className={styles.artDescription}>
+              <p>
+                {singleArt.title} {singleArt.code}, {singleArt.year}
+              </p>
+              <p>{singleArt.technique}</p>
+              <p>
+                {singleArt.dimensions.width}x{singleArt.dimensions.height}cm
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

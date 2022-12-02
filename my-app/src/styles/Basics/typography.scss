@@ -10,6 +10,14 @@
   }
 }
 
+@mixin textXS {
+  @include text ();
+  font-size: $fontSize12;
+  @include sm {
+    font-size: $fontSize10;
+  }
+}
+
 body {
   color: $darkGrey500;
   font-family: "Heebo", sans-serif;
