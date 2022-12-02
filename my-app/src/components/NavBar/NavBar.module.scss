@@ -72,4 +72,14 @@
   display: flex;
   flex-direction: column;
   padding: 8px;
+  padding-bottom: $spacing24;
+}
+
+.toggleOverlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: block;
+  z-index: 2;
+  position: absolute;
 }

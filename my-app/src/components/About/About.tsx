@@ -4,7 +4,6 @@ export const About = () => {
   return (
     <>
       <MessagePage message={"underConstruction"} />
-      <div></div>
     </>
   );
 };

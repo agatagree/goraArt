@@ -1,5 +1,9 @@
+import { MessagePage } from "../../utils/messages/MessagePage";
+
 export const UserProfile = () => {
   return (
-    <div>UserProfile</div>
+    <>
+      <MessagePage message={"underConstruction"} />
+    </>
   )
 }

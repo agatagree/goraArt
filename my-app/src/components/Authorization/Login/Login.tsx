@@ -1,5 +1,9 @@
+import { MessagePage } from "../../utils/messages/MessagePage";
+
 export const Login = () => {
   return (
-    <div>Login</div>
+    <>
+    <MessagePage message={"underConstruction"} />
+  </>
   )
 }

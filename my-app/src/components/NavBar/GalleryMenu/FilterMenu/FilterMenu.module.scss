@@ -5,7 +5,6 @@
 .navBarFilterlayout {
   @include navBarToggleLayout();
   height: calc(100vh - 170px);
-  // overflow-y: scroll;
   justify-content: space-between;
 
   @include sm {
@@ -18,12 +17,12 @@
   padding-top: $spacing10;
   margin: $spacing16;
   margin-top: 0;
+  @include textSM();
 }
 
 .categoryTitle {
-  @include text();
   text-transform: uppercase;
-  font-weight: $fontWeights500;
+  font-weight: $fontWeights700;
   padding-bottom: $spacing10;
 }
 
@@ -39,8 +38,40 @@
 .filterCheckbox {
   margin-right: $spacing10;
   &Color {
-    @extend .filterCheckbox ;
+    @extend .filterCheckbox;
     width: 15px;
     height: 15px;
+  }
+}
+
+.filterGroupButton {
+  display: flex;
+  width: 100%;
+}
+
+.filterBtn {
+  flex: 1;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid $darkGrey500;
+  border-radius: 0;
+  @include textSM();
+  padding: $spacing10 $spacing16;
+  letter-spacing: $fontLs2;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $darkGrey500;
+    color: $white100;
+  }
+
+  &Apply {
+    @extend .filterBtn;
+    background-color: $darkGrey500;
+    color: $white100;
+    &:hover {
+      background-color: transparent;
+      color: $darkGrey500;
+    }
   }
 }

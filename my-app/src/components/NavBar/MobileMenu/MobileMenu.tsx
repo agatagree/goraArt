@@ -13,29 +13,29 @@ export const MobileMenu = ({ toggle, setToggle }: toogleType) => {
   };
   return (
     <div className={styles.navBarToggleMenu}>
-    <div className={styles.navBarLinksWrapperMobile}>
-    <NavLink
-        className={({ isActive }) =>
-          isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
-        }
-        to="/gallery"
-        onClick={handleToggle}
-      >
-        Gallery
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
-        }
-        to="/about"
-        onClick={handleToggle}
-      >
-        About
+      <div className={styles.navBarLinksWrapperMobile}>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
+          }
+          to="/gallery"
+          onClick={handleToggle}
+        >
+          Gallery
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
+          }
+          to="/about"
+          onClick={handleToggle}
+        >
+          About
+        </NavLink>
+      </div>
+      <NavLink className="link" to="/login">
+        Account
       </NavLink>
     </div>
-    <NavLink className="link" to="/login">
-      Account
-    </NavLink>
-  </div>
-  )
-}
+  );
+};

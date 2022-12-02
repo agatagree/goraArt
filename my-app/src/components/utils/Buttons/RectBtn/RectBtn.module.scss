@@ -1,22 +1,14 @@
 @use "../../../../styles/Basics/" as *;
 @use "../../../../styles/Helpers" as *;
 
-.buttonText {
+.buttonStyle {
   @include link();
   @include textXS();
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+  border: 1px solid, $darkGrey500;
+}
+
+.buttonText {
   padding: 0 6px;
   letter-spacing: $fontLs2;
   text-transform: capitalize;
-}
-
-.buttonIcon {
-  transform: rotate(0deg);
-}
-
-.buttonIconRotate {
-  transition: transform 0.5s ease-in-out 0s;
-  transform: rotate(360deg);
 }

@@ -10,6 +10,14 @@
   }
 }
 
+@mixin textSM {
+  @include text ();
+  font-size: $fontSize14;
+  @include sm {
+    font-size: $fontSize12;
+  }
+}
+
 @mixin textXS {
   @include text ();
   font-size: $fontSize12;
