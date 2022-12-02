@@ -1,4 +1,3 @@
-import "./styles/Basics/index.scss";
 import styles from "./App.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/HomePage/HomePage";
