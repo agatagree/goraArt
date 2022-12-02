@@ -19,7 +19,10 @@ export const NavBar = () => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
     } else setGallerymenuState(false);
-  }, [pageName]);
+    if (toggle && (pageName.pathname === "/gallery")) {
+      setGallerymenuState(false);
+    } 
+  }, [pageName, toggle]);
 
   useEffect(() => {
     if (toggle || toggleFilter) {
@@ -27,11 +30,7 @@ export const NavBar = () => {
     } else {
       document.body.style.overflow = "visible";
     }
-    if (toggle) {
-      setGallerymenuState(false);
-    } else {
-      setGallerymenuState(true);
-    }
+
   }, [toggle, toggleFilter]);
 
   return (
