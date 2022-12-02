@@ -5,8 +5,11 @@ import { ImInstagram } from "react-icons/im";
 export const Footer = () => {
   return (
     <div className={styles.FooterLayout}>
+      <div className={styles.FooterConatiner}>
       <img src="/assets/logo.svg" alt="logo" />
-      <div className={styles.FooterMediaLink}>
+      &copy; {new Date().getFullYear()} tamaga studio
+      </div>
+      <div className={styles.FooterConatiner}>
         <a href="https://www.facebook.com/wojciech.gora/">
           <AiFillFacebook className={styles.FooterIconFacebook} />
         </a>

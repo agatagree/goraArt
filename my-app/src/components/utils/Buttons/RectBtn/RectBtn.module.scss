@@ -1,0 +1,14 @@
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers" as *;
+
+.buttonStyle {
+  @include link();
+  @include textXS();
+  border: 1px solid, $darkGrey500;
+}
+
+.buttonText {
+  padding: 0 6px;
+  letter-spacing: $fontLs2;
+  text-transform: capitalize;
+}

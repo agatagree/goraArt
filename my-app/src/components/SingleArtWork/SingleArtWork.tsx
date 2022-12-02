@@ -1,5 +1,9 @@
+import { MessagePage } from "../utils/messages/MessagePage";
+
 export const SingleArtWork = () => {
   return (
-    <div>SingleArtWork</div>
+    <>
+    <MessagePage message={"underConstruction"} />
+  </>
   )
 }

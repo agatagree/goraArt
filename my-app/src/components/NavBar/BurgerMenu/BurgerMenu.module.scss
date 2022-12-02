@@ -4,7 +4,7 @@
 .burgerWrapper {
   display: none;
 
-  @include md {
+  @include sm {
     display: flex;
     justify-content: center;
     align-items: center;

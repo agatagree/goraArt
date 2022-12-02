@@ -1,5 +1,9 @@
+import { MessagePage } from "../utils/messages/MessagePage";
+
 export const Search = () => {
   return (
-    <div>Search</div>
+    <>
+    <MessagePage message={"underConstruction"} />
+  </>
   )
 }

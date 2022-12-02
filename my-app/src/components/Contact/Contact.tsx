@@ -1,5 +1,9 @@
+import { MessagePage } from "../utils/messages/MessagePage";
+
 export const Contact = () => {
   return (
-    <div>Contact</div>
+    <>
+    <MessagePage message={"underConstruction"} />
+  </>
   )
 }

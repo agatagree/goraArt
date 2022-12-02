@@ -1,12 +1,12 @@
 import styles from "./BurgerMenu.module.scss";
 import { Dispatch, SetStateAction } from "react";
 
-type Props = {
+type toogleType = {
   toggle: boolean;
   setToggle: Dispatch<SetStateAction<boolean>>;
 };
 
-export const BurgerMenu = ({ toggle, setToggle }: Props) => {
+export const BurgerMenu = ({ toggle, setToggle }: toogleType) => {
   const handleToggle = () => {
     setToggle(!toggle);
   };

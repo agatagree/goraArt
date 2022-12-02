@@ -1,6 +1,6 @@
 import styles from "./Detail.module.scss";
 import { galleryType } from "../HomePage";
-import { Button } from "../../utils/Button/Button";
+import { ArrowBtn } from "../../utils/Buttons/ArrowBtn/ArrowBtn";
 
 export const Detail = ({ data }: { data: galleryType[] }) => {
   return (
@@ -11,7 +11,7 @@ export const Detail = ({ data }: { data: galleryType[] }) => {
           <p className={styles.DetailDescription}>
             {data[0].mainPageData.description}
           </p>
-          <Button linkTo={"/about"} text={"Read more"} />
+          <ArrowBtn linkTo={"/about"} text={"Read more"} />
         </div>
         <img
           className={styles.DetailImg}

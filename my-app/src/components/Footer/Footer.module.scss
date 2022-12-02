@@ -8,20 +8,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include sm {
+    padding: $spacing30 $spacing10;
+  }
 }
 
-.FooterMediaLink {
+.FooterConatiner{
   display: flex;
   gap: $spacing24;
   align-items: center;
+  @include sm {
+    gap: $spacing16;
+  }
 }
 
 .FooterIcon {
   font-size: $fontSize30;
   vertical-align: middle;
+  @include sm {
+    font-size: $fontSize16;
+  }
 
   &Facebook {
     @extend .FooterIcon;
     font-size: $fontSize36;
+    @include sm {
+      font-size: 20px;
+    }
   }
 }

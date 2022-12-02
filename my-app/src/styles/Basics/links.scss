@@ -2,14 +2,24 @@
 @use "./typography.scss" as *;
 
 @mixin link {
+  @include text();
   text-decoration: none;
   display: inline-block;
   width: fit-content;
+  cursor: pointer;
+  font-weight: $fontWeights500;
+  background-color: transparent;
+  border: none;
 
   &:hover {
     color: $primaryOrange;
   }
 }
+
+.link {
+  @include link();
+}
+
 .link30 {
   @include link();
   @include H05M();
