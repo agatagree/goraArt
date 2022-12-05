@@ -4,8 +4,12 @@
 
 .navBarLoginLayout {
   @include navBarToggleLayout();
-  height: calc(100vh - 120px);
+  height: calc(100vh - 64px);
   padding: 0 $spacing16;
+
+  @include sm {
+    height: calc(100vh - 48px);
+  }
 }
 
 .LoginHeader {
@@ -13,7 +17,7 @@
   border-bottom: 1px solid $darkGrey500;
   min-height: $spacing40;
   margin-bottom: $spacing40;
-  align-items: center
+  align-items: center;
 }
 
 .LoginTitle {
@@ -43,12 +47,12 @@
 .LoginInput {
   flex: 1;
   background-color: $grey100;
-  padding: $spacing10 $spacing16 $spacing10 160px ;
+  padding: $spacing10 $spacing16 $spacing10 160px;
   border: none;
   &:focus {
     outline: none;
     background-color: $grey300;
-}
+  }
 }
 
 .LoginButtonContainer {

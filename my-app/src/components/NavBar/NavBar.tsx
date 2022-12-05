@@ -1,61 +1,62 @@
 import styles from "./NavBar.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { useLocation } from "react-router-dom";
 import { GalleryMenu } from "./GalleryMenu/GalleryMenu";
 import { AppBar } from "./AppBar/AppBar";
 import { Login } from "../Authorization/Login/Login";
+import { OverlayMenu } from "./OverlayMenu/OverlayMenu";
+
+interface NavBrContextInterface {
+  isOpen: boolean;
+  setIsOpen: (f: boolean) => void;
+  activeDrawer: string;
+  setActiveDrawer: (f: string) => void;
+}
+const defaultState = {
+  isOpen: false,
+  activeDrawer: "",
+  setIsOpen: () => {},
+  setActiveDrawer: () => {},
+};
+export const NavBarContext = createContext<NavBrContextInterface>(defaultState);
 
 export const NavBar = () => {
-  const [toggle, setToggle] = useState<boolean>(false);
-  const [toggleFilter, setToggleFilter] = useState<boolean>(false);
-  const [toggleLogin, setToggleLogin] = useState<boolean>(false);
   const [galleryMenuState, setGallerymenuState] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDrawer, setActiveDrawer] = useState("");
+
+  const handleOverlay = () => {
+    setIsOpen(!isOpen);
+    setActiveDrawer("");
+  };
+  useEffect(() => {
+    isOpen === true
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+  }, [isOpen]);
 
   const pageName = useLocation();
-
   useEffect(() => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
     } else setGallerymenuState(false);
-    if (toggle && pageName.pathname === "/gallery") {
-      setGallerymenuState(false);
-    }
-  }, [pageName, toggle]);
-
-  useEffect(() => {
-    if (toggle || toggleFilter || toggleLogin) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-  }, [toggle, toggleFilter, toggleLogin]);
+  }, [pageName]);
 
   return (
     <>
-      <div className={styles.navBarWrapper}>
-        {toggleLogin && (
-          <Login toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
-        )}
-
-        <AppBar
-          toggle={toggle}
-          setToggle={setToggle}
-          toggleLogin={toggleLogin}
-          setToggleLogin={setToggleLogin}
-        />
-        {galleryMenuState && !toggleLogin && (
-          <GalleryMenu
-            toggleFilter={toggleFilter}
-            setToggleFilter={setToggleFilter}
-          />
-        )}
-      </div>
-      {(toggle || toggleFilter || toggleLogin) && (
-        <div
-          className={styles.toggleOverlay}
-          onClick={() => setToggleFilter(!toggleFilter)}
-        ></div>
-      )}
+      <NavBarContext.Provider
+        value={{ isOpen, setIsOpen, activeDrawer, setActiveDrawer }}
+      >
+        <div className={styles.navBarWrapper}>
+          {activeDrawer === "login" && <Login />}
+          {activeDrawer !== "login" && <AppBar />}
+          {galleryMenuState &&
+            (activeDrawer === "" || activeDrawer === "filterMenu") && (
+              <GalleryMenu />
+            )}
+        </div>
+        {isOpen && <OverlayMenu onClick={handleOverlay} />}
+      </NavBarContext.Provider>
     </>
   );
 };

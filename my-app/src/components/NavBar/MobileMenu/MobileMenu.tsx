@@ -1,16 +1,16 @@
 import styles from "./MobileMenu.module.scss";
 import { NavLink } from "react-router-dom";
-import { Dispatch, SetStateAction } from "react";
+import { NavBarContext } from "../../NavBar/NavBar";
+import { useContext } from "react";
 
-type toogleType = {
-  toggle: boolean;
-  setToggle: Dispatch<SetStateAction<boolean>>;
-};
+export const MobileMenu = () => {
+  const { setIsOpen, setActiveDrawer } = useContext(NavBarContext);
 
-export const MobileMenu = ({ toggle, setToggle }: toogleType) => {
-  const handleToggle = () => {
-    setToggle(!toggle);
+  const handleClick = () => {
+    setIsOpen(false);
+    setActiveDrawer("");
   };
+
   return (
     <div className={styles.navBarToggleMenu}>
       <div className={styles.navBarLinksWrapperMobile}>
@@ -19,7 +19,7 @@ export const MobileMenu = ({ toggle, setToggle }: toogleType) => {
             isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
           }
           to="/gallery"
-          onClick={handleToggle}
+          onClick={handleClick}
         >
           Gallery
         </NavLink>
@@ -28,12 +28,16 @@ export const MobileMenu = ({ toggle, setToggle }: toogleType) => {
             isActive ? styles.linkNavToggleMenuActive : styles.linkNavToggleMenu
           }
           to="/about"
-          onClick={handleToggle}
+          onClick={handleClick}
         >
           About
         </NavLink>
       </div>
-      <NavLink className={styles.navBarAccountLink} to="/login">
+      <NavLink
+        className={styles.navBarAccountLink}
+        to="/login"
+        onClick={handleClick}
+      >
         Account
       </NavLink>
     </div>

@@ -5,21 +5,18 @@ import { BiShoppingBag } from "react-icons/bi";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
-import { Dispatch, SetStateAction } from "react";
+import { NavBarContext } from "../../NavBar/NavBar";
+import { useContext } from "react";
 
-type toogleType = {
-  toggle: boolean;
-  setToggle: Dispatch<SetStateAction<boolean>>;
-  toggleLogin: boolean;
-  setToggleLogin: Dispatch<SetStateAction<boolean>>;
-};
+export const AppBar = () => {
+  const { isOpen, setIsOpen, activeDrawer, setActiveDrawer } =
+    useContext(NavBarContext);
 
-export const AppBar = ({
-  toggle,
-  setToggle,
-  toggleLogin,
-  setToggleLogin,
-}: toogleType) => {
+  const handleDrawer = (props: string) => {
+    setIsOpen(!isOpen);
+    setActiveDrawer(props);
+  };
+
   return (
     <>
       <div className={styles.navBarLayout}>
@@ -58,7 +55,7 @@ export const AppBar = ({
           <div className={styles.navBarLinksWrapper}>
             <button
               className={styles.linkNav}
-              onClick={() => setToggleLogin(!toggleLogin)}
+              onClick={() => handleDrawer("login")}
             >
               <IoPersonCircleOutline className={styles.navBarIcon} />
             </button>
@@ -69,10 +66,10 @@ export const AppBar = ({
           <NavLink className={styles.linkNav} to="/search">
             <BiSearch className={styles.navBarIcon} />
           </NavLink>
-          <BurgerMenu toggle={toggle} setToggle={setToggle} />
+          <BurgerMenu />
         </div>
       </div>
-      {toggle && <MobileMenu toggle={toggle} setToggle={setToggle} />}
+      {activeDrawer === "mobileMenu" && <MobileMenu />}
     </>
   );
 };

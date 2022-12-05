@@ -1,26 +1,23 @@
-import { MessagePage } from "../../utils/messages/MessagePage";
 import styles from "./Login.module.scss";
 import { Link } from "react-router-dom";
 import { ExitBtn } from "../../utils/Buttons/ExitBtn/ExitBtn";
-import { Dispatch, SetStateAction } from "react";
+import { NavBarContext } from "../../NavBar/NavBar";
+import { useContext } from "react";
 
-type toogleType = {
-  toggleLogin: boolean;
-  setToggleLogin: Dispatch<SetStateAction<boolean>>;
-};
-
-export const Login = ({ toggleLogin, setToggleLogin }: toogleType) => {
+export const Login = () => {
+  const { isOpen, setIsOpen, setActiveDrawer } = useContext(NavBarContext);
 
   const handleClick = () => {
-    setToggleLogin(!toggleLogin)
-    
-  }
+    setIsOpen(!isOpen);
+    setActiveDrawer("");
+  };
+
   return (
     <>
       <div className={styles.navBarLoginLayout}>
         <header className={styles.LoginHeader}>
           <h3 className={styles.LoginTitle}>Login</h3>
-          <ExitBtn onClick={handleClick}/>
+          <ExitBtn onClick={handleClick} />
         </header>
         <form className={styles.LoginForm}>
           <div className={styles.LoginInputWrapper}>
