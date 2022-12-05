@@ -5,8 +5,18 @@
   font-weight: $fontWeights400;
   font-size: $fontSize18;
   font-family: "Heebo", sans-serif;
+
   @include sm {
     font-size: $fontSize16;
+  }
+}
+
+.text {
+  @include text();
+
+  &Bold {
+    @extend .text;
+    font-weight: $fontWeights700;
   }
 }
 

@@ -1,0 +1,13 @@
+@use "../../../../styles/Basics/" as *;
+@use "../../../../styles/Helpers" as *;
+
+.buttonWrapper {
+  @include link();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: $fontSize18;
+  height: 24px;
+  width: 24px;
+}

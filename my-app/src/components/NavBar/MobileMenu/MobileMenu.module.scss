@@ -17,3 +17,8 @@
     height: calc(100vh - 88px);
   }
 }
+
+.navBarAccountLink {
+  @include link();
+  padding: 0 8px;
+}

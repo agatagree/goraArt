@@ -1,16 +1,14 @@
 import styles from "./NavBar.module.scss";
 import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
-import { BiShoppingBag } from "react-icons/bi";
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
-import { MobileMenu } from "./MobileMenu/MobileMenu";
+import { useLocation } from "react-router-dom";
 import { GalleryMenu } from "./GalleryMenu/GalleryMenu";
+import { AppBar } from "./AppBar/AppBar";
+import { Login } from "../Authorization/Login/Login";
 
 export const NavBar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [toggleFilter, setToggleFilter] = useState<boolean>(false);
+  const [toggleLogin, setToggleLogin] = useState<boolean>(false);
   const [galleryMenuState, setGallerymenuState] = useState(false);
 
   const pageName = useLocation();
@@ -19,79 +17,40 @@ export const NavBar = () => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
     } else setGallerymenuState(false);
-    if (toggle && (pageName.pathname === "/gallery")) {
+    if (toggle && pageName.pathname === "/gallery") {
       setGallerymenuState(false);
-    } 
+    }
   }, [pageName, toggle]);
 
   useEffect(() => {
-    if (toggle || toggleFilter) {
+    if (toggle || toggleFilter || toggleLogin) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-
-  }, [toggle, toggleFilter]);
+  }, [toggle, toggleFilter, toggleLogin]);
 
   return (
     <>
       <div className={styles.navBarWrapper}>
-        <div className={styles.navBarLayout}>
-          <div className={styles.navBarLinksContainer}>
-            <NavLink className={styles.linkNav} to="/">
-              <img
-                className={styles.navBarIcon}
-                src="/assets/logo.svg"
-                alt="logo"
-              />
-            </NavLink>
-            <div className={styles.navBarLinksWrapperDesktop}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? styles.linkNavToggleMenuActive
-                    : styles.linkNavToggleMenu
-                }
-                to="/gallery"
-              >
-                Gallery
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? styles.linkNavToggleMenuActive
-                    : styles.linkNavToggleMenu
-                }
-                to="/about"
-              >
-                About
-              </NavLink>
-            </div>
-          </div>
-          <div className={styles.navBarLinksContainer}>
-            <div className={styles.navBarLinksWrapper}>
-              <NavLink className={styles.linkNav} to="/login">
-                <IoPersonCircleOutline className={styles.navBarIcon} />
-              </NavLink>
-            </div>
-            <NavLink className={styles.linkNav} to="/basket">
-              <BiShoppingBag className={styles.navBarIcon} />
-            </NavLink>
-            <NavLink className={styles.linkNav} to="/search">
-              <BiSearch className={styles.navBarIcon} />
-            </NavLink>
-            <BurgerMenu toggle={toggle} setToggle={setToggle} />
-          </div>
-        </div>
-        {toggle && <MobileMenu toggle={toggle} setToggle={setToggle} />}
-        {galleryMenuState && (
+        {toggleLogin && (
+          <Login toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
+        )}
+
+        <AppBar
+          toggle={toggle}
+          setToggle={setToggle}
+          toggleLogin={toggleLogin}
+          setToggleLogin={setToggleLogin}
+        />
+        {galleryMenuState && !toggleLogin && (
           <GalleryMenu
             toggleFilter={toggleFilter}
             setToggleFilter={setToggleFilter}
           />
         )}
       </div>
-      {(toggle || toggleFilter) && (
+      {(toggle || toggleFilter || toggleLogin) && (
         <div
           className={styles.toggleOverlay}
           onClick={() => setToggleFilter(!toggleFilter)}

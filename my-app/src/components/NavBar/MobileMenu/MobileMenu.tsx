@@ -33,7 +33,7 @@ export const MobileMenu = ({ toggle, setToggle }: toogleType) => {
           About
         </NavLink>
       </div>
-      <NavLink className="link" to="/login">
+      <NavLink className={styles.navBarAccountLink} to="/login">
         Account
       </NavLink>
     </div>
