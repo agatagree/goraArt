@@ -1,15 +1,4 @@
 import styles from "./MessagePage.module.scss";
-import { useEffect, useState } from "react";
-
-type MessageName = {
-  message: string;
-};
-
-interface messageValuesTypes {
-  alt: string;
-  img: string;
-  text: string;
-}
 
 const messageType = {
   pageNotFound: {
@@ -24,41 +13,19 @@ const messageType = {
   },
 };
 
+type MessageName = {
+  message: keyof typeof messageType;
+};
+
 export const MessagePage = ({ message }: MessageName) => {
-  const [messageValue, setMessageValue] = useState<messageValuesTypes>({
-    alt: "",
-    img: "",
-    text: "string",
-  });
-
-  useEffect(() => {
-    if (message === "underConstruction") {
-      setMessageValue({
-        text: messageType.underConstruction.text,
-        img: messageType.underConstruction.img,
-        alt: messageType.underConstruction.alt,
-      });
-    } else {
-      setMessageValue({
-        text: messageType.pageNotFound.text,
-        img: messageType.pageNotFound.img,
-        alt: messageType.pageNotFound.alt,
-      });
-    }
-  }, [message]);
-
-  const DisplayMessage = () => {
-    return (
-      <div className={styles.messageLayout}>
-        <img
-          className={styles.messageImg}
-          alt={messageValue.alt}
-          src={messageValue.img}
-        />
-        <h6 className={styles.H06}>{messageValue.text}</h6>
-      </div>
-    );
-  };
-
-  return <>{messageValue ? <DisplayMessage /> : null}</>;
+  return (
+    <div className={styles.messageLayout}>
+      <img
+        className={styles.messageImg}
+        alt={messageType[message].alt}
+        src={messageType[message].img}
+      />
+      <h6 className={styles.H06}>{messageType[message].text}</h6>
+    </div>
+  );
 };
