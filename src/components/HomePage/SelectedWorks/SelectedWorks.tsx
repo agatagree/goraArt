@@ -1,7 +1,7 @@
-import styles from "./SeletedWorks.module.scss";
 import { SelectedCard } from "./SelectedCard/SelectedCard";
 import { galleryType } from "../HomePage";
 import { ArrowBtn } from "../../utils/Buttons/ArrowBtn/ArrowBtn";
+import styles from "./SeletedWorks.module.scss";
 
 export const SelectedWorks = ({ data }: { data: galleryType[] }) => {
   return (

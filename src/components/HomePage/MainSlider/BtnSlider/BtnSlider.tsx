@@ -1,6 +1,6 @@
-import styles from "./BtnSlider.module.scss";
 import { VscArrowRight } from "react-icons/vsc";
 import { useState } from "react";
+import styles from "./BtnSlider.module.scss";
 
 type DirectionProps = {
   direction: string;

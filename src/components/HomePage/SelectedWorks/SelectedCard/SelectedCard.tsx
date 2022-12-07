@@ -1,5 +1,5 @@
-import styles from "./SelectedCard.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./SelectedCard.module.scss";
 
 interface SelectedTypes {
   cardId: string;

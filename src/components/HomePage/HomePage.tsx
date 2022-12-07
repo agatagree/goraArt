@@ -1,13 +1,13 @@
-import styles from "./HomePage.module.scss";
+import { useEffect, useState } from "react";
+import { onSnapshot, where, query } from "firebase/firestore";
+import { getDataFromSnapshot } from "../../api/firebaseGetData";
+import { galleryCollection } from "../../api/firebaseIndex";
 import { MainSlider } from "./MainSlider/MainSlider";
 import { SelectedWorks } from "./SelectedWorks/SelectedWorks";
 import { Tailor } from "./Tailor/Tailor";
-import { onSnapshot, where, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { getDataFromSnapshot } from "../../api/firebaseGetData";
-import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
 import { Detail } from "./Detail/Detail";
+import styles from "./HomePage.module.scss";
 
 export interface galleryType {
   id: string;

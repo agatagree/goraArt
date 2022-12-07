@@ -1,7 +1,7 @@
-import styles from "./MobileMenu.module.scss";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { NavBarContext } from "../../NavBar/NavBar";
-import { useContext } from "react";
+import styles from "./MobileMenu.module.scss";
 
 export const MobileMenu = () => {
   const { setIsOpen, setActiveDrawer } = useContext(NavBarContext);

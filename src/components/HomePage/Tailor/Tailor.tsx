@@ -1,5 +1,5 @@
-import styles from "./Tailor.module.scss";
 import { galleryType } from "../HomePage";
+import styles from "./Tailor.module.scss";
 
 export const Tailor = ({ data }: { data: galleryType[] }) => {
   return (

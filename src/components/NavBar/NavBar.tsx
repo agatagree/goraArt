@@ -1,10 +1,10 @@
-import styles from "./NavBar.module.scss";
 import { useState, useEffect, createContext } from "react";
 import { useLocation } from "react-router-dom";
 import { GalleryMenu } from "./GalleryMenu/GalleryMenu";
 import { AppBar } from "./AppBar/AppBar";
 import { Login } from "../Authorization/Login/Login";
 import { OverlayMenu } from "./OverlayMenu/OverlayMenu";
+import styles from "./NavBar.module.scss";
 
 interface NavBrContextInterface {
   isOpen: boolean;

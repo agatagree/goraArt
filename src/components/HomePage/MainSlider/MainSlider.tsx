@@ -1,11 +1,11 @@
-import styles from "./MainSlider.module.scss";
-import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { getDataFromSnapshot } from "../../../api/firebaseGetData";
 import { bannerCollection } from "../../../api/firebaseIndex";
 import { Loader } from "../../utils/Loader/Loader";
 import { BtnSlider } from "./BtnSlider/BtnSlider";
 import { HeroText } from "./HeroText/HeroText";
+import styles from "./MainSlider.module.scss";
 
 interface galleryType {
   order: number;

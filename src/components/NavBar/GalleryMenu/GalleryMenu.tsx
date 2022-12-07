@@ -1,7 +1,7 @@
-import styles from "./GalleryMenu.module.scss";
+import { useContext, useState, useEffect } from "react";
 import { FilterMenu } from "./FilterMenu/FilterMenu";
 import { NavBarContext } from "../../NavBar/NavBar";
-import { useContext, useState, useEffect } from "react";
+import styles from "./GalleryMenu.module.scss";
 
 export const GalleryMenu = () => {
   const { isOpen, setIsOpen, activeDrawer, setActiveDrawer } =

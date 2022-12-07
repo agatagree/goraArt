@@ -1,6 +1,6 @@
-import styles from "./Detail.module.scss";
 import { galleryType } from "../HomePage";
 import { ArrowBtn } from "../../utils/Buttons/ArrowBtn/ArrowBtn";
+import styles from "./Detail.module.scss";
 
 export const Detail = ({ data }: { data: galleryType[] }) => {
   return (

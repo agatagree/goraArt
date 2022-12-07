@@ -1,8 +1,8 @@
-import styles from "./Login.module.scss";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ExitBtn } from "../../utils/Buttons/ExitBtn/ExitBtn";
 import { NavBarContext } from "../../NavBar/NavBar";
-import { useContext } from "react";
+import styles from "./Login.module.scss";
 
 export const Login = () => {
   const { isOpen, setIsOpen, setActiveDrawer } = useContext(NavBarContext);
