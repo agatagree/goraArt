@@ -51,7 +51,7 @@ export const HomePage = () => {
   }
 
   const tailorSectionData = gallery.filter((obj) => {
-    return obj.mainPageData.mainPagePosition == 1;
+    return obj.mainPageData.mainPagePosition === 1;
   });
 
   const selectedSectionData = gallery.filter((obj) => {
@@ -62,7 +62,7 @@ export const HomePage = () => {
   });
 
   const detailSectionData = gallery.filter((obj) => {
-    return obj.mainPageData.mainPagePosition == 5;
+    return obj.mainPageData.mainPagePosition === 5;
   });
 
   return (
