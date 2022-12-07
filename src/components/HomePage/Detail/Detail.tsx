@@ -1,8 +1,8 @@
-import { galleryType } from "../HomePage";
+import { GalleryType } from "../../utils/Types";
 import { ArrowBtn } from "../../utils/Buttons/ArrowBtn/ArrowBtn";
 import styles from "./Detail.module.scss";
 
-export const Detail = ({ data }: { data: galleryType[] }) => {
+export const Detail = ({ data }: { data: GalleryType[] }) => {
   return (
     <>
       <div className={styles.DetailSectionLayout}>

@@ -1,7 +1,7 @@
-import { galleryType } from "../HomePage";
+import { GalleryType } from "../../utils/Types";
 import styles from "./Tailor.module.scss";
 
-export const Tailor = ({ data }: { data: galleryType[] }) => {
+export const Tailor = ({ data }: { data: GalleryType[] }) => {
   return (
     <>
       <div className={styles.MainInfoLayout}>

@@ -7,13 +7,13 @@ import { BtnSlider } from "./BtnSlider/BtnSlider";
 import { HeroText } from "./HeroText/HeroText";
 import styles from "./MainSlider.module.scss";
 
-interface galleryType {
+interface GalleryType {
   order: number;
   img?: string;
 }
 
 export const MainSlider = () => {
-  const [gallery, setGallery] = useState<galleryType[]>([]);
+  const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [load, setLoad] = useState(false);
 

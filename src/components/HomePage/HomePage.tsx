@@ -8,34 +8,10 @@ import { Tailor } from "./Tailor/Tailor";
 import { Loader } from "../utils/Loader/Loader";
 import { Detail } from "./Detail/Detail";
 import styles from "./HomePage.module.scss";
-
-export interface galleryType {
-  id: string;
-  title: string;
-  code: string;
-  color: string[];
-  technique: string;
-  year: number;
-  dimensions: {
-    width: number;
-    height: number;
-  };
-  img: {
-    cover: string;
-    wiz: string;
-    zoom: string;
-  };
-  mainPage: boolean;
-  mainPageData: {
-    mainPagePosition: number;
-    title: string;
-    description: string;
-    icon: string;
-  };
-}
+import { GalleryType } from "../utils/Types";
 
 export const HomePage = () => {
-  const [gallery, setGallery] = useState<galleryType[]>([]);
+  const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [load, setLoad] = useState(false);
 
   useEffect(() => {

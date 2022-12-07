@@ -1,9 +1,9 @@
 import { SelectedCard } from "./SelectedCard/SelectedCard";
-import { galleryType } from "../HomePage";
+import { GalleryType } from "../../utils/Types";
 import { ArrowBtn } from "../../utils/Buttons/ArrowBtn/ArrowBtn";
 import styles from "./SeletedWorks.module.scss";
 
-export const SelectedWorks = ({ data }: { data: galleryType[] }) => {
+export const SelectedWorks = ({ data }: { data: GalleryType[] }) => {
   return (
     <div>
       <h3 className={styles.SelectedMainText}>
