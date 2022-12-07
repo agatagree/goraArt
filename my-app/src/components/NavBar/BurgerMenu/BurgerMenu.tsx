@@ -1,21 +1,29 @@
 import styles from "./BurgerMenu.module.scss";
-import { Dispatch, SetStateAction } from "react";
+import { NavBarContext } from "../NavBar";
+import { useContext, useState, useEffect } from "react";
 
-type toogleType = {
-  toggle: boolean;
-  setToggle: Dispatch<SetStateAction<boolean>>;
-};
+export const BurgerMenu = () => {
+  const { isOpen, setIsOpen, setActiveDrawer } = useContext(NavBarContext);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-export const BurgerMenu = ({ toggle, setToggle }: toogleType) => {
-  const handleToggle = () => {
-    setToggle(!toggle);
+  const handleDrawer = () => {
+    setIsOpen(!isOpen);
+    setMobileMenu(!mobileMenu);
+    !mobileMenu ? setActiveDrawer("mobileMenu") : setActiveDrawer("");
   };
+
+  useEffect(() => {
+    if (isOpen === false) {
+      setMobileMenu(false);
+      setActiveDrawer("");
+    }
+  }, [isOpen, setActiveDrawer]);
 
   return (
     <>
       <button
-        className={!toggle ? styles.burgerWrapper : styles.burgerWrapperActive}
-        onClick={handleToggle}
+        className={isOpen ? styles.burgerWrapperActive : styles.burgerWrapper}
+        onClick={handleDrawer}
       >
         <div className={styles.burgerContent}>
           <div className={`${styles.line} ${styles.top}`} />

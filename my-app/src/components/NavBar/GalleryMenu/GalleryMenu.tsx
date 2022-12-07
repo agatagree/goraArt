@@ -1,28 +1,33 @@
 import styles from "./GalleryMenu.module.scss";
-import { Dispatch, SetStateAction } from "react";
 import { FilterMenu } from "./FilterMenu/FilterMenu";
+import { NavBarContext } from "../../NavBar/NavBar";
+import { useContext, useState, useEffect } from "react";
 
-type toogleFilterType = {
-  toggleFilter: boolean;
-  setToggleFilter: Dispatch<SetStateAction<boolean>>;
-};
+export const GalleryMenu = () => {
+  const { isOpen, setIsOpen, activeDrawer, setActiveDrawer } =
+    useContext(NavBarContext);
+  const [filterMenu, setFilterMenu] = useState(false);
 
-export const GalleryMenu = ({
-  toggleFilter,
-  setToggleFilter,
-}: toogleFilterType) => {
-  const handleToggle = () => {
-    setToggleFilter(!toggleFilter);
+  useEffect(() => {
+    if (!isOpen) {
+      setFilterMenu(false);
+    }
+  }, [isOpen]);
+
+  const handleDrawer = () => {
+    setFilterMenu(!filterMenu);
+    setIsOpen(!isOpen);
+    !filterMenu ? setActiveDrawer("filterMenu") : setActiveDrawer("");
   };
   return (
     <>
       <div className={styles.navBarGallery}>
-        <button className={styles.linkNav} onClick={handleToggle}>
+        <button className={styles.linkNav} onClick={handleDrawer}>
           Filter
         </button>
         <button className={styles.linkNav}>Grid</button>
       </div>
-      {toggleFilter && <FilterMenu />}
+      {activeDrawer === "filterMenu" && <FilterMenu />}
     </>
   );
 };

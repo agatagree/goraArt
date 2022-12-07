@@ -7,10 +7,12 @@ import { SingleArtWork } from "./components/SingleArtWork/SingleArtWork";
 import { About } from "./components/About/About";
 import { Contact } from "./components/Contact/Contact";
 import { MessagePage } from "./components/utils/messages/MessagePage";
-import { Login } from "./components/Authorization/Login/Login";
 import { Basket } from "./components/Shop/Basket/Basket";
 import { Search } from "./components/Search/Search";
 import { NavBar } from "./components/NavBar/NavBar";
+import { SignUp } from "./components/Authorization/SignUp/SignUp";
+import { ForgotPassword } from "./components/Authorization/ForgotPassword/ForgotPassword";
+
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
               <Route path="/gallery/:id" element={<SingleArtWork />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/signUp" element={<SignUp />} />
+              <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/basket" element={<Basket />} />
               <Route path="/search" element={<Search />} />
               <Route
