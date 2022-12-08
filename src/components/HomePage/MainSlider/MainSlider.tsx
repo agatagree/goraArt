@@ -1,19 +1,19 @@
-import styles from "./MainSlider.module.scss";
-import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { getDataFromSnapshot } from "../../../api/firebaseGetData";
 import { bannerCollection } from "../../../api/firebaseIndex";
 import { Loader } from "../../utils/Loader/Loader";
 import { BtnSlider } from "./BtnSlider/BtnSlider";
 import { HeroText } from "./HeroText/HeroText";
+import styles from "./MainSlider.module.scss";
 
-interface galleryType {
+interface GalleryType {
   order: number;
   img?: string;
 }
 
 export const MainSlider = () => {
-  const [gallery, setGallery] = useState<galleryType[]>([]);
+  const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [load, setLoad] = useState(false);
 

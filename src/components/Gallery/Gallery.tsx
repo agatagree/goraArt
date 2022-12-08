@@ -1,14 +1,14 @@
-import styles from "./Gallery.module.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { onSnapshot } from "firebase/firestore";
 import { getDataFromSnapshot } from "../../api/firebaseGetData";
 import { galleryCollection } from "../../api/firebaseIndex";
 import { Loader } from "../utils/Loader/Loader";
-import { galleryType } from "../HomePage/HomePage";
-import { Link } from "react-router-dom";
+import { GalleryType } from "../../components/utils/Types";
+import styles from "./Gallery.module.scss";
 
 export const Gallery = () => {
-  const [gallery, setGallery] = useState<galleryType[]>([]);
+  const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [load, setLoad] = useState(false);
 
   useEffect(() => {

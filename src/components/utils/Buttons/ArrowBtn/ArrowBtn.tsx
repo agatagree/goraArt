@@ -1,7 +1,7 @@
-import styles from "./ArrowBtn.module.scss";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { VscArrowRight } from "react-icons/vsc";
-import { useState } from "react";
+import styles from "./ArrowBtn.module.scss";
 
 interface buttonProps {
   linkTo: string;

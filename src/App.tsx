@@ -1,4 +1,3 @@
-import styles from "./App.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/HomePage/HomePage";
 import { Footer } from "./components/Footer/Footer";
@@ -12,7 +11,7 @@ import { Search } from "./components/Search/Search";
 import { NavBar } from "./components/NavBar/NavBar";
 import { SignUp } from "./components/Authorization/SignUp/SignUp";
 import { ForgotPassword } from "./components/Authorization/ForgotPassword/ForgotPassword";
-
+import styles from "./App.module.scss";
 
 function App() {
   return (
