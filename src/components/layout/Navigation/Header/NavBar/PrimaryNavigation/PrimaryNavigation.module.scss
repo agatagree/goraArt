@@ -1,0 +1,14 @@
+@use "../../../../../../styles/Basics/" as *;
+@use "../../../../../../styles/Helpers/" as *;
+@use "../NavBar.module.scss" as *;
+
+.navBarLinksWrapper{
+  display: flex;
+  align-items: center;
+
+  @include sm {
+    display: none;
+  }
+}
+
+

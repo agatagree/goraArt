@@ -26,31 +26,30 @@
 }
 
 
-.rectangularBtn {
-  @include link();
-  @include textSM();
-  background-color: transparent;
-  border: 1px solid $darkGrey500;
-  border-radius: 0;
+// .rectangularBtn {
+//   @include link();
+//   @include textSM();
+//   background-color: transparent;
+//   border: 1px solid $darkGrey500;
+//   border-radius: 0;
+//   padding: $spacing10 $spacing16;
+//   letter-spacing: $fontLs2;
+//   text-transform: uppercase;
+//   font-weight: $fontWeights500;
 
-  padding: $spacing10 $spacing16;
-  letter-spacing: $fontLs2;
-  text-transform: uppercase;
-  font-weight: $fontWeights500;
+// &Regular {
+//   @extend .rectangularBtn;
+//   text-transform: none;
+// }
+// &Negative {
+//   @extend .rectangularBtn;
+//   text-transform: none;
+//   color: $darkGrey200;
+//   border: 1px solid transparent;
+// }
 
-&Regular {
-  @extend .rectangularBtn;
-  text-transform: none;
-}
-&Negative {
-  @extend .rectangularBtn;
-  text-transform: none;
-  color: $darkGrey200;
-  border: 1px solid transparent;
-}
-
-  &:hover {
-    background-color: $darkGrey500;
-    color: $white100;
-  }
-}
+//   &:hover {
+//     background-color: $darkGrey500;
+//     color: $white100;
+//   }
+// }

@@ -1,0 +1,23 @@
+.linkNav {
+  @include link();
+  padding: 8px;
+
+  &ToggleMenu {
+    @extend .linkNav;
+    padding: 0 8px;
+    @include sm {
+      @include H03();
+    }
+
+    &Active {
+      @extend .linkNavToggleMenu;
+      font-weight: $fontWeights700;
+    }
+  }
+}
+
+.navBarIcon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
