@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Text } from "../../../../components/common/Text/Text";
 import styles from "./SelectedCard.module.scss";
 
 interface SelectedTypes {
@@ -37,19 +38,20 @@ export const SelectedCard = ({
             src={icon}
             alt={title}
           />
-          <h4 className={`${styles.H05} ${styles.SelectedTitle}`}>
-            {pageTitle}
-          </h4>
+          <div className="SelectedTitle">
+            <Text variant="header" size="xl">
+              {pageTitle}
+            </Text>
+          </div>
         </div>
-        <p className={styles.SelectedMessageText}>{description}</p>
+        <Text>{description}</Text>
       </div>
       <Link to={`/gallery/${cardId}`} className={styles.SelectedImgWrapper}>
         <img className={styles.SelectedImgSide} src={img} alt={title} />
-
         <div className={styles.SelectedImgDescription}>
-          <p>
+          <Text size="sm">
             {title} {code} / {technique} / {width}x{height}cm / {year}
-          </p>
+          </Text>
         </div>
       </Link>
     </>

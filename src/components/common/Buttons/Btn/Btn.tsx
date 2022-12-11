@@ -1,22 +1,21 @@
 import classnames from "classnames";
-import { ReactNode } from "react";
+import { ReactNode, ElementType, ComponentProps } from "react";
 import styles from "./Btn.module.scss";
 import { NavLink, Link } from "react-router-dom";
 
-type Props = {
-  to?: string;
-  href?: string;
+type BtnOwnProps<E extends ElementType> = {
   children: ReactNode;
-  as?: "link" | "navlink" | "button" | "a";
+  as?: E;
   disabled?: boolean;
   size?: "S" | "L";
   variant?: "Text" | "Rect" | "RectRegular" | "RectNegative" | "Arrow";
   onClick?: () => void;
 };
 
-export const Btn = ({
-  to,
-  href,
+type BtnProps<E extends ElementType> = BtnOwnProps<E> &
+  Omit<ComponentProps<E>, keyof BtnOwnProps<E>>;
+
+export const Btn = <E extends ElementType = "button">({
   children,
   as,
   disabled,
@@ -24,7 +23,8 @@ export const Btn = ({
   variant,
   onClick,
   ...props
-}: Props) => {
+}: BtnProps<E>) => {
+  const Component = as || "button";
   const classNames = [styles.btn];
   if (size) {
     classNames.push(styles[size]);
@@ -32,53 +32,14 @@ export const Btn = ({
   if (variant) {
     classNames.push(styles[variant]);
   }
-
-  if (as === "link" && to) {
     return (
-      <Link
-        to={to}
-        className={classnames(classNames.join(" "))}
-        {...props}
-      >
-        {children}
-      </Link>
-    );
-  } else if (as === "navlink" && to) {
-    return (
-      <NavLink
-        to={to}
-        className={({ isActive }) =>
-          isActive
-            ? classnames(classNames.join(" "), styles.ActiveBtn)
-            : classnames(classNames.join(" "))
-        }
-        {...props}
-      >
-        {children}
-      </NavLink>
-    );
-  } else if (as === "a" && href) {
-    return (
-      <a
-        href={href}
-        onClick={onClick}
-        className={classnames(classNames.join(" "))}
-        {...props}
-      >
-        {children}
-      </a>
-    );
-  } else {
-    return (
-      <button
-        type="button"
+      <Component
         onClick={onClick}
         className={classnames(classNames.join(" "))}
         disabled={disabled}
         {...props}
       >
         {children}
-      </button>
+      </Component>
     );
   }
-};

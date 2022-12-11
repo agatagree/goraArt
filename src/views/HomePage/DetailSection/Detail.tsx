@@ -1,17 +1,21 @@
 import { GalleryType } from "../../../utils/Types";
 import { ArrowBtn } from "../../../components/common/Buttons/ArrowBtn/ArrowBtn";
+import { Text } from "../../../components/common/Text/Text";
 import styles from "./Detail.module.scss";
+
 
 export const Detail = ({ data }: { data: GalleryType[] }) => {
   return (
     <>
       <div className={styles.DetailSectionLayout}>
         <div className={styles.DetailSectionMessage}>
-          <h3 className={styles.DetailTitle}>{data[0].mainPageData.title}</h3>
-          <p className={styles.DetailDescription}>
-            {data[0].mainPageData.description}
-          </p>
-          {/* <ArrowBtn linkTo={"/about"} text={"Read more"} /> */}
+          <div className={styles.DetailTitle}>
+            <Text variant="header" size="xxxl">
+              {data[0].mainPageData.title}
+            </Text>
+          </div>
+          <Text>{data[0].mainPageData.description}</Text>
+          <ArrowBtn linkTo={"/about"} text={"Read more"} />
         </div>
         <img
           className={styles.DetailImg}

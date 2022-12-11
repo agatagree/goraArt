@@ -2,7 +2,6 @@
 @use "../../../styles/Helpers" as *;
 
 .SelectedMainText {
-  @include H02();
   padding: $spacing120 0 $spacing60 0;
   align-self: flex-start;
 

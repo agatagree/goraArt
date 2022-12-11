@@ -3,7 +3,7 @@ import { ReactNode, ElementType, ComponentProps } from "react";
 import styles from "./Text.module.scss";
 
 type TextOwnProps<E extends ElementType> = {
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   variant?: "text" | "header" | "mainHeader" | "subHeader" | "basicHeader";
   children: ReactNode;

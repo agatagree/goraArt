@@ -2,15 +2,18 @@ import { SelectedCard } from "./SelectedCard/SelectedCard";
 import { GalleryType } from "../../../utils/Types";
 import { ArrowBtn } from "../../../components/common/Buttons/ArrowBtn/ArrowBtn";
 import styles from "./Selected.module.scss";
+import { Text } from "../../../components/common/Text/Text";
 
 export const Selected = ({ data }: { data: GalleryType[] }) => {
   return (
     <div>
-      <h3 className={styles.SelectedMainText}>
-        Discover more
-        <br />
-        through selected artworks
-      </h3>
+      <div className={styles.SelectedMainText}>
+        <Text variant="subHeader">
+          Discover more
+          <br />
+          through selected artworks
+        </Text>
+      </div>
       {data.map((card) => (
         <div key={card.id} className={styles.SelectedCardWrapper}>
           <SelectedCard

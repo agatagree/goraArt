@@ -16,7 +16,7 @@
 }
 
 .DetailSectionMessage {
-  padding-left: $spacing120;
+  padding: 0 0 $spacing20 $spacing120;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -35,7 +35,6 @@
 }
 
 .DetailTitle {
-  @include H03();
   white-space: nowrap;
   @include sm {
     padding-top: $spacing60;
@@ -52,8 +51,4 @@
     align-self: flex-end;
     padding-top: 0;
   }
-}
-
-.DetailDescription {
-  padding-bottom: $spacing20;
 }
