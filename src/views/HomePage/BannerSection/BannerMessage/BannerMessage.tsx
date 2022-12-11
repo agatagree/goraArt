@@ -1,17 +1,18 @@
+import { Text } from "../../../../components/common/Text/Text";
 import styles from "./BannerMessage.module.scss";
 
 export const BannerMessage = () => {
   return (
     <div className={styles.HeroTextContainer}>
-      <h1 className={`${styles.H01} ${styles.HeroTextMessage}`}>
+      <Text variant="mainHeader" color="primaryLight">
         Wojciech Góra
         <br />
         paintings
-      </h1>
+      </Text>
       <div className={styles.HeroSubtextContainer}>
-        <h4 className={`${styles.H05} ${styles.HeroSubtextMessage}`}>
+        <Text variant="header" size="xl" color="primaryLight">
           Art to match your space
-        </h4>
+          </Text>
         <img
           className={styles.HeroSubtextIcon}
           src="/assets/arrow.svg"

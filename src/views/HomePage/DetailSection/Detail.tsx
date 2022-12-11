@@ -11,7 +11,7 @@ export const Detail = ({ data }: { data: GalleryType[] }) => {
           <p className={styles.DetailDescription}>
             {data[0].mainPageData.description}
           </p>
-          <ArrowBtn linkTo={"/about"} text={"Read more"} />
+          {/* <ArrowBtn linkTo={"/about"} text={"Read more"} /> */}
         </div>
         <img
           className={styles.DetailImg}

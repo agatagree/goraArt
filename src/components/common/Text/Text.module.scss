@@ -1,0 +1,132 @@
+@use "../../../styles/Basics/" as *;
+@use "../../../styles/Helpers/" as *;
+
+//variant regular Body Text
+.text {
+  letter-spacing: 0;
+  font-weight: $fontWeights400;
+  font-size: $fontSize18;
+  font-family: "Heebo", sans-serif;
+  color: $darkGrey500;
+
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+
+// variant header
+@mixin header {
+  font-weight: $fontWeights500;
+  letter-spacing: $fontLs4;
+}
+
+.header {
+  @include header();
+}
+
+.mainHeader {
+  font-weight: $fontWeights400;
+  letter-spacing: $fontLs2M;
+  font-size: $fontSize80;
+  line-height: 1.2;
+
+  @include sm {
+    font-size: $fontSize36;
+  }
+}
+
+.subHeader {
+  @include header();
+  font-size: $fontSize64;
+
+  @include md {
+    font-size: $fontSize48;
+  }
+  @include sm {
+    font-size: $fontSize36;
+  }
+}
+
+.basicHeader {
+  font-weight: $fontWeights400;
+  font-size: $fontSize24;
+  letter-spacing: $fontLs4;
+
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+
+/// regular sizes:
+.xs {
+  font-size: $fontSize12;
+  @include sm {
+    font-size: $fontSize10;
+  }
+}
+
+.sm {
+  font-size: $fontSize14;
+  @include sm {
+    font-size: $fontSize12;
+  }
+}
+
+.md {
+  font-size: $fontSize18;
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+.lg {
+  font-size: $fontSize24;
+  letter-spacing: $fontLs4;
+  font-weight: $fontWeights400;
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+.xl {
+  font-size: $fontSize30;
+  letter-spacing: $fontLs2;
+  @include sm {
+    font-size: $fontSize18;
+  }
+}
+
+.xxl {
+  font-size: $fontSize36;
+  @include sm {
+    font-size: $fontSize24;
+  }
+}
+
+.xxxl {
+  font-size: $fontSize48;
+  @include sm {
+    font-size: $fontSize30;
+  }
+}
+
+
+/// colors: 
+.primary {
+  color: $darkGrey500;
+}
+
+.primaryLight {
+  color: $white100;
+}
+
+.primaryOrange {
+  color: $primaryOrange;
+}
+
+.secondary {
+  color: $darkGrey200;
+}
+
