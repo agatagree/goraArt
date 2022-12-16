@@ -4,6 +4,12 @@ Portfolio website for an artist🎨 Work in progress
 
 🛠 Tools: React, Typescript, Firebase, CSS Modules, SASS.
 
+## Table Of Contents:
+
+- [💻 Application Overview](docs/application-overview.md)
+- [⚙️ Project Configuration](docs/project-configuration.md)
+- [👁️ Style Guide](docs/style-guide.md)
+- [🗄️ Project Structure](docs/project-structure.md)
 
 
 # Getting Started with Create React App
@@ -52,3 +58,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+

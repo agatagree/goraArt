@@ -1,14 +1,16 @@
 import classnames from "classnames";
-import { ReactNode, ElementType, ComponentProps } from "react";
+import { ReactNode, ElementType, ComponentProps, useState } from "react";
+import { VscArrowRight } from "react-icons/vsc";
+import { classNames } from "utils/css";
 import styles from "./Btn.module.scss";
-import { NavLink, Link } from "react-router-dom";
 
 type BtnOwnProps<E extends ElementType> = {
   children: ReactNode;
   as?: E;
   disabled?: boolean;
-  size?: "S" | "L";
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   variant?: "Text" | "Rect" | "RectRegular" | "RectNegative" | "Arrow";
+  color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   onClick?: () => void;
 };
 
@@ -18,28 +20,34 @@ type BtnProps<E extends ElementType> = BtnOwnProps<E> &
 export const Btn = <E extends ElementType = "button">({
   children,
   as,
-  disabled,
   size,
   variant,
+  color,
   onClick,
   ...props
 }: BtnProps<E>) => {
+  const [hoverState, setHoverState] = useState(false);
   const Component = as || "button";
-  const classNames = [styles.btn];
-  if (size) {
-    classNames.push(styles[size]);
-  }
-  if (variant) {
-    classNames.push(styles[variant]);
-  }
-    return (
-      <Component
-        onClick={onClick}
-        className={classnames(classNames.join(" "))}
-        disabled={disabled}
-        {...props}
-      >
-        {children}
-      </Component>
-    );
-  }
+  const classItem = classNames(
+    styles.btn,
+    variant && styles[variant],
+    size && size,
+    color && color
+  );
+  return (
+    <Component
+      onClick={onClick}
+      className={classItem}
+      onMouseEnter={() => setHoverState(true)}
+      onMouseLeave={() => setHoverState(false)}
+      {...props}
+    >
+      {variant === "Arrow" ? (
+        <VscArrowRight
+          className={hoverState ? styles.ArrowRotate : styles.Arrow}
+        />
+      ) : null}
+      {children}
+    </Component>
+  );
+};

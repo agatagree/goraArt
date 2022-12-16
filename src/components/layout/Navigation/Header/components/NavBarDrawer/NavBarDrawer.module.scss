@@ -1,0 +1,14 @@
+@use "styles/Helpers/" as *;
+
+.navBarDrawerLayout {
+  border-top: 1px solid $grey200;
+  width: 100%;
+  height: calc(100vh - 108px);
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+
+  @include sm {
+  height: calc(100vh - 88px);
+  }
+}

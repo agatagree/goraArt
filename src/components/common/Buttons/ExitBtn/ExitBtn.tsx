@@ -1,10 +1,13 @@
 import { MdOutlineClear } from "react-icons/md";
+import { Btn } from "components/common/Buttons";
 import styles from "./ExitBtn.module.scss";
 
-export const ExitBtn = (props:{onClick:()=>void}) => {
+export const ExitBtn = (props: { onClick: () => void }) => {
   return (
-    <button className={styles.buttonWrapper} onClick={props.onClick}>
-      <MdOutlineClear />
-    </button>
+    <div className={styles.buttonWrapper}>
+      <Btn onClick={props.onClick}>
+        <MdOutlineClear />
+      </Btn>
+    </div>
   );
 };

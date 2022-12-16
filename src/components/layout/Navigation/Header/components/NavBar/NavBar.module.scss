@@ -1,0 +1,68 @@
+@use "styles/Helpers/" as *;
+
+.navBarLayout {
+  width: 100%;
+  min-height: 40px; 
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBarLinksContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 $spacing16 0 $spacing16;
+  gap: $spacing16;
+}
+
+.navBarLinksWrapperDesktop {
+  display: flex;
+  align-items: center;
+
+  @include sm {
+    display: none;
+  }
+}
+
+.navBarIcon {
+  width: 24px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+// .linkNav {
+//   @include link();
+//   padding: 8px;
+
+//   &ToggleMenu {
+//     @extend .linkNav;
+//     padding: 0 8px;
+//     @include sm {
+//       @include H03();
+//     }
+
+//     &Active {
+//       @extend .linkNavToggleMenu;
+//       font-weight: $fontWeights700;
+//     }
+//   }
+// }
+
+// @mixin navBarToggleLayout {
+//   width: 100%;
+//   background-color: white;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 8px;
+//   padding-bottom: $spacing24;
+// }
+
+// .toggleOverlay {
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: rgba(0, 0, 0, 0.3);
+//   display: block;
+//   z-index: 2;
+//   position: absolute;
+// }

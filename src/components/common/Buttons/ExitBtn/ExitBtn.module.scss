@@ -1,8 +1,6 @@
-@use "../../../../styles/Basics/" as *;
-@use "../../../../styles/Helpers" as *;
+@use "styles/Helpers" as *;
 
 .buttonWrapper {
-  @include link();
   display: flex;
   align-items: center;
   justify-content: center;

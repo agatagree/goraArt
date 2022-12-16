@@ -1,5 +1,4 @@
-@use "../../../../styles/Basics/" as *;
-@use "../../../../styles/Helpers/" as *;
+@use "styles/Helpers/" as *;
 
 .FooterLayout {
   width: 100%;
@@ -14,7 +13,7 @@
   }
 }
 
-.FooterConatiner{
+.FooterContainer {
   display: flex;
   gap: $spacing24;
   align-items: center;

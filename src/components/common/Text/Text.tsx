@@ -1,11 +1,18 @@
 import classnames from "classnames";
 import { ReactNode, ElementType, ComponentProps } from "react";
+import { classNames } from "utils/css";
 import styles from "./Text.module.scss";
 
 type TextOwnProps<E extends ElementType> = {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
-  variant?: "text" | "header" | "mainHeader" | "subHeader" | "basicHeader";
+  variant?:
+    | "text"
+    | "header"
+    | "mainHeader"
+    | "subHeader"
+    | "basicHeader"
+    | "smallHeader";
   children: ReactNode;
   as?: E;
 };
@@ -21,17 +28,12 @@ export const Text = <E extends ElementType = "p">({
   as,
 }: TextProps<E>) => {
   const Component = as || "p";
+  const classItem = classNames(
+    styles.text,
+    variant && styles[variant],
+    size && size,
+    color && color
+  );
 
-const classNames = [styles.text];
-if (variant) {
-  classNames.push(styles[variant])
-} 
-if (size) {
-  classNames.push(styles[size]);
-}
-if (color) {
-  classNames.push(styles[color]);
-}
-
-  return <Component className={classnames(classNames.join(" "))}>{children}</Component>;
+  return <Component className={classItem}>{children}</Component>;
 };

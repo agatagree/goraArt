@@ -1,24 +1,16 @@
-@use "../../../../styles//Basics/" as *;
-@use "../../../../styles//Helpers/" as *;
+@use "styles/Helpers/" as *;
 
 @mixin btn {
-  font-family: "Heebo", sans-serif;
   font-weight: $fontWeights500;
   text-decoration: none;
-  display: inline-block;
-  width: fit-content;
   cursor: pointer;
-  padding: 8px;
-  font-size: $fontSize18;
   background-color: transparent;
   border: none;
 
   &:hover,
-  &:active
-  &:not([disabled]) {
+  &:active &:not([disabled]) {
     color: $primaryOrange;
   }
-   
   &:disabled {
     color: $darkGrey200;
   }
@@ -27,7 +19,7 @@
   }
 }
 
-.btn { 
+.btn {
   @include btn();
 }
 
@@ -35,9 +27,11 @@
 .Text {
   @include btn();
   background-color: transparent;
-  color: $darkGrey500;
   letter-spacing: 0;
   border: none;
+  text-align: center;
+  // display: inline-block;
+  // width: fit-content;
 }
 
 .Rect {
@@ -48,6 +42,7 @@
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-transform: uppercase;
+  text-align: center;
 
   &Regular {
     @extend .Rect;
@@ -80,15 +75,16 @@
   font-weight: $fontWeights700;
 }
 
-//size
-.S {
-  font-size: $fontSize14;
-}
+.Arrow {
+  @include btn;
+  // font-size: $spacing30;
+  transform: rotate(0deg);
+  margin-right: $spacing10;
+  vertical-align: middle;
 
-.M {
-  font-size: $fontSize18;
-}
-
-.L {
-  font-size: $fontSize30;
+  &Rotate {
+    @extend .Arrow;
+    transition: transform 0.5s ease-in-out 0s;
+    transform: rotate(360deg);
+  }
 }

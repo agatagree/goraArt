@@ -1,3 +1,4 @@
+import { Text } from "components/common/Text";
 import styles from "./MessagePage.module.scss";
 
 const messageType = {
@@ -25,7 +26,7 @@ export const MessagePage = ({ message }: MessageName) => {
         alt={messageType[message].alt}
         src={messageType[message].img}
       />
-      <h6 className={styles.H06}>{messageType[message].text}</h6>
+      <Text>{messageType[message].text}</Text>
     </div>
   );
 };
