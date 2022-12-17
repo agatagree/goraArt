@@ -1,14 +1,8 @@
 @use "styles/Helpers/" as *;
 
-
 .navBarLoginLayout {
-  margin-top: -40px;
   height: 100%;
   width: 100%;
-  background-color: white;
-  padding: 0 $spacing16;
-  position: absolute;
-  z-index: 5;
 }
 
 .LoginHeader {

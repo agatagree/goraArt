@@ -1,5 +1,5 @@
-import { VscArrowRight } from "react-icons/vsc";
 import { useState } from "react";
+import { VscArrowRight } from "react-icons/vsc";
 import styles from "./BannerNavigation.module.scss";
 
 type DirectionProps = {

@@ -7,8 +7,9 @@ export const NavBarOverlay = () => {
 
   if (isOpen) {
     document.body.style.overflow = "hidden";
-  } else {document.body.style.overflow = "visible"}
-
+  } else {
+    document.body.style.overflow = "visible";
+  }
 
   return (
     <>

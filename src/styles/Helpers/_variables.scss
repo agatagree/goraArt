@@ -1,3 +1,41 @@
+@use "./breakpoints.scss" as *;
+
+//COLORS
+$white100: #ffffff;
+$lightGrey100: #f9f9f9;
+$grey100: #e5e5e7;
+$grey200: #dddddf;
+$grey300: #CBCCCE;
+$darkGrey200: #a0a0a1;
+$darkGrey500: #323233;
+$primaryOrange: #c5501e;
+$validated: #42ce40;
+$error: #da4040;
+
+//FONT SIZE
+$fontSize10: 10px;
+$fontSize12: 12px;
+$fontSize14: 14px;
+$fontSize16: 16px;
+$fontSize18: 18px;
+$fontSize24: 24px;
+$fontSize30: 30px;
+$fontSize36: 36px;
+$fontSize48: 48px;
+$fontSize64: 64px;
+$fontSize80: 80px;
+
+//FONT WEIGHT
+$fontWeights400: 400;
+$fontWeights500: 500;
+$fontWeights700: 700;
+
+//FONT LETTER SPACING
+$fontLs2: 0.02em;
+$fontLs2M: -0.02em;
+$fontLs4: -0.04em;
+
+//SPACING
 $spacing10: 10px;
 $spacing16: 16px;
 $spacing20: 20px;
@@ -9,3 +47,5 @@ $spacing80: 80px;
 $spacing120: 120px;
 $spacing150: 150px;
 $spacing180: 180px;
+
+

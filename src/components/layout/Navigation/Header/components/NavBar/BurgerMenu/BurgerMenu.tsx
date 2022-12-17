@@ -1,15 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NavBarContext } from "../../Header";
 import styles from "./BurgerMenu.module.scss";
 
 export const BurgerMenu = () => {
-  const { activeDrawer, setActiveDrawer, isOpen, setIsOpen } = useContext(NavBarContext);
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const { setActiveDrawer, isOpen, setIsOpen } = useContext(NavBarContext);
 
   const handleDrawer = () => {
     setIsOpen(!isOpen);
-    setMobileMenu(!mobileMenu);
-    !mobileMenu ? setActiveDrawer("mobileMenu") : setActiveDrawer("");
+    !isOpen ? setActiveDrawer("mobileMenu") : setActiveDrawer("");
   };
 
   return (

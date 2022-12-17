@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { onSnapshot } from "firebase/firestore";
 import { getDataFromSnapshot, galleryCollection } from "api";
-import { Loader } from "components/common/Loader";
-import { GalleryType } from "utils/Types";
 import { Btn } from "components/common/Buttons";
+import { Loader } from "components/common/Loader";
 import { ArtDescription } from "components/layout/ArtDescription";
+import { GalleryType } from "utils/Types";
 import styles from "./GalleryPage.module.scss";
 
 export const GalleryPage = () => {

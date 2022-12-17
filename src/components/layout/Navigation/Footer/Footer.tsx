@@ -2,6 +2,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { ImInstagram } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { Btn } from "../../../common/Buttons/Btn/Btn";
+import { Text } from "components/common/Text";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -15,7 +16,7 @@ export const Footer = () => {
             className={styles.FooterIcon}
           />
         </Btn>
-        &copy; {new Date().getFullYear()} tamaga studio
+        <Text size="sm">&copy; {new Date().getFullYear()} tamaga studio</Text>
       </div>
       <div className={styles.FooterContainer}>
         <Btn as={"a"} href="https://www.facebook.com/wojciech.gora/">

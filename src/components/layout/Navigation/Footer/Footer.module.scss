@@ -23,17 +23,12 @@
 }
 
 .FooterIcon {
-  font-size: $fontSize30;
   vertical-align: middle;
-  @include sm {
-    font-size: $fontSize16;
-  }
+  font-size: $fontSize16;
+  width: 20px;
 
   &Facebook {
     @extend .FooterIcon;
-    font-size: $fontSize36;
-    @include sm {
-      font-size: 20px;
-    }
+    font-size: 20px;
   }
 }

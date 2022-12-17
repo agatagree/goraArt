@@ -1,9 +1,9 @@
-// import { MessagePage } from "../../components/utils/MessagePage/MessagePage";
+import { MessagePage } from "components/layout/MessagePage";
 
 export const AboutPage = () => {
   return (
     <>
-      {/* <MessagePage message={"underConstruction"} /> */}
+      <MessagePage message={"underConstruction"} />
     </>
   );
 };

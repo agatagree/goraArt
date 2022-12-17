@@ -1,8 +1,8 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { NavBar } from "./NavBar/NavBar";
 import { NavBarDrawer } from "./NavBarDrawer/NavBarDrawer";
-import styles from "./Header.module.scss";
 import { NavBarOverlay } from "./NavBarOverlay/NavBarOverlay";
+import styles from "./Header.module.scss";
 
 interface NavBrContextInterface {
   activeDrawer: string;
@@ -22,7 +22,7 @@ export const Header = () => {
   const [activeDrawer, setActiveDrawer] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(`activedrawer: ${activeDrawer}`);
+  console.log(`activedrawer: ${activeDrawer}, open: ${isOpen}`);
 
   return (
     <>

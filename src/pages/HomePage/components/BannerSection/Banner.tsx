@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { getDataFromSnapshot, bannerCollection } from "api";
 import { Loader } from "components/common/Loader";
-import { BannerNavigation } from "./BannerNavigation/BannerNavigation";
 import { BannerMessage } from "./BannerMessage/BannerMessage";
+import { BannerNavigation } from "./BannerNavigation/BannerNavigation";
 import styles from "./Banner.module.scss";
 
 interface GalleryType {

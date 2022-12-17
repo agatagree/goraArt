@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import { ReactNode, ElementType, ComponentProps, useState } from "react";
 import { VscArrowRight } from "react-icons/vsc";
 import { classNames } from "utils/css";
@@ -9,7 +8,7 @@ type BtnOwnProps<E extends ElementType> = {
   as?: E;
   disabled?: boolean;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
-  variant?: "Text" | "Rect" | "RectRegular" | "RectNegative" | "Arrow";
+  variant?: "Text" | "TextLight" |"Rect" | "RectRegular" | "RectNegative" | "Arrow" | "mobileMenu" | "mobileVis";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   onClick?: () => void;
 };

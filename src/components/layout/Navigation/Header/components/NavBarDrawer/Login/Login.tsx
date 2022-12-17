@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Btn, ExitBtn } from "components/common/Buttons";
+import { MenuDrawer } from "components/common/MenuDrawer/MenuDrawer";
 import { Text } from "components/common/Text";
 import { NavBarContext } from "../../Header";
 import styles from "./Login.module.scss";
@@ -14,7 +15,7 @@ export const Login = () => {
   };
 
   return (
-    <>
+    <MenuDrawer variant="fullHeight">
       <div className={styles.navBarLoginLayout}>
         <header className={styles.LoginHeader}>
           <div className={styles.LoginTitle}>
@@ -60,6 +61,6 @@ export const Login = () => {
           </Btn>
         </div>
       </div>
-    </>
+    </MenuDrawer>
   );
 };

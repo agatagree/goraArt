@@ -1,10 +1,9 @@
 @use "styles/Helpers/" as *;
-@use "../../NavBar.module.scss" as *;
 
 .navBarFilterlayout {
-  @include navBarToggleLayout();
-  height: calc(100vh - 170px);
+  height: 100%;
   justify-content: space-between;
+  padding-top: $spacing40;
 
   @include sm {
     height: calc(100vh - 160px);
@@ -14,9 +13,6 @@
 .navBarCategoryContainer {
   border-top: 1px solid $grey200;
   padding-top: $spacing10;
-  margin: $spacing16;
-  margin-top: 0;
-  @include textSM();
 }
 
 .categoryTitle {
@@ -26,7 +22,9 @@
 }
 
 .categoryContainer {
-  padding-bottom: $spacing10;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing10;
 
   &Color {
     @extend .categoryContainer;
@@ -54,7 +52,7 @@
   background-color: transparent;
   border: 1px solid $darkGrey500;
   border-radius: 0;
-  @include textSM();
+  // @include textSM();
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-transform: uppercase;

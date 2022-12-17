@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import { ReactNode, ElementType, ComponentProps } from "react";
 import { classNames } from "utils/css";
 import styles from "./Text.module.scss";
@@ -12,7 +11,7 @@ type TextOwnProps<E extends ElementType> = {
     | "mainHeader"
     | "subHeader"
     | "basicHeader"
-    | "smallHeader";
+    | "smallHeader"
   children: ReactNode;
   as?: E;
 };

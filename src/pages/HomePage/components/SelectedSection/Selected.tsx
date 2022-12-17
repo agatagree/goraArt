@@ -1,9 +1,9 @@
-import { SelectedCard } from "./SelectedCard/SelectedCard";
-import { GalleryType } from "utils/Types";
-import styles from "./Selected.module.scss";
-import { Text } from "components/common/Text";
 import { Link } from "react-router-dom";
 import { Btn } from "components/common/Buttons";
+import { Text } from "components/common/Text";
+import { GalleryType } from "utils/Types";
+import { SelectedCard } from "./SelectedCard/SelectedCard";
+import styles from "./Selected.module.scss";
 
 export const Selected = ({ data }: { data: GalleryType[] }) => {
   return (
@@ -33,7 +33,9 @@ export const Selected = ({ data }: { data: GalleryType[] }) => {
         </div>
       ))}
       <div className={styles.SelectedButton}>
-        <Btn as={Link} to="/gallery" size="xl" variant="Arrow" >See all works</Btn>
+        <Btn as={Link} to="/gallery" size="xl" variant="Arrow">
+          See all works
+        </Btn>
       </div>
     </div>
   );
