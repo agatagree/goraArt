@@ -2,6 +2,7 @@ import { Checkbox } from "components/common/Checkbox";
 import { MenuDrawer } from "components/common/MenuDrawer/MenuDrawer";
 import { SingleCategory } from "./SingleCategory/SingleCategory";
 import styles from "./GalleryFiltration.module.scss";
+import { Btn } from "components/common/Buttons";
 
 export const GalleryFiltration = () => {
   return (
@@ -47,14 +48,16 @@ export const GalleryFiltration = () => {
         </SingleCategory>
         <SingleCategory title="Color">
           <div className={styles.categoryContainerColor}>
-            <Checkbox id="red" size="sm" />
-            <Checkbox id="orange" size="sm" />
+            <Checkbox id="red" size="sm" color="red"/>
+            <Checkbox id="orange" size="sm" color="blue"/>
           </div>
         </SingleCategory>
       </div>
       <div className={styles.filterGroupButton}>
-        <button className={styles.filterBtn}>reset filters</button>
-        <button className={styles.filterBtnApply}>apply filters</button>
+        {/* <button className={styles.filterBtn}>reset filters</button>
+        <button className={styles.filterBtnApply}>apply filters</button> */}
+        <Btn variant="rectDark" fullWidth size="sm">apply filters</Btn>
+        <Btn variant="rect" fullWidth size="sm">reset filters</Btn>
       </div>
     </MenuDrawer>
   );

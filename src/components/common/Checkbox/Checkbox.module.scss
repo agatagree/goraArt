@@ -20,4 +20,9 @@
 .checked {
   background-color: $darkGrey500;
   border-color: $darkGrey500;
+
+  &Color {
+    @extend .checked;
+    outline: 3px solid;
+  }
 }

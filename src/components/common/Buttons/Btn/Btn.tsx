@@ -14,10 +14,12 @@ type BtnOwnProps<E extends ElementType> = {
     | "rect"
     | "rectRegular"
     | "rectNegative"
+    | "rectDark"
     | "arrow"
     | "mobileMenu"
     | "mobileVis";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
+  fullWidth?: boolean;
   onClick?: () => void;
 };
 
@@ -30,6 +32,7 @@ export const Btn = <E extends ElementType = "button">({
   size,
   variant,
   color,
+  fullWidth,
   onClick,
   ...props
 }: BtnProps<E>) => {
@@ -39,7 +42,8 @@ export const Btn = <E extends ElementType = "button">({
     styles.btn,
     variant && styles[variant],
     size && size,
-    color && color
+    color && color,
+    fullWidth && styles.fullWidth
   );
   return (
     <Component
@@ -47,6 +51,7 @@ export const Btn = <E extends ElementType = "button">({
       className={classItem}
       onMouseEnter={() => setHoverState(true)}
       onMouseLeave={() => setHoverState(false)}
+
       {...props}
     >
       {variant === "arrow" ? (

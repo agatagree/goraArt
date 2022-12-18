@@ -42,7 +42,7 @@
   font-weight: $fontWeights400;
 }
 
-.rect {
+@mixin rect {
   @include btn();
   border: 1px solid $darkGrey500;
   border-radius: 0;
@@ -51,6 +51,10 @@
   letter-spacing: $fontLs2;
   text-transform: uppercase;
   text-align: center;
+}
+
+.rect {
+  @include rect();
 
   &Regular {
     @extend .rect;
@@ -79,6 +83,16 @@
   }
 }
 
+.rectDark {
+  @include rect();
+  background-color: $darkGrey500;
+  color: $white100;
+  &:hover {
+    background-color: $white100;
+    color: $darkGrey500;
+  }
+}
+
 .arrow {
   @include btn;
   transform: rotate(0deg);
@@ -104,4 +118,10 @@
   @include sm {
     display: none;
   }
+}
+
+.fullWidth {
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }

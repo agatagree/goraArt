@@ -10,15 +10,12 @@ type CheckboxProps = {
   label?: string;
   checked?: boolean;
   disabled?: boolean;
-  color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
+  type?: "checkbox" | "color",
+  color?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   variant?:
     | "text"
     | "textLight"
-    | "rect"
-    | "rectRegular"
-    | "rectNegative"
-    | "arrow"
     | "mobileMenu"
     | "mobileVis";
   onChange?: () => void;
@@ -35,6 +32,7 @@ export const Checkbox = ({
   color,
   size,
   variant,
+  type="checkbox",
   onChange,
   onClick,
   ...props
@@ -44,7 +42,7 @@ export const Checkbox = ({
   const inputClassName = classNames(
     styles.checkboxInput,
     checkStatus && styles.checked,
-    color && color
+    color && checkStatus && styles.checkedColor
   );
 
   return (
@@ -56,18 +54,18 @@ export const Checkbox = ({
         id={id}
         name={name}
         value={value}
-        type="checkbox"
+        type={type}
         checked={checked}
         disabled={disabled}
         className={inputClassName}
         onChange={() => setCheckStatus(!checkStatus)}
+        style={{backgroundColor:color}}
         {...props}
       />
       <Btn
         as="label"
         htmlFor={name}
         size={size}
-        color={color}
         variant={variant}
       >
         {label}
