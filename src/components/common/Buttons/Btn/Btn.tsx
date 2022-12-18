@@ -51,7 +51,7 @@ export const Btn = <E extends ElementType = "button">({
     >
       {variant === "arrow" ? (
         <VscArrowRight
-          className={hoverState ? styles.ArrowRotate : styles.Arrow}
+          className={hoverState ? styles.arrowRotate : styles.arrow}
         />
       ) : null}
       {children}

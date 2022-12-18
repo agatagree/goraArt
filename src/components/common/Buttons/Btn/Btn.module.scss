@@ -35,8 +35,6 @@
   letter-spacing: 0;
   border: none;
   text-align: center;
-  // display: inline-block;
-  // width: fit-content;
 }
 
 .textLight {
@@ -86,6 +84,7 @@
   transform: rotate(0deg);
   margin-right: $spacing10;
   vertical-align: middle;
+  font-size: $spacing30;
 
   &Rotate {
     @extend .arrow;
