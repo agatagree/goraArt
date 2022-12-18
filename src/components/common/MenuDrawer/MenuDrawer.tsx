@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import styles from "./MenuDrawer.module.scss";
 import { classNames } from "utils/css";
+import styles from "./MenuDrawer.module.scss";
 
 type DrawerProps = {
   children: ReactNode;
@@ -8,12 +8,9 @@ type DrawerProps = {
 };
 
 export const MenuDrawer = ({ children, variant, ...props }: DrawerProps) => {
-const classItem = classNames(
-  styles.drawerLayout,
-  variant && styles[variant]
-)
+  const classItem = classNames(styles.drawerLayout, variant && styles[variant]);
   return (
-    <div className={classItem}{...props}>
+    <div className={classItem} {...props}>
       {children}
     </div>
   );

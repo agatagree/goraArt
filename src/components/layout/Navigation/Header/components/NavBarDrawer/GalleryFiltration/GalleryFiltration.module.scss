@@ -10,17 +10,6 @@
   }
 }
 
-.navBarCategoryContainer {
-  border-top: 1px solid $grey200;
-  padding-top: $spacing10;
-}
-
-.categoryTitle {
-  text-transform: uppercase;
-  font-weight: $fontWeights700;
-  padding-bottom: $spacing10;
-}
-
 .categoryContainer {
   display: flex;
   flex-direction: column;
@@ -28,16 +17,7 @@
 
   &Color {
     @extend .categoryContainer;
-    display: flex;
-  }
-}
-
-.filterCheckbox {
-  margin-right: $spacing10;
-  &Color {
-    @extend .filterCheckbox;
-    width: 15px;
-    height: 15px;
+    flex-direction: row;
   }
 }
 
@@ -52,7 +32,6 @@
   background-color: transparent;
   border: 1px solid $darkGrey500;
   border-radius: 0;
-  // @include textSM();
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-transform: uppercase;

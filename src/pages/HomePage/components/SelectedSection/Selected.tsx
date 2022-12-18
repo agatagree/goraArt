@@ -8,7 +8,7 @@ import styles from "./Selected.module.scss";
 export const Selected = ({ data }: { data: GalleryType[] }) => {
   return (
     <div>
-      <div className={styles.SelectedMainText}>
+      <div className={styles.selectedMainText}>
         <Text variant="subHeader">
           Discover more
           <br />
@@ -16,7 +16,7 @@ export const Selected = ({ data }: { data: GalleryType[] }) => {
         </Text>
       </div>
       {data.map((card) => (
-        <div key={card.id} className={styles.SelectedCardWrapper}>
+        <div key={card.id} className={styles.selectedCardWrapper}>
           <SelectedCard
             cardId={card.id}
             pageTitle={card.mainPageData.title}
@@ -32,8 +32,8 @@ export const Selected = ({ data }: { data: GalleryType[] }) => {
           />
         </div>
       ))}
-      <div className={styles.SelectedButton}>
-        <Btn as={Link} to="/gallery" size="xl" variant="Arrow">
+      <div className={styles.selectedButton}>
+        <Btn as={Link} to="/gallery" size="xl" variant="arrow">
           See all works
         </Btn>
       </div>

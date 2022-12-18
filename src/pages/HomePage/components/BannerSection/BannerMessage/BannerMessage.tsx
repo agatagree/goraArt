@@ -4,13 +4,13 @@ import styles from "./BannerMessage.module.scss";
 
 export const BannerMessage = () => {
   return (
-    <div className={styles.HeroTextContainer}>
+    <div className={styles.heroTextContainer}>
       <Text variant="mainHeader" color="primaryLight">
         Wojciech Góra
         <br />
         paintings
       </Text>
-      <div className={styles.HeroSubtextContainer}>
+      <div className={styles.heroSubtextContainer}>
         <Text variant="header" size="xl" color="primaryLight">
           Art to match your space
         </Text>

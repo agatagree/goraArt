@@ -1,6 +1,6 @@
 @use "styles/Helpers/" as *;
 
-.FooterLayout {
+.footerLayout {
   width: 100%;
   border-top: 1px solid $grey200;
   padding: $spacing30 $spacing24;
@@ -13,7 +13,7 @@
   }
 }
 
-.FooterContainer {
+.footerContainer {
   display: flex;
   gap: $spacing24;
   align-items: center;
@@ -22,13 +22,13 @@
   }
 }
 
-.FooterIcon {
+.footerIcon {
   vertical-align: middle;
   font-size: $fontSize16;
   width: 20px;
 
   &Facebook {
-    @extend .FooterIcon;
+    @extend .footerIcon;
     font-size: 20px;
   }
 }

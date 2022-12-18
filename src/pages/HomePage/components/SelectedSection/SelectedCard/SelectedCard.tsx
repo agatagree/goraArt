@@ -33,14 +33,14 @@ export const SelectedCard = ({
 }: SelectedTypes) => {
   return (
     <>
-      <div className={styles.SelectedDescription}>
-        <div className={styles.SelectedTitleContainer}>
+      <div className={styles.selectedDescription}>
+        <div className={styles.selectedTitleContainer}>
           <img
-            className={styles.SelectedMessageTitleIcon}
+            className={styles.selectedMessageTitleIcon}
             src={icon}
             alt={title}
           />
-          <div className="SelectedTitle">
+          <div className={styles.selectedTitle}>
             <Text variant="header" size="xl">
               {pageTitle}
             </Text>
@@ -51,9 +51,9 @@ export const SelectedCard = ({
       <Btn
         as={Link}
         to={`/gallery/${cardId}`}
-        className={styles.SelectedImgWrapper}
+        className={styles.selectedImgWrapper}
       >
-        <img className={styles.SelectedImgSide} src={img} alt={title} />
+        <img className={styles.selectedImgSide} src={img} alt={title} />
         <ArtDescription
           title={title}
           code={code}

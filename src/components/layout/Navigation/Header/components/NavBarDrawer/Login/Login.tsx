@@ -17,43 +17,43 @@ export const Login = () => {
   return (
     <MenuDrawer variant="fullHeight">
       <div className={styles.navBarLoginLayout}>
-        <header className={styles.LoginHeader}>
-          <div className={styles.LoginTitle}>
+        <header className={styles.loginHeader}>
+          <div className={styles.loginTitle}>
             <Text variant="smallHeader" size="sm">
               Login
             </Text>
           </div>
           <ExitBtn onClick={handleClick} />
         </header>
-        <form className={styles.LoginForm}>
-          <div className={styles.LoginInputWrapper}>
-            <label className={styles.LoginLabel} htmlFor="email">
+        <form className={styles.loginForm}>
+          <div className={styles.loginInputWrapper}>
+            <label className={styles.loginLabel} htmlFor="email">
               E-mail address:
             </label>
             <input
-              className={styles.LoginInput}
+              className={styles.loginInput}
               type="text"
               name="email"
               id="email"
             />
           </div>
-          <div className={styles.LoginInputWrapper}>
-            <label className={styles.LoginLabel} htmlFor="passwrod">
+          <div className={styles.loginInputWrapper}>
+            <label className={styles.loginLabel} htmlFor="passwrod">
               Password:
             </label>
             <input
-              className={styles.LoginInput}
+              className={styles.loginInput}
               type="password"
               name="password"
               id="password"
             />
           </div>
         </form>
-        <div className={styles.LoginButtonContainer}>
-          <Btn variant="Rect" size="sm" type="submit">
+        <div className={styles.loginButtonContainer}>
+          <Btn variant="rect" size="sm" type="submit">
             log in
           </Btn>
-          <Btn as={Link} to="/signUp" variant="RectRegular" size="sm">
+          <Btn as={Link} to="/signUp" variant="rectRegular" size="sm">
             Create new account
           </Btn>
           <Btn as={Link} to="/forgotPassword" size="sm" color="secondary">

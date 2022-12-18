@@ -4,7 +4,6 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common/Buttons/Btn/Btn";
-import { MenuDrawer } from "components/common/MenuDrawer/MenuDrawer";
 import { NavBarContext } from "../Header";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { GalleryNavigation } from "./GalleryNavigation/GalleryNavigation";

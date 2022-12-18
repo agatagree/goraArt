@@ -19,7 +19,7 @@ export const MobileNavigationDrawer = () => {
         <div className={styles.mobileNav}>
           <PrimaryNavigation />
         </div>
-        <Btn as={NavLink} to="/login" variant="Text" onClick={handleClick}>
+        <Btn as={NavLink} to="/login" variant="text" onClick={handleClick}>
           Account
         </Btn>
       </div>

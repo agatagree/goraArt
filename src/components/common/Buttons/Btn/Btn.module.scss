@@ -29,7 +29,7 @@
 }
 
 //Variant
-.Text {
+.text {
   @include btn();
   background-color: transparent;
   letter-spacing: 0;
@@ -39,12 +39,12 @@
   // width: fit-content;
 }
 
-.TextLight{
+.textLight {
   @include btn();
   font-weight: $fontWeights400;
 }
 
-.Rect {
+.rect {
   @include btn();
   border: 1px solid $darkGrey500;
   border-radius: 0;
@@ -55,11 +55,11 @@
   text-align: center;
 
   &Regular {
-    @extend .Rect;
+    @extend .rect;
     text-transform: none;
   }
   &Negative {
-    @extend .Rect;
+    @extend .rect;
     text-transform: none;
     color: $darkGrey200;
     border: 1px solid transparent;
@@ -81,18 +81,14 @@
   }
 }
 
-.ActiveBtn {
-  font-weight: $fontWeights700;
-}
-
-.Arrow {
+.arrow {
   @include btn;
   transform: rotate(0deg);
   margin-right: $spacing10;
   vertical-align: middle;
 
   &Rotate {
-    @extend .Arrow;
+    @extend .arrow;
     transition: transform 0.5s ease-in-out 0s;
     transform: rotate(360deg);
   }

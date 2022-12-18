@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.LoginHeader {
+.loginHeader {
   display: flex;
   border-bottom: 1px solid $darkGrey500;
   min-height: $spacing40;
@@ -13,18 +13,18 @@
   align-items: center;
 }
 
-.LoginTitle {
+.loginTitle {
   flex: 1;
   text-align: center;
 }
 
-.LoginInputWrapper {
+.loginInputWrapper {
   margin-bottom: $spacing16;
   display: flex;
   align-items: center;
 }
 
-.LoginLabel {
+.loginLabel {
   min-width: 130px;
   background-color: transparent;
   padding: $spacing10 $spacing16;
@@ -33,7 +33,7 @@
   font-weight: $fontWeights500;
 }
 
-.LoginInput {
+.loginInput {
   flex: 1;
   background-color: $grey100;
   padding: $spacing10 $spacing16 $spacing10 160px;
@@ -44,7 +44,7 @@
   }
 }
 
-.LoginButtonContainer {
+.loginButtonContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +54,7 @@
   text-align: center;
 }
 
-.LoginBtn {
+.loginBtn {
   flex: 1;
   display: flex;
   width: 100%;

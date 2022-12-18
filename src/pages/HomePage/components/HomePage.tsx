@@ -43,7 +43,7 @@ export const HomePage = () => {
   return (
     <>
       <Banner />
-      <div className={styles.HomePageContent}>
+      <div className={styles.narrowLayout}>
         <Tailor data={tailorSectionData} />
         <Selected data={selectedSectionData} />
       </div>

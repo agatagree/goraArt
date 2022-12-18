@@ -4,8 +4,8 @@ import styles from "./Tailor.module.scss";
 
 export const Tailor = ({ data }: { data: GalleryType[] }) => {
   return (
-    <div className={styles.MainInfoLayout}>
-      <div className={styles.IntroText}>
+    <div className={styles.mainInfoLayout}>
+      <div className={styles.introText}>
         <Text variant="header" size="xxxl">
           Original, abstract oil paintings
           <br />
@@ -13,7 +13,7 @@ export const Tailor = ({ data }: { data: GalleryType[] }) => {
         </Text>
       </div>
       <img
-        className={styles.IntroImg}
+        className={styles.introImg}
         src={data[0].img.wiz}
         alt={data[0].title}
       />

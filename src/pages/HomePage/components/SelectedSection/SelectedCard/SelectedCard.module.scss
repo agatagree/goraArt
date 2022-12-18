@@ -1,6 +1,6 @@
 @use "styles/Helpers" as *;
 
-.SelectedWrapper {
+.selectedWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,7 +19,7 @@
   }
 }
 
-.SelectedDescription {
+.selectedDescription {
   width: 50%;
   padding: 0 $spacing60 0 $spacing120;
   display: flex;
@@ -34,18 +34,18 @@
   }
 }
 
-.SelectedTitleContainer {
+.selectedTitleContainer {
   display: flex;
   flex-wrap: wrap;
   gap: $spacing16;
   align-items: center;
 }
 
-.SelectedTitle {
+.selectedTitle {
   white-space: nowrap;
 }
 
-.SelectedImgWrapper {
+.selectedImgWrapper {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
   }
 }
 
-.SelectedImgSide {
+.selectedImgSide {
   width: 100%;
   min-height: 200px;
   display: block;

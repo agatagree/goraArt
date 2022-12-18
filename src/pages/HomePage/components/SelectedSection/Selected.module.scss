@@ -1,6 +1,6 @@
 @use "styles/Helpers" as *;
 
-.SelectedMainText {
+.selectedMainText {
   padding: $spacing120 0 $spacing60 0;
   align-self: flex-start;
 
@@ -9,7 +9,7 @@
   }
 }
 
-@mixin SelectedCardWrapper {
+@mixin selectedCardWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,16 +26,16 @@
     margin-bottom: $spacing30;
   }
 }
-.SelectedCardWrapper {
-  @include SelectedCardWrapper();
+.selectedCardWrapper {
+  @include selectedCardWrapper();
 }
 
-.SelectedCardWrapper:nth-of-type(even) {
-  @include SelectedCardWrapper();
+.selectedCardWrapper:nth-of-type(even) {
+  @include selectedCardWrapper();
   flex-direction: row-reverse;
 }
 
-.SelectedButton {
+.selectedButton {
   padding-left: $spacing120;
   @include lg {
     padding: 0;

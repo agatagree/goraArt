@@ -19,7 +19,7 @@ export const ArtDescription = ({
   height,
 }: SelectedTypes) => {
   return (
-    <div className={styles.ImgDescription}>
+    <div className={styles.imgDescription}>
       <Text size="sm">
         {title} {code} / {technique} / {width}x{height}cm / {year}
       </Text>

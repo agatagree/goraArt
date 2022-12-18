@@ -47,7 +47,7 @@ export const Banner = () => {
   return (
     <>
       {gallery ? (
-        <div className={styles.MainSliderLayout}>
+        <div className={styles.mainSliderLayout}>
           <BannerNavigation onClick={goToNextSlide} direction={"right"} />
           <BannerNavigation onClick={goToPreviousSlide} direction={"left"} />
           <BannerMessage />
@@ -63,11 +63,11 @@ export const Banner = () => {
               ></div>
             ))}
           </div>
-          <div className={styles.MainSliderOverlay}></div>
+          <div className={styles.mainSliderOverlay}></div>
           <img
             src={gallery[currentSlideIndex].img}
             alt="art"
-            className={styles.MainSliderCard}
+            className={styles.mainSliderCard}
           />
         </div>
       ) : (

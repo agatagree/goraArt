@@ -1,6 +1,6 @@
 @use "styles/Helpers" as *;
 
-.MainInfoLayout {
+.mainInfoLayout {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
   }
 }
 
-.IntroText {
+.introText {
   max-width: 760px;
   text-align: center;
   padding: $spacing120 0;
@@ -21,7 +21,7 @@
   }
 }
 
-.IntroImg {
+.introImg {
   width: 100%;
   padding: 0 $spacing120;
   max-height: 80vh;

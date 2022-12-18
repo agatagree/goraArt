@@ -8,7 +8,15 @@ type BtnOwnProps<E extends ElementType> = {
   as?: E;
   disabled?: boolean;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
-  variant?: "Text" | "TextLight" |"Rect" | "RectRegular" | "RectNegative" | "Arrow" | "mobileMenu" | "mobileVis";
+  variant?:
+    | "text"
+    | "textLight"
+    | "rect"
+    | "rectRegular"
+    | "rectNegative"
+    | "arrow"
+    | "mobileMenu"
+    | "mobileVis";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   onClick?: () => void;
 };
@@ -41,7 +49,7 @@ export const Btn = <E extends ElementType = "button">({
       onMouseLeave={() => setHoverState(false)}
       {...props}
     >
-      {variant === "Arrow" ? (
+      {variant === "arrow" ? (
         <VscArrowRight
           className={hoverState ? styles.ArrowRotate : styles.Arrow}
         />
