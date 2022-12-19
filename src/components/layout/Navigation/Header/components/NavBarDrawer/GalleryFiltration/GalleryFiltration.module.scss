@@ -1,0 +1,53 @@
+@use "styles/Helpers/" as *;
+
+.navBarFilterlayout {
+  height: 100%;
+  justify-content: space-between;
+  padding-top: $spacing40;
+
+  @include sm {
+    height: calc(100vh - 160px);
+  }
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing10;
+
+  &Color {
+    @extend .categoryContainer;
+    flex-direction: row;
+  }
+}
+
+.filterGroupButton {
+  display: flex;
+  width: 100%;
+}
+
+.filterBtn {
+  flex: 1;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid $darkGrey500;
+  border-radius: 0;
+  padding: $spacing10 $spacing16;
+  letter-spacing: $fontLs2;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $darkGrey500;
+    color: $white100;
+  }
+
+  &Apply {
+    @extend .filterBtn;
+    background-color: $darkGrey500;
+    color: $white100;
+    &:hover {
+      background-color: transparent;
+      color: $darkGrey500;
+    }
+  }
+}

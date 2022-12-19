@@ -1,0 +1,36 @@
+@use "styles/Helpers" as *;
+
+.mainInfoLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  padding: 0 $spacing60;
+
+  @include sm {
+    padding: 0 $spacing24;
+  }
+}
+
+.introText {
+  max-width: 760px;
+  text-align: center;
+  padding: $spacing120 0;
+  @include sm {
+    padding: $spacing60 0;
+  }
+}
+
+.introImg {
+  width: 100%;
+  padding: 0 $spacing120;
+  max-height: 80vh;
+  background-color: transparent;
+  min-height: 200px;
+
+  @include md {
+    max-width: 100%;
+    padding: 0;
+
+  }
+}

@@ -1,0 +1,13 @@
+@use "styles/Helpers" as *;
+
+.narrowLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  padding: 0 $spacing60;
+
+  @include sm {
+    padding: 0 $spacing24;
+  }
+}

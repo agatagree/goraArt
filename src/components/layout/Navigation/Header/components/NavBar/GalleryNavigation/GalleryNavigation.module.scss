@@ -1,0 +1,16 @@
+@use "styles/Helpers/" as *;
+
+.navBarGallery {
+  width: 100%;
+  padding: 0 16px;
+  background-color: white;
+
+  &Container {
+    border-top: 1px solid $grey200;
+    min-height: $spacing40;
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing16;
+  }
+}

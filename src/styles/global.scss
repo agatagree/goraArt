@@ -1,0 +1,86 @@
+@use "styles/Helpers" as *;
+
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  overflow-y: scroll;
+  font-size: $fontSize18;
+  color: $darkGrey500;
+}
+
+.xs {
+  font-size: $fontSize12;
+  @include sm {
+    font-size: $fontSize10;
+  }
+}
+
+.sm {
+  font-size: $fontSize14;
+  @include sm {
+    font-size: $fontSize12;
+  }
+}
+
+.md {
+  font-size: $fontSize18;
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+.lg {
+  font-size: $fontSize24;
+  letter-spacing: $fontLs4;
+  font-weight: $fontWeights400;
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+.xl {
+  font-size: $fontSize30;
+  letter-spacing: $fontLs2;
+  @include sm {
+    font-size: $fontSize18;
+  }
+}
+
+.xxl {
+  font-size: $fontSize36;
+  @include sm {
+    font-size: $fontSize24;
+  }
+}
+
+.xxxl {
+  font-size: $fontSize48;
+  @include sm {
+    font-size: $fontSize30;
+  }
+}
+
+// colors:
+.primary {
+  color: $darkGrey500;
+}
+
+.primaryLight {
+  color: $white100;
+}
+
+.primaryOrange {
+  color: $primaryOrange;
+}
+
+.secondary {
+  color: $darkGrey200;
+}
+

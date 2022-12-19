@@ -1,0 +1,63 @@
+@use "styles/Helpers/" as *;
+
+//variant regular Body Text
+.text {
+  letter-spacing: 0;
+  font-weight: $fontWeights400;
+  font-family: "Heebo", sans-serif;
+  color: $darkGrey500;
+
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+// variant header
+@mixin header {
+  font-weight: $fontWeights500;
+  letter-spacing: $fontLs4;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  @include header();
+}
+
+.subHeader {
+  @include header();
+  font-size: $fontSize64;
+
+  @include md {
+    font-size: $fontSize48;
+  }
+  @include sm {
+    font-size: $fontSize36;
+  }
+}
+
+.mainHeader {
+  font-weight: $fontWeights400;
+  letter-spacing: $fontLs2M;
+  font-size: $fontSize80;
+  line-height: 1.2;
+
+  @include sm {
+    font-size: $fontSize36;
+  }
+}
+
+.basicHeader {
+  font-weight: $fontWeights400;
+  font-size: $fontSize24;
+  letter-spacing: $fontLs4;
+
+  @include sm {
+    font-size: $fontSize16;
+  }
+}
+
+.smallHeader {
+  text-transform: uppercase;
+  font-weight: $fontWeights500;
+}

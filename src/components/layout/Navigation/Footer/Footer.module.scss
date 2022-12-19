@@ -1,0 +1,34 @@
+@use "styles/Helpers/" as *;
+
+.footerLayout {
+  width: 100%;
+  border-top: 1px solid $grey200;
+  padding: $spacing30 $spacing24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include sm {
+    padding: $spacing30 $spacing10;
+  }
+}
+
+.footerContainer {
+  display: flex;
+  gap: $spacing24;
+  align-items: center;
+  @include sm {
+    gap: $spacing16;
+  }
+}
+
+.footerIcon {
+  vertical-align: middle;
+  font-size: $fontSize16;
+  width: 20px;
+
+  &Facebook {
+    @extend .footerIcon;
+    font-size: 20px;
+  }
+}

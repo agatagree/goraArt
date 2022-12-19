@@ -1,0 +1,15 @@
+.messageLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.messageImg {
+  max-height: 80%;
+  max-width: 80%;
+  object-fit: contain;
+}

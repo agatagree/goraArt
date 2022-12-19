@@ -1,0 +1,62 @@
+@use "styles/Helpers/" as *;
+
+.navBarLoginLayout {
+  height: 100%;
+  width: 100%;
+}
+
+.loginHeader {
+  display: flex;
+  border-bottom: 1px solid $darkGrey500;
+  min-height: $spacing40;
+  margin-bottom: $spacing40;
+  align-items: center;
+}
+
+.loginTitle {
+  flex: 1;
+  text-align: center;
+}
+
+.loginInputWrapper {
+  margin-bottom: $spacing16;
+  display: flex;
+  align-items: center;
+}
+
+.loginLabel {
+  min-width: 130px;
+  background-color: transparent;
+  padding: $spacing10 $spacing16;
+  position: absolute;
+  z-index: 2;
+  font-weight: $fontWeights500;
+}
+
+.loginInput {
+  flex: 1;
+  background-color: $grey100;
+  padding: $spacing10 $spacing16 $spacing10 160px;
+  border: none;
+  &:focus {
+    outline: none;
+    background-color: $grey300;
+  }
+}
+
+.loginButtonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $spacing16;
+  padding: $spacing40 0;
+  width: 100%;
+  text-align: center;
+}
+
+.loginBtn {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

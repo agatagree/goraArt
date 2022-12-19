@@ -1,0 +1,43 @@
+@use "styles/Helpers" as *;
+
+.selectedMainText {
+  padding: $spacing120 0 $spacing60 0;
+  align-self: flex-start;
+
+  @include sm {
+    padding: $spacing80 0 $spacing40 0;
+  }
+}
+
+@mixin selectedCardWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: $spacing60;
+  margin-bottom: $spacing60;
+  @include md {
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  @include sm {
+    gap: $spacing30;
+    margin-bottom: $spacing30;
+  }
+}
+.selectedCardWrapper {
+  @include selectedCardWrapper();
+}
+
+.selectedCardWrapper:nth-of-type(even) {
+  @include selectedCardWrapper();
+  flex-direction: row-reverse;
+}
+
+.selectedButton {
+  padding-left: $spacing120;
+  @include lg {
+    padding: 0;
+  }
+}

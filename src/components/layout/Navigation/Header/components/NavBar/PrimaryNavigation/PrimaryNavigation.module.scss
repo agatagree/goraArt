@@ -1,0 +1,13 @@
+@use "styles/Helpers/" as *;
+
+.navBarLinksWrapper{
+  display: flex;
+  align-items: center;
+  gap: $spacing16;
+
+  @include sm {
+    display: none;
+  }
+}
+
+

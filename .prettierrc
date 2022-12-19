@@ -1,7 +1,16 @@
 {
   "tabWidth": 2,
   "useTabs": false,
-  "importOrder": ["^components/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrder": [
+    "^react(.*)",
+    "^firebase(.*)",
+    "^api",
+    "^routes/",
+    "^components/",
+    "^utils",
+    "antd/(.*)",
+    "<THIRD_PARTY_MODULES>",
+    "@/(.*)",
+    "^./*.*.scss"
+  ]
 }

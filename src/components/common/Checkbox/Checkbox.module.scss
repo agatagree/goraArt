@@ -1,0 +1,28 @@
+@use "styles/Helpers/" as *;
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxInput {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5em;
+  border: 1px solid $darkGrey200;
+  outline: none;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: $darkGrey500;
+  border-color: $darkGrey500;
+
+  &Color {
+    @extend .checked;
+    outline: 3px solid;
+  }
+}
