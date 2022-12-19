@@ -17,7 +17,7 @@ export const GalleryNavigation = () => {
         <Btn size="sm" onClick={handleDrawer}>
           Filter
         </Btn>
-        <Btn size="sm">Grid</Btn>
+        {/* <Btn size="sm">Grid</Btn> */}
       </div>
     </div>
   );

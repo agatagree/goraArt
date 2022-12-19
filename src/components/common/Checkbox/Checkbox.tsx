@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { classNames } from "utils/css";
 import { Btn } from "../Buttons/Btn/Btn";
+import { url } from "inspector";
 import styles from "./Checkbox.module.scss";
 
 type CheckboxProps = {
@@ -10,14 +11,10 @@ type CheckboxProps = {
   label?: string;
   checked?: boolean;
   disabled?: boolean;
-  type?: "checkbox" | "color",
+  type?: "checkbox" | "color";
   color?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
-  variant?:
-    | "text"
-    | "textLight"
-    | "mobileMenu"
-    | "mobileVis";
+  variant?: "text" | "textLight" | "mobileMenu" | "mobileVis";
   onChange?: () => void;
   onClick?: () => void;
 };
@@ -32,7 +29,7 @@ export const Checkbox = ({
   color,
   size,
   variant,
-  type="checkbox",
+  type = "checkbox",
   onChange,
   onClick,
   ...props
@@ -59,15 +56,13 @@ export const Checkbox = ({
         disabled={disabled}
         className={inputClassName}
         onChange={() => setCheckStatus(!checkStatus)}
-        style={{backgroundColor:color}}
+        style={{
+          background: color,
+          backgroundSize: "cover",
+        }}
         {...props}
       />
-      <Btn
-        as="label"
-        htmlFor={name}
-        size={size}
-        variant={variant}
-      >
+      <Btn as="label" htmlFor={name} size={size} variant={variant}>
         {label}
       </Btn>
     </div>

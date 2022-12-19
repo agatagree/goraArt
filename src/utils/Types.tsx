@@ -1,4 +1,4 @@
-export interface GalleryType {
+export type GalleryType = {
   id: string;
   title: string;
   code: string;
@@ -22,3 +22,4 @@ export interface GalleryType {
     icon: string;
   };
 }
+
