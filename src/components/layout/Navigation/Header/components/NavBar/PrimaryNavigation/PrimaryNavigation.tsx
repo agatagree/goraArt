@@ -20,6 +20,9 @@ export const PrimaryNavigation = () => {
       <Btn as={NavLink} to="/about" variant="mobileMenu" onClick={handleClick}>
         About
       </Btn>
+      <Btn as={NavLink} to="/contact" variant="mobileMenu" onClick={handleClick}>
+        Contact
+      </Btn>
     </>
   );
 };
