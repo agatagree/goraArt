@@ -8,7 +8,6 @@ Portfolio website for an artist🎨 Work in progress
 
 - [💻 Application Overview](docs/application-overview.md)
 - [⚙️ Project Configuration](docs/project-configuration.md)
-- [👁️ Style Guide](docs/style-guide.md)
 - [🗄️ Project Structure](docs/project-structure.md)
 
 
