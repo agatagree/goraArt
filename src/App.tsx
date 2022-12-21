@@ -1,4 +1,3 @@
-import { useEffect, useState, createContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { AppRouts } from "routes/AppRouts";
 import { Footer } from "components/layout/Navigation/Footer";

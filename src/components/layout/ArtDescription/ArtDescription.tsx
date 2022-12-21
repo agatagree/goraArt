@@ -1,4 +1,4 @@
-import { Text } from "../../common/Text/Text";
+import { Text } from "components/common";
 import styles from "./ArtDescription.module.scss";
 
 interface SelectedTypes {

@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Btn } from "components/common/Buttons";
-import { Loader } from "components/common/Loader";
-import { ArtDescription } from "components/layout/ArtDescription";
+import { Btn, Loader } from "components/common";
+import { ArtDescription } from "components/layout";
 import { GalleryContext } from "providers/AppProvider";
 import styles from "./GalleryPage.module.scss";
 

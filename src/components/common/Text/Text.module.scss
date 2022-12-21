@@ -42,6 +42,10 @@
   font-size: $fontSize80;
   line-height: 1.2;
 
+  @include md {
+    font-size: $fontSize64;
+  }
+
   @include sm {
     font-size: $fontSize36;
   }

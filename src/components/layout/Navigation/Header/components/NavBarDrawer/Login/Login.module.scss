@@ -1,23 +1,5 @@
 @use "styles/Helpers/" as *;
 
-.navBarLoginLayout {
-  height: 100%;
-  width: 100%;
-}
-
-.loginHeader {
-  display: flex;
-  border-bottom: 1px solid $darkGrey500;
-  min-height: $spacing40;
-  margin-bottom: $spacing40;
-  align-items: center;
-}
-
-.loginTitle {
-  flex: 1;
-  text-align: center;
-}
-
 .loginInputWrapper {
   margin-bottom: $spacing16;
   display: flex;

@@ -1,0 +1,17 @@
+@use "styles/Helpers" as *;
+
+.description {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing40;
+}
+
+.image {
+  width: calc(100%/2 - $spacing30);
+  height: 100%;
+  object-fit: cover;
+  @include md {
+    width: 100%;
+  }
+}

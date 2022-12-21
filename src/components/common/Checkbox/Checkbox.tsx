@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { classNames } from "utils/css";
-import { Btn } from "../Buttons/Btn/Btn";
-import { url } from "inspector";
+import { Btn } from "components/common";
 import styles from "./Checkbox.module.scss";
 
 type CheckboxProps = {

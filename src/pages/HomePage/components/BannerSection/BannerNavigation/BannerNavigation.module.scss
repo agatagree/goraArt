@@ -1,10 +1,9 @@
 .btnSliderWrapper {
   border: none;
   background-color: transparent;
-  position: absolute;
-  z-index: 2;
   width: 30%;
   height: 100vh;
+  position: absolute;
   cursor: pointer;
 
   &.right {

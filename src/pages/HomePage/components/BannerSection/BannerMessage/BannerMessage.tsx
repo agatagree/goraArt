@@ -4,7 +4,7 @@ import styles from "./BannerMessage.module.scss";
 
 export const BannerMessage = () => {
   return (
-    <div className={styles.heroTextContainer}>
+    <>
       <Text variant="mainHeader" color="primaryLight">
         Wojciech Góra
         <br />
@@ -18,6 +18,6 @@ export const BannerMessage = () => {
           <VscArrowDown />
         </Text>
       </div>
-    </div>
+    </>
   );
 };

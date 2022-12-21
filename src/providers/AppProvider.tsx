@@ -20,17 +20,3 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     </GalleryContext.Provider>
   );
 };
-
-// export type AppContextInterface = {
-//   name: string;
-//   author: string;
-//   url: string;
-// };
-
-// export const GalleryContext = createContext<AppContextInterface | null>(null);
-
-// const sampleAppContext: AppContextInterface = {
-//   name: "Using React Context in a Typescript App",
-//   author: "thehappybug",
-//   url: "http://www.example.com",
-// };

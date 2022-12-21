@@ -1,4 +1,4 @@
-import { Text } from "components/common/Text";
+import { Text } from "components/common";
 import styles from "./MessagePage.module.scss";
 
 const messageType = {

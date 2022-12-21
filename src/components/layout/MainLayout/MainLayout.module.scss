@@ -1,0 +1,32 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  padding: $spacing180 $spacing60;
+
+  @include sm {
+    padding: $spacing60 $spacing24;
+  }
+}
+
+.g180 {
+  gap: $spacing180;
+  @include md {
+    gap: $spacing120;
+  }
+  @include sm {
+    gap:  $spacing60;
+  }
+}
+
+.g60 {
+  gap: $spacing60;
+  @include sm {
+    gap:  $spacing30;
+  }
+}
+
+

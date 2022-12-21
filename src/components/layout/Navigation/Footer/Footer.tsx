@@ -1,8 +1,7 @@
 import { AiFillFacebook } from "react-icons/ai";
 import { ImInstagram } from "react-icons/im";
 import { Link } from "react-router-dom";
-import { Text } from "components/common/Text";
-import { Btn } from "../../../common/Buttons/Btn/Btn";
+import { Text, Btn } from "components/common";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {

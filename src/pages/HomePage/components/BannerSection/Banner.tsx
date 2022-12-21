@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { getDataFromSnapshot, bannerCollection } from "api";
-import { Loader } from "components/common/Loader";
+import { Loader } from "components/common";
+import { Banner } from "components/layout";
 import { BannerMessage } from "./BannerMessage/BannerMessage";
 import { BannerNavigation } from "./BannerNavigation/BannerNavigation";
 import styles from "./Banner.module.scss";
@@ -11,7 +12,7 @@ interface GalleryType {
   img?: string;
 }
 
-export const Banner = () => {
+export const BannerIntro = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [load, setLoad] = useState(false);
@@ -47,28 +48,26 @@ export const Banner = () => {
   return (
     <>
       {gallery ? (
-        <div className={styles.mainSliderLayout}>
-          <BannerNavigation onClick={goToNextSlide} direction={"right"} />
-          <BannerNavigation onClick={goToPreviousSlide} direction={"left"} />
-          <BannerMessage />
-          <div className={styles.progressBar}>
-            {gallery.map((_, index) => (
-              <div
-                className={
-                  currentSlideIndex === index
-                    ? styles.progressBarBtnActive
-                    : styles.progressBarBtn
-                }
-                key={index}
-              ></div>
-            ))}
+        <div className={styles.layout}>
+          <div className={styles.navigation}>
+            <BannerNavigation onClick={goToNextSlide} direction={"right"} />
+            <BannerNavigation onClick={goToPreviousSlide} direction={"left"} />
+            <div className={styles.progressBar}>
+              {gallery.map((_, index) => (
+                <div
+                  className={
+                    currentSlideIndex === index
+                      ? styles.progressBarBtnActive
+                      : styles.progressBarBtn
+                  }
+                  key={index}
+                ></div>
+              ))}
+            </div>
           </div>
-          <div className={styles.mainSliderOverlay}></div>
-          <img
-            src={gallery[currentSlideIndex].img}
-            alt="art"
-            className={styles.mainSliderCard}
-          />
+          <Banner background={gallery[currentSlideIndex].img}>
+            <BannerMessage />
+          </Banner>
         </div>
       ) : (
         <Loader />
