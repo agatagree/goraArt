@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Text } from "components/common/Text";
+import { Text } from "components/common";
 import styles from "./SingleCategory.module.scss";
 
 type CategoryProps = {

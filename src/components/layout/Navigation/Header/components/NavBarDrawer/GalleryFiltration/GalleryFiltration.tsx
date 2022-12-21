@@ -1,7 +1,5 @@
 import { useContext } from "react";
-import { Btn } from "components/common/Buttons";
-import { Checkbox } from "components/common/Checkbox";
-import { MenuDrawer } from "components/common/MenuDrawer/MenuDrawer";
+import { Btn, Checkbox, MenuDrawer } from "components/common";
 import { category } from "utils/category";
 import { SingleCategory } from "./SingleCategory/SingleCategory";
 import { GalleryContext } from "providers/AppProvider";

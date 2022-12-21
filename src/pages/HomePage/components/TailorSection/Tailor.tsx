@@ -1,4 +1,4 @@
-import { Text } from "components/common/Text";
+import { Text } from "components/common";
 import { GalleryType } from "utils/Types";
 import styles from "./Tailor.module.scss";
 

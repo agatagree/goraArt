@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Btn } from "components/common/Buttons";
-import { MenuDrawer } from "components/common/MenuDrawer/MenuDrawer";
+import { Btn, MenuDrawer } from "components/common";
 import { NavBarContext } from "../../Header";
 import { DrawerHeader } from "../common";
 import styles from "./Login.module.scss";

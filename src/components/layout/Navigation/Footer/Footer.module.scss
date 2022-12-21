@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 
   @include sm {
     padding: $spacing30 $spacing10;

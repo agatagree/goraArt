@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Btn } from "components/common/Buttons";
-import { Text } from "components/common/Text";
+import { Btn, Text } from "components/common";
 import { GalleryType } from "utils/Types";
 import styles from "./Detail.module.scss";
 
