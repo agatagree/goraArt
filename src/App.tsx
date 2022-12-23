@@ -1,14 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
 import { AppRouts } from "routes/AppRouts";
-import { Footer } from "components/layout/Navigation/Footer";
-import { Header } from "components/layout/Navigation/Header";
-import { AppProvider } from "providers/AppProvider";
+import { Header, Footer } from "components/layout/Navigation";
+import { FilterProvider } from "providers/FilterProvider";
 import styles from "./App.module.scss";
 import "styles/global.scss";
 
-function App() {
+export const App = () => {
   return (
-    <AppProvider>
+    <FilterProvider>
       <BrowserRouter>
         <div className={styles.layout}>
           <Header />
@@ -16,8 +15,6 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-    </AppProvider>
+    </FilterProvider>
   );
-}
-
-export default App;
+};

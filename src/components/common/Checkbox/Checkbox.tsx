@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { classNames } from "utils/css";
+import { useState, ChangeEvent } from "react";
 import { Btn } from "components/common";
+import { classNames } from "utils/css";
 import styles from "./Checkbox.module.scss";
 
 type CheckboxProps = {
@@ -14,7 +14,7 @@ type CheckboxProps = {
   color?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   variant?: "text" | "textLight" | "mobileMenu" | "mobileVis";
-  onChange?: () => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
 };
 
@@ -33,18 +33,15 @@ export const Checkbox = ({
   onClick,
   ...props
 }: CheckboxProps) => {
-  const [checkStatus, setCheckStatus] = useState(false);
 
   const inputClassName = classNames(
     styles.checkboxInput,
-    checkStatus && styles.checked,
-    color && checkStatus && styles.checkedColor
+    color && styles.checkboxInputColor
   );
 
   return (
     <div
       className={styles.container}
-      onClick={() => setCheckStatus(!checkStatus)}
     >
       <input
         id={id}
@@ -54,7 +51,7 @@ export const Checkbox = ({
         checked={checked}
         disabled={disabled}
         className={inputClassName}
-        onChange={() => setCheckStatus(!checkStatus)}
+        onChange={onChange}
         style={{
           background: color,
           backgroundSize: "cover",
