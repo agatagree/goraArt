@@ -1,13 +1,4 @@
-import {
-  useEffect,
-  useState,
-  createContext,
-  ReactNode,
-  useReducer,
-} from "react";
-import { onSnapshot, query, where } from "firebase/firestore";
-import { getDataFromSnapshot, galleryCollection } from "api";
-import { GalleryType } from "utils/Types";
+import { createContext, ReactNode, useReducer } from "react";
 import { FilterReducer } from "providers/FilterReducer";
 
 export type FilterContextType = {

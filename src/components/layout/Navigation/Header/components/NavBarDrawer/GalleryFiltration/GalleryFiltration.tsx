@@ -1,11 +1,10 @@
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { Btn, Checkbox, MenuDrawer } from "components/common";
 import { category } from "utils/category";
+import { NavBarContext } from "../../Header";
 import { SingleCategory } from "./SingleCategory/SingleCategory";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
-import { NavBarContext } from "../../Header";
-
 
 export const GalleryFiltration = () => {
   const { selectedValues, dispatch } = useContext(FilterContext);
