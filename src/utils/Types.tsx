@@ -5,6 +5,7 @@ export type GalleryType = {
   color: string[];
   technique: string;
   year: number;
+  availability: string;
   dimensions: {
     width: number;
     height: number;

@@ -91,10 +91,10 @@ export const GalleryFiltration = () => {
         </SingleCategory>
       </div>
       <div className={styles.filterGroupButton}>
-        <Btn variant="rectDark" fullWidth size="sm" onClick={handleCloseDrawer}>
+        <Btn variant="rectDark" upperCase fullWidth size="sm" onClick={handleCloseDrawer}>
           let's see
         </Btn>
-        <Btn variant="rect" fullWidth size="sm" onClick={handleReset}>
+        <Btn variant="rect" upperCase fullWidth size="sm" onClick={handleReset}>
           reset filters
         </Btn>
       </div>

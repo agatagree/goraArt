@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { ChangeEvent } from "react";
 import { Btn } from "components/common";
 import { classNames } from "utils/css";
 import styles from "./Checkbox.module.scss";
@@ -33,16 +33,13 @@ export const Checkbox = ({
   onClick,
   ...props
 }: CheckboxProps) => {
-
   const inputClassName = classNames(
     styles.checkboxInput,
     color && styles.checkboxInputColor
   );
 
   return (
-    <div
-      className={styles.container}
-    >
+    <div className={styles.container}>
       <input
         id={id}
         name={name}

@@ -49,20 +49,14 @@
   background-color: transparent;
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
-  text-transform: uppercase;
   text-align: center;
 }
 
 .rect {
   @include rect();
 
-  &Regular {
-    @extend .rect;
-    text-transform: none;
-  }
   &Negative {
     @extend .rect;
-    text-transform: none;
     color: $darkGrey200;
     border: 1px solid transparent;
   }
@@ -128,4 +122,8 @@
 
 .noWrap {
   white-space: nowrap;
+}
+
+.upperCase {
+  text-transform: uppercase;
 }

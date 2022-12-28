@@ -1,0 +1,13 @@
+@use "styles/Helpers/" as *;
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing40;
+
+  &Container {
+    @extend .description;
+    gap: $spacing24;
+  }
+}

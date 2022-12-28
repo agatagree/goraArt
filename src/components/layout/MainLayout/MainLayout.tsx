@@ -4,7 +4,7 @@ import styles from "./MainLayout.module.scss";
 
 type MainLayoutProps = {
   children: ReactNode;
-  gap?: "g180" | "g60";
+  gap?: "g180" | "g120" | "g60";
 };
 
 export const MainLayout = ({ children, gap }: MainLayoutProps) => {
