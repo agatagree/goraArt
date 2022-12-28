@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 import { NavBar } from "./NavBar/NavBar";
 import { NavBarDrawer } from "./NavBarDrawer/NavBarDrawer";
 import { NavBarOverlay } from "./NavBarOverlay/NavBarOverlay";

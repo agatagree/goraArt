@@ -1,9 +1,9 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { firebaseConfig } from "./firebase.config";
-import { getStorage } from "firebase/storage";
-import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { firebaseConfig } from "./firebase.config";
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

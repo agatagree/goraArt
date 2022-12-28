@@ -18,6 +18,7 @@
   letter-spacing: $fontLs4;
   display: flex;
   align-items: center;
+  line-height: 100%;
 }
 
 .header {
@@ -64,4 +65,8 @@
 .smallHeader {
   text-transform: uppercase;
   font-weight: $fontWeights500;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }

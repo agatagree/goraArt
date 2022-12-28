@@ -12,7 +12,6 @@ type BtnOwnProps<E extends ElementType> = {
     | "text"
     | "textLight"
     | "rect"
-    | "rectRegular"
     | "rectNegative"
     | "rectDark"
     | "arrow"
@@ -20,6 +19,7 @@ type BtnOwnProps<E extends ElementType> = {
     | "mobileVis";
   color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   fullWidth?: boolean;
+  upperCase?: boolean;
   noWrap?: boolean;
   onClick?: () => void;
 };
@@ -34,6 +34,7 @@ export const Btn = <E extends ElementType = "button">({
   variant,
   color,
   fullWidth,
+  upperCase,
   noWrap,
   onClick,
   ...props
@@ -46,7 +47,8 @@ export const Btn = <E extends ElementType = "button">({
     size && size,
     color && color,
     fullWidth && styles.fullWidth,
-    noWrap && styles.noWrap
+    noWrap && styles.noWrap,
+    upperCase && styles.upperCase
   );
   return (
     <Component

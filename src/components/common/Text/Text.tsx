@@ -14,6 +14,7 @@ type TextOwnProps<E extends ElementType> = {
     | "smallHeader"
   children: ReactNode;
   as?: E;
+  capitalize?:boolean;
 };
 
 type TextProps<E extends ElementType> = TextOwnProps<E> &
@@ -24,6 +25,7 @@ export const Text = <E extends ElementType = "p">({
   color,
   variant,
   children,
+  capitalize,
   as,
 }: TextProps<E>) => {
   const Component = as || "p";
@@ -31,7 +33,8 @@ export const Text = <E extends ElementType = "p">({
     styles.text,
     variant && styles[variant],
     size && size,
-    color && color
+    color && color,
+    capitalize && styles.capitalize
   );
 
   return <Component className={classItem}>{children}</Component>;

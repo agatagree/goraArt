@@ -8,7 +8,7 @@
   padding: $spacing180 $spacing60;
 
   @include sm {
-    padding: $spacing60 $spacing24;
+    padding: $spacing120 $spacing24;
   }
 }
 
@@ -18,15 +18,23 @@
     gap: $spacing120;
   }
   @include sm {
-    gap:  $spacing60;
+    gap: $spacing60;
+  }
+}
+
+.g120 {
+  gap: $spacing120;
+  @include md {
+    gap: $spacing80;
+  }
+  @include sm {
+    gap: $spacing40;
   }
 }
 
 .g60 {
   gap: $spacing60;
   @include sm {
-    gap:  $spacing30;
+    gap: $spacing30;
   }
 }
-
-
