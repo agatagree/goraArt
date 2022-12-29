@@ -1,2 +1,1 @@
-export * from "./Btn/Btn";
-export * from "./ExitBtn/ExitBtn";
+export * from "./Btn";
