@@ -23,16 +23,14 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <NavBarContext.Provider
-        value={{ activeDrawer, setActiveDrawer, isOpen, setIsOpen }}
-      >
-        <header className={styles.navBarWrapper}>
-          <NavBar />
-          {isOpen ? <NavBarDrawer /> : null}
-        </header>
-        <NavBarOverlay />
-      </NavBarContext.Provider>
-    </>
+    <NavBarContext.Provider
+      value={{ activeDrawer, setActiveDrawer, isOpen, setIsOpen }}
+    >
+      <header className={styles.navBarWrapper}>
+        <NavBar />
+        {isOpen ? <NavBarDrawer /> : null}
+      </header>
+      <NavBarOverlay />
+    </NavBarContext.Provider>
   );
 };

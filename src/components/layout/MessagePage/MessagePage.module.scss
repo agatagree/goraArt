@@ -1,3 +1,5 @@
+@use "styles/Helpers/" as *;
+
 .messageLayout {
   display: flex;
   flex-direction: column;
@@ -6,10 +8,11 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  padding-top: $spacing180;
 }
 
 .messageImg {
-  max-height: 80%;
+  max-height: 50vh;
   max-width: 80%;
   object-fit: contain;
 }

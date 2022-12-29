@@ -23,7 +23,7 @@ export const SingleArtPage = () => {
       setSingleArtWithId(doc.data() as GalleryType, doc.id);
       setLoad(true);
     });
-  }, [id]);
+  }, [id, load]);
 
   if (load === false) {
     return <Loader />;

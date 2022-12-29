@@ -9,17 +9,15 @@ public
 
 src
   |
-  +-- assets                    # assets folder contain common static files e.g. icons
-  |
   +-- components                # shared components used across the entire application
   |  |
-  |  +-- UI                     # shared components small one
+  |  +-- common                    # shared components small one
   |  |  |
   |  |  +-- Button
   |  |  |
   |  |  +-- Text..
   |  |
-  |  +-- Layout                 # shared components bigger components, characteristic for the layout
+  |  +-- layout                 # shared components bigger components, characteristic for the layout
   |    |
   |    +-- Header
   |    |
@@ -27,13 +25,13 @@ src
   |
   +-- api                       # all the global configuration and shared functions connected with API
   |
-  +-- pages                     # feature : independent, often repetetive piece of the bigger component 
+  +-- pages                     # single pages of the web: routing mirror
   |  |
-  |  +-- HomePage               # main file for the features import below
+  |  +-- HomePage               # single page component
   |  |  |  
-  |  |  +-- Banner              # this will can be divided for smaller components
+  |  |  +-- Banner              # bigger piece of the page
   |  |  |
-  |  |  +-- SelectedSection..   # this will be divided for smaller components, can have structure with assets, providers etc.if needed    
+  |  |  +-- SelectedSection..    
   |  |
   |  +-- Gallery            
   |     |   
@@ -41,17 +39,15 @@ src
   |     |
   |     +-- Gallery Layout..
   |  
-  +-- providers                 # all of the application providers
+  +-- providers                 # all of the application providers, context api
   |
-  +-- routes                    # routes configuration
+  +-- routes                    # app routs
   |
   +-- styles                    # global styles
   |
   +-- test                      # test utilities and mock server
   |
-  +-- types                     # base types used across the application
-  |
-  +-- utils                     # shared utility functions
+  +-- utils                     # shared utility functions, types etc.
 ```
 
 Main folder: features repeat this structure, if needed + contain index.tsx file which represents each feature and group all subfeatures together.
