@@ -15,6 +15,10 @@ Portfolio website for an artist🎨 Work in progress
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Connect with Firebase Database
+
+Create .env file with proper keys
+
 ## Available Scripts
 
 In the project directory, you can run:
