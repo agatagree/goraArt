@@ -39,7 +39,6 @@ body {
 .lg {
   font-size: $fontSize24;
   letter-spacing: $fontLs4;
-  font-weight: $fontWeights400;
   @include sm {
     font-size: $fontSize16;
   }

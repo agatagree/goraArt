@@ -8,8 +8,7 @@ export const collectionGallery = "gallery";
 export const galleryStorage = "/img";
 export const galleryCollection = collection(db, collectionGallery);
 
-export const singleArtCollection = (docId) =>
-  doc(db, collectionGallery, docId);
+export const singleArtCollection = (docId) => doc(db, collectionGallery, docId);
 
 export const collectionBanner = "banner";
 export const bannerStorage = "/banner";

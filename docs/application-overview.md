@@ -2,7 +2,7 @@
 
 The application is a virtual painting galllery. 
 
-Users can check works of defined painter, and order them, save as favourites o their profile. Artist as an admin can add new painting and check orders.
+Users can check works of defined painter, read about, see the contact.
 
 
 [Demo] here soon 🚀
@@ -13,16 +13,10 @@ The application contains the following models:
 
 - User - can have one of these roles:
 
-  - `ADMIN` can:
+  - `ADMIN` will be able to:
     - create/edit/delete painting
     - add/remove painting to the homepageBanner
-    - see list of orders / change order status
     - enter to admin page by login page
-  - `USER` - can:
-    - edit own profile
-    - add/delete painting to favourites
-    - check order status
-    - buy items
+  - `USER` - will be able to:
     - see gallery page and filter/sort through them
-    - login / register / ask for password reminder
 

@@ -12,6 +12,11 @@ const messageType = {
     img: "https://img.freepik.com/premium-vector/construction-website-page-web-page-vector-illustration_123447-3974.jpg?w=826",
     alt: "website underconstruction",
   },
+  search: {
+    text: "Sorry, there is nothing here",
+    img: "./assets/Search.png",
+    alt: "empty search",
+  },
 };
 
 type MessageName = {
