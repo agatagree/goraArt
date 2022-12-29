@@ -56,7 +56,6 @@ export const Btn = <E extends ElementType = "button">({
       className={classItem}
       onMouseEnter={() => setHoverState(true)}
       onMouseLeave={() => setHoverState(false)}
-
       {...props}
     >
       {variant === "arrow" ? (
