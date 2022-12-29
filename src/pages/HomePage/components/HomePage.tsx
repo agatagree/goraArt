@@ -4,10 +4,10 @@ import { getDataFromSnapshot, galleryCollection } from "api";
 import { Loader } from "components/common";
 import { MainLayout } from "components/layout";
 import { GalleryType } from "utils/Types";
-import { BannerIntro } from "./BannerSection/Banner";
-import { Detail } from "./DetailSection/Detail";
-import { Selected } from "./SelectedSection/Selected";
-import { Tailor } from "./TailorSection/Tailor";
+import { BannerIntro } from "./BannerSection";
+import { Detail } from "./DetailSection";
+import { Selected } from "./SelectedSection";
+import { Tailor } from "./TailorSection";
 
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);

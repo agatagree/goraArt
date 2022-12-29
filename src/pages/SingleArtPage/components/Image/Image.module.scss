@@ -3,8 +3,10 @@
 .img {
   height: 80vh;
   max-width: 800px;
+  min-width: 200px;
   object-fit: contain;
   object-position: center;
+  background-color: $grey100;
 
   @include md {
     max-width: 100%;

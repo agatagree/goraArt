@@ -5,7 +5,7 @@ import { singleArtCollection } from "api";
 import { Btn, Loader, Text } from "components/common";
 import { MainLayout } from "components/layout";
 import { GalleryType } from "utils/Types";
-import { Image } from "./Image/Image";
+import { Image } from "./Image";
 import styles from "./SingleArtPage.module.scss";
 
 export const SingleArtPage = () => {
