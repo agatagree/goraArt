@@ -4,12 +4,14 @@ import { onSnapshot, query, where } from "firebase/firestore";
 import { getDataFromSnapshot, galleryCollection } from "api";
 import { Btn, Loader } from "components/common";
 import { ArtDescription } from "components/layout";
+import { MessagePage } from "components/layout/MessagePage";
 import { GalleryType } from "utils/Types";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryPage.module.scss";
 
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
+  const [load, setLoad] = useState(false);
   const { selectedValues } = useContext(FilterContext);
 
   useEffect(() => {
@@ -26,11 +28,16 @@ export const GalleryPage = () => {
         setGallery(getDataFromSnapshot(card));
       });
     }
-  }, [selectedValues]);
+    setLoad(true);
+  }, [selectedValues, load]);
+
+  if (load === false) {
+    return <Loader />;
+  }
 
   return (
     <>
-      {gallery ? (
+      {gallery.length !== 0 ? (
         <div className={styles.galleryLayout}>
           {gallery.map((card) => (
             <Btn
@@ -56,7 +63,7 @@ export const GalleryPage = () => {
           ))}
         </div>
       ) : (
-        <Loader />
+        <MessagePage message={"search"} />
       )}
     </>
   );
