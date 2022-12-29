@@ -1,0 +1,10 @@
+@use "styles/Helpers/" as *;
+
+.mobileLayout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: $spacing30;
+  align-items: flex-start;
+  gap: $spacing10;
+}
