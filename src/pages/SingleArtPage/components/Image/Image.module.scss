@@ -1,0 +1,13 @@
+@use "styles/Helpers" as *;
+
+.img {
+  height: 80vh;
+  max-width: 800px;
+  object-fit: contain;
+  object-position: center;
+
+  @include md {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -47,7 +47,7 @@ export const Login = () => {
         <Btn
           as={Link}
           to="/signUp"
-          variant="rectRegular"
+          variant="rect"
           size="sm"
           onClick={handleClick}
         >

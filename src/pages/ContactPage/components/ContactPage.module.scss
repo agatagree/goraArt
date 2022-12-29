@@ -1,0 +1,56 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  height: calc(100vh - 87.5px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include md {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.text {
+  width: 70%;
+  height: calc(100% - 74px);
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 $spacing120;
+  gap: $spacing40;
+
+  @include lg {
+    gap: $spacing20;
+  }
+  @include md {
+    width: 100%;
+    max-width: 540px;
+    align-self: center;
+    height: auto;
+    padding: $spacing120 $spacing24 $spacing60 $spacing24;
+  }
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image {
+  height: auto;
+  width: 30%;
+  object-fit: cover;
+  object-position: top;
+  flex: 1;
+  @include md {
+    width: 100%;
+    max-height: 500px;
+  }
+  @include sm {
+    max-height: 400px;
+  }
+}

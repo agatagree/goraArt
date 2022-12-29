@@ -15,14 +15,16 @@
   border: 1px solid $darkGrey200;
   outline: none;
   cursor: pointer;
-}
 
-.checked {
-  background-color: $darkGrey500;
-  border-color: $darkGrey500;
+  &:checked {
+    background-color: $darkGrey500;
+    border-color: $darkGrey500;
+  }
 
   &Color {
-    @extend .checked;
-    outline: 3px solid;
+    &:checked {
+      border-color: $darkGrey500;
+      outline: 3px solid $darkGrey500;
+    }
   }
 }
