@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
 import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
+import { LanguageContext } from "providers/LanguageProvider";
 import styles from "./NavBar.module.scss";
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
+  const [translation, setTranslation] = useState(false);
+  const { language, setLanguage } = useContext(LanguageContext);
 
   const pageName = useLocation();
   useEffect(() => {
@@ -15,6 +18,12 @@ export const NavBar = () => {
       setGallerymenuState(true);
     } else setGallerymenuState(false);
   }, [pageName]);
+
+  const handleTranslation = () => {
+    setTranslation(!translation);
+    translation ? setLanguage("EN") : setLanguage("PL");
+  };
+  console.log(`translation: ${translation}, ${language}`);
 
   return (
     <>
@@ -32,7 +41,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className={styles.navBarLinksContainer}>
-          <Btn>PL</Btn>
+          <Btn onClick={handleTranslation}>{language}</Btn>
           <BurgerMenu />
         </div>
       </div>
