@@ -1,20 +1,21 @@
 import { ReactNode, ElementType, ComponentProps } from "react";
 import { classNames } from "utils/css";
+import { Color, Size } from "../commonTypes";
 import styles from "./Text.module.scss";
 
 type TextOwnProps<E extends ElementType> = {
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
-  color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
+  size?: Size;
+  color?: Color;
   variant?:
     | "text"
     | "header"
     | "mainHeader"
     | "subHeader"
     | "basicHeader"
-    | "smallHeader"
+    | "smallHeader";
   children: ReactNode;
   as?: E;
-  capitalize?:boolean;
+  capitalize?: boolean;
 };
 
 type TextProps<E extends ElementType> = TextOwnProps<E> &

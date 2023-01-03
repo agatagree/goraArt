@@ -1,6 +1,7 @@
 import { ChangeEvent } from "react";
 import { Btn } from "components/common";
 import { classNames } from "utils/css";
+import { Size } from "../commonTypes";
 import styles from "./Checkbox.module.scss";
 
 type CheckboxProps = {
@@ -12,7 +13,7 @@ type CheckboxProps = {
   disabled?: boolean;
   type?: "checkbox" | "color";
   color?: string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
+  size?: Size;
   variant?: "text" | "textLight" | "mobileMenu" | "mobileVis";
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
