@@ -12,6 +12,7 @@ import styles from "./GalleryPage.module.scss";
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [load, setLoad] = useState(false);
+  const [emptySearch, setEmptySearch] = useState(false);
   const { selectedValues } = useContext(FilterContext);
 
   useEffect(() => {
@@ -23,48 +24,51 @@ export const GalleryPage = () => {
       onSnapshot(q, (card) => {
         setGallery(getDataFromSnapshot(card));
       });
+      if (gallery.length === 0) {
+        setEmptySearch(true);
+      } else {
+        setEmptySearch(false);
+      }
     } else {
       onSnapshot(galleryCollection, (card) => {
         setGallery(getDataFromSnapshot(card));
       });
     }
     setLoad(true);
-  }, [selectedValues, load]);
+  }, [selectedValues, load, gallery]);
 
   if (load === false) {
     return <Loader />;
   }
 
+  if (emptySearch === true) {
+    return <MessagePage message={"search"} />;
+  }
+
   return (
-    <>
-      {gallery.length !== 0 ? (
-        <div className={styles.galleryLayout}>
-          {gallery.map((card) => (
-            <Btn
-              as={Link}
-              to={`/gallery/${card.id}`}
-              className={styles.art}
-              key={card.id}
-            >
-              <img
-                className={styles.artImg}
-                src={card.img.cover}
-                alt={card.title}
-              />
-              <ArtDescription
-                title={card.title}
-                code={card.code}
-                year={card.year}
-                technique={card.technique}
-                width={card.dimensions.width}
-                height={card.dimensions.height}
-              />
-            </Btn>
-          ))}
-        </div>
-      ) : (
-        <MessagePage message={"search"} />
-      )}
-    </>
+    <div className={styles.galleryLayout}>
+      {gallery.map((card) => (
+        <Btn
+          as={Link}
+          to={`/gallery/${card.id}`}
+          className={styles.art}
+          key={card.id}
+        >
+          <img
+            className={styles.artImg}
+            src={card.img.cover}
+            alt={card.title}
+          />
+          <ArtDescription
+            title={card.title}
+            code={card.code}
+            year={card.year}
+            technique={card.technique}
+            width={card.dimensions.width}
+            height={card.dimensions.height}
+          />
+        </Btn>
+      ))}
+    </div>
   );
 };
