@@ -1,13 +1,41 @@
 @use "styles/Helpers/" as *;
 
-@mixin btn {
+// @mixin btn {
+//   font-weight: $fontWeights500;
+//   text-decoration: none;
+//   cursor: pointer;
+//   background-color: transparent;
+//   border: none;
+//   font-size: $fontSize18;
+  
+
+//   &:hover,
+//   &:active &:not([disabled]) {
+//     color: $primaryOrange;
+//   }
+//   &:disabled {
+//     color: $darkGrey200;
+//   }
+//   &:focus {
+//     outline: $darkGrey200;
+//   }
+//   &:global.active {
+//     font-weight: $fontWeights700;
+//   }
+// }
+
+.btn,
+.text,
+.textLight, 
+.rect,
+.arrow {
   font-weight: $fontWeights500;
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  font-family: "Heebo", sans-serif;
   font-size: $fontSize18;
+  
 
   &:hover,
   &:active &:not([disabled]) {
@@ -24,13 +52,7 @@
   }
 }
 
-.btn {
-  @include btn();
-}
-
-//Variant
 .text {
-  @include btn();
   background-color: transparent;
   letter-spacing: 0;
   border: none;
@@ -38,22 +60,17 @@
 }
 
 .textLight {
-  @include btn();
   font-weight: $fontWeights400;
 }
 
-@mixin rect {
-  @include btn();
+.rect,
+.rectDark {
   border: 1px solid $darkGrey500;
   border-radius: 0;
   background-color: transparent;
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-align: center;
-}
-
-.rect {
-  @include rect();
 
   &Negative {
     @extend .rect;
@@ -78,7 +95,6 @@
 }
 
 .rectDark {
-  @include rect();
   background-color: $darkGrey500;
   color: $white100;
   &:hover {
@@ -88,7 +104,6 @@
 }
 
 .arrow {
-  @include btn;
   transform: rotate(0deg);
   margin-right: $spacing10;
   vertical-align: middle;

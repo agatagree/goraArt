@@ -1,14 +1,14 @@
 import { Text } from "components/common";
 import styles from "./ArtDescription.module.scss";
 
-interface SelectedTypes {
+type SelectedTypes = {
   year: number;
   technique: string;
   title: string;
   code: string;
   width: number;
   height: number;
-}
+};
 
 export const ArtDescription = ({
   title,

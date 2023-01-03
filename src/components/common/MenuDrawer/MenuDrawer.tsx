@@ -4,7 +4,7 @@ import styles from "./MenuDrawer.module.scss";
 
 type DrawerProps = {
   children: ReactNode;
-  variant?: "gallery" | "fullHeight";
+  variant?: "gallery";
 };
 
 export const MenuDrawer = ({ children, variant, ...props }: DrawerProps) => {

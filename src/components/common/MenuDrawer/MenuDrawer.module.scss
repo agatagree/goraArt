@@ -25,11 +25,4 @@
   }
 }
 
-.fullHeight {
-  height: calc(100vh - 68px);
-  top: 0;
 
-  @include sm {
-    height: calc(100vh - 48px);
-  }
-}

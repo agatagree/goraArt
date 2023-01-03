@@ -18,12 +18,19 @@ export const Footer = () => {
         <Text size="sm">&copy; {new Date().getFullYear()} tamaga studio</Text>
       </div>
       <div className={styles.footerContainer}>
-        <Btn as={"a"} href="https://www.facebook.com/wojciech.gora/">
+        <Btn
+          as={"a"}
+          href="https://www.facebook.com/wojciech.gora/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <AiFillFacebook className={styles.footerIconFacebook} />
         </Btn>
         <Btn
           as={"a"}
           href="https://www.instagram.com/_wojciech_gora_/?fbclid=IwAR3ZjSl3pDKGP8OQgJiLWBWHyf75Zv5Cbu3LZM6QUDxfVRBVANA6BwDBYNc/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <ImInstagram className={styles.footerIcon} />
         </Btn>

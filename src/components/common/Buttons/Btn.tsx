@@ -1,13 +1,15 @@
 import { ReactNode, ElementType, ComponentProps, useState } from "react";
 import { VscArrowRight } from "react-icons/vsc";
 import { classNames } from "utils/css";
+import { Color, Size } from "../commonTypes";
 import styles from "./Btn.module.scss";
 
 type BtnOwnProps<E extends ElementType> = {
   children: ReactNode;
   as?: E;
+  size?: Size;
+  color?: Color;
   disabled?: boolean;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
   variant?:
     | "text"
     | "textLight"
@@ -17,10 +19,11 @@ type BtnOwnProps<E extends ElementType> = {
     | "arrow"
     | "mobileMenu"
     | "mobileVis";
-  color?: "primary" | "primaryLight" | "secondary" | "primaryOrange";
   fullWidth?: boolean;
   upperCase?: boolean;
   noWrap?: boolean;
+  target?: string;
+  rel?: string;
   onClick?: () => void;
 };
 
@@ -36,6 +39,8 @@ export const Btn = <E extends ElementType = "button">({
   fullWidth,
   upperCase,
   noWrap,
+  target,
+  rel,
   onClick,
   ...props
 }: BtnProps<E>) => {
@@ -56,6 +61,7 @@ export const Btn = <E extends ElementType = "button">({
       className={classItem}
       onMouseEnter={() => setHoverState(true)}
       onMouseLeave={() => setHoverState(false)}
+      target={target || "_self"}
       {...props}
     >
       {variant === "arrow" ? (
