@@ -10,6 +10,12 @@ Portfolio website for an artist🎨 Work in progress
 - [⚙️ Project Configuration](docs/project-configuration.md)
 - [🗄️ Project Structure](docs/project-structure.md)
 
+## Screenshots 📺
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/98839155/211794184-3d2e83d2-6385-4513-8715-075df2ba1ce7.jpg" alt="Screenshot">
+</p>
+
 
 # Getting Started with Create React App
 
