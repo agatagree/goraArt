@@ -10,6 +10,11 @@ Portfolio website for an artist🎨 Work in progress
 - [⚙️ Project Configuration](docs/project-configuration.md)
 - [🗄️ Project Structure](docs/project-structure.md)
 
+## Design 🎨
+
+Design: made in Figma
+Check it on my [behance](https://www.behance.net/gallery/160749095/The-art-gallery-website)
+
 ## Screenshots 📺
 
 <p align="center">
