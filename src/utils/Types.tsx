@@ -24,3 +24,9 @@ export type GalleryType = {
   };
 }
 
+export type TranslationTypes = {
+  id: string;
+  key: string;
+  EN: string;
+  PL: string;
+}

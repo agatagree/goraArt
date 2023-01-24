@@ -9,7 +9,6 @@ import styles from "./NavBar.module.scss";
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
-  const [translation, setTranslation] = useState(false);
   const { language, setLanguage } = useContext(LanguageContext);
 
   const pageName = useLocation();
@@ -20,10 +19,8 @@ export const NavBar = () => {
   }, [pageName]);
 
   const handleTranslation = () => {
-    setTranslation(!translation);
-    translation ? setLanguage("EN") : setLanguage("PL");
+    setLanguage(language === "PL" ? "EN" : "PL")
   };
-  console.log(`translation: ${translation}, ${language}`);
 
   return (
     <>

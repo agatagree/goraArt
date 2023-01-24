@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Btn } from "components/common/Buttons";
 import { Text } from "components/common/Text";
 import { ArtDescription } from "components/layout/ArtDescription";
+import { LanguageContext } from "providers/LanguageProvider";
 import styles from "./SelectedCard.module.scss";
 
 interface SelectedTypes {

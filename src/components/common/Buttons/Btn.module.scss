@@ -1,29 +1,5 @@
 @use "styles/Helpers/" as *;
 
-// @mixin btn {
-//   font-weight: $fontWeights500;
-//   text-decoration: none;
-//   cursor: pointer;
-//   background-color: transparent;
-//   border: none;
-//   font-size: $fontSize18;
-  
-
-//   &:hover,
-//   &:active &:not([disabled]) {
-//     color: $primaryOrange;
-//   }
-//   &:disabled {
-//     color: $darkGrey200;
-//   }
-//   &:focus {
-//     outline: $darkGrey200;
-//   }
-//   &:global.active {
-//     font-weight: $fontWeights700;
-//   }
-// }
-
 .btn,
 .text,
 .textLight, 

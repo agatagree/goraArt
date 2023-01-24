@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { onSnapshot, where, query } from "firebase/firestore";
-import { getDataFromSnapshot, galleryCollection } from "api";
+import { getDataFromSnapshot, galleryCollection, translationCollection } from "api";
 import { Loader } from "components/common";
 import { MainLayout } from "components/layout";
-import { GalleryType } from "utils/Types";
+import { GalleryType, TranslationTypes } from "utils/Types";
 import { BannerIntro } from "./BannerSection";
 import { Detail } from "./DetailSection";
 import { Selected } from "./SelectedSection";
@@ -11,17 +11,23 @@ import { Tailor } from "./TailorSection";
 
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
-  const [load, setLoad] = useState(false);
+  const [translation, setTranslation] = useState<TranslationTypes[]>([]);
+  const [galleryLoad, setGalleryLoad] = useState(false);
+  const [translationLoad, setTranslationLoad] = useState(false);
 
   useEffect(() => {
     const q = query(galleryCollection, where("mainPage", "==", true));
     onSnapshot(q, (art) => {
       setGallery(getDataFromSnapshot(art));
-      setLoad(true);
+      setGalleryLoad(true);
     });
-  }, [load]);
+    onSnapshot(translationCollection, (data) => {
+      setTranslation(getDataFromSnapshot(data));
+      setTranslationLoad(true);
+    });
+  }, [galleryLoad, translationLoad ]);
 
-  if (load === false) {
+  if ((galleryLoad || translationLoad ) === false) {
     return <Loader />;
   }
 
@@ -39,6 +45,8 @@ export const HomePage = () => {
   const detailSectionData = gallery.filter((obj) => {
     return obj.mainPageData.mainPagePosition === 5;
   });
+
+  // console.log(translation.find(item => item.key = "red"))
 
   return (
     <>
