@@ -53,9 +53,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     });
   }, [language, translationLoad]);
 
-  // console.log(staticText);
-  // console.log(staticText.navBar.contact);
-
   return (
     <LanguageContext.Provider value={{ language, setLanguage, staticText, translation }}>
       {staticText&&translation ? children : <Loader />}

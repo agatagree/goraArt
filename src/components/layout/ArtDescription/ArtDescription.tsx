@@ -24,16 +24,14 @@ export const ArtDescription = ({
   const { language, translation } = useContext(LanguageContext);
 
   const t = (props: string) => {
-    if (translation && language) {
-      return translation.find((obj) => obj.key === props)?.[language];
+    if (translation) {
+      const found = translation.find((obj) => obj.key === props);
+      if (found) {
+        return found[language];
+      }
     }
     return props;
   };
-  // console.log(t("Oil paint on wooden board"));
-
-  // const x = technique
-  // console.log(technique)
-  // console.log(t(technique))
 
   return (
     <div className={styles.imgDescription}>

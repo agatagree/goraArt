@@ -9,6 +9,7 @@ import styles from "./NavBar.module.scss";
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
+  const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
   const { language, setLanguage } = useContext(LanguageContext);
 
   const pageName = useLocation();
@@ -19,7 +20,8 @@ export const NavBar = () => {
   }, [pageName]);
 
   const handleTranslation = () => {
-    setLanguage(language === "PL" ? "EN" : "PL")
+    setLanguage(language === "PL" ? "EN" : "PL");
+    setLanguageBtn(language === "PL" ? "PL" : "EN");
   };
 
   return (
@@ -38,7 +40,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className={styles.navBarLinksContainer}>
-          <Btn onClick={handleTranslation}>{language}</Btn>
+          <Btn onClick={handleTranslation}>{languageBtn}</Btn>
           <BurgerMenu />
         </div>
       </div>

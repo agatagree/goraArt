@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { LanguageContext } from "providers/LanguageProvider";
 
-// export const translation = (props: string) => {
-//   // const { language, translation } = useContext(LanguageContext);
-//   // if (translation && props && language) {
-//   //   return translation.find((obj) => obj.key === props)?.[language];
-//   // }
-//   return props;
-// };
-
-export const Translation = () => {
-  return <p>xx</p>;
+export const T = ({ key }: { key: string }) => {
+  const { language, translation } = useContext(LanguageContext);
+  if (translation) {
+    const found = translation.find((obj) => obj.key === key);
+    if (found) {
+      return <span>{found[language]}</span>;
+    }
+  }
+  return <span>{key}</span>;
 };
+
+
