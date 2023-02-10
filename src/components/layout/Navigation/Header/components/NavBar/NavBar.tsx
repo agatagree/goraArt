@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
@@ -10,7 +11,9 @@ import styles from "./NavBar.module.scss";
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
-  const { language, setLanguage } = useContext(LanguageContext);
+  // const { language, setLanguage } = useContext(LanguageContext);
+  const [language, setLanguage] = useState<"pl" | "en">("pl");
+  const { i18n } = useTranslation();
 
   const pageName = useLocation();
   useEffect(() => {
@@ -19,9 +22,15 @@ export const NavBar = () => {
     } else setGallerymenuState(false);
   }, [pageName]);
 
-  const handleTranslation = () => {
-    setLanguage(language === "PL" ? "EN" : "PL");
-    setLanguageBtn(language === "PL" ? "PL" : "EN");
+  // const handleTranslation = () => {
+  //   setLanguage(language === "PL" ? "EN" : "PL");
+  //   setLanguageBtn(language === "PL" ? "PL" : "EN");
+  // };
+
+  const changeLanguage = () => {
+    setLanguage(language === "pl" ? "en" : "pl");
+    setLanguageBtn(language === "pl" ? "PL" : "EN");
+    i18n.changeLanguage(language);
   };
 
   return (
@@ -40,7 +49,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className={styles.navBarLinksContainer}>
-          <Btn onClick={handleTranslation}>{languageBtn}</Btn>
+          <Btn onClick={changeLanguage}>{languageBtn}</Btn>
           <BurgerMenu />
         </div>
       </div>

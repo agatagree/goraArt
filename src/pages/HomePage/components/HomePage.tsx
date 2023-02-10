@@ -50,10 +50,10 @@ export const HomePage = () => {
 
   return (
     <>
-      <BannerIntro />
+      {/* <BannerIntro /> */}
       <MainLayout>
         <Tailor data={tailorSectionData} />
-        <Selected data={selectedSectionData} />
+        {/* <Selected data={selectedSectionData} /> */}
         <Detail data={detailSectionData} />
       </MainLayout>
     </>

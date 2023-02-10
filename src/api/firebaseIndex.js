@@ -8,10 +8,8 @@ export const collectionGallery = "gallery";
 export const galleryCollection = collection(db, collectionGallery);
 export const singleArtCollection = (docId) => doc(db, collectionGallery, docId);
 
-export const collectionTranslations = "/translations";
+export const collectionTranslations = "/translate";
 export const translationCollection = collection(db, collectionTranslations);
-
-
 
 export const collectionBanner = "banner";
 export const bannerStorage = "/banner";
