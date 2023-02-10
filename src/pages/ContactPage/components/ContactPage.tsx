@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import { Btn, Text } from "components/common";
 import styles from "./ContactPage.module.scss";
 
 export const ContactPage = () => {
+  const { t } = useTranslation(["static", "dynamic"]);
   return (
     <div className={styles.layout}>
       <div className={styles.text}>
-        <Text variant="subHeader">Interested in my art? Let’s talk.</Text>
+        <Text variant="subHeader">{t("contactPage.title")}</Text>
         <div className={styles.contactGroup}>
           <Btn
             as={"a"}

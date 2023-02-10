@@ -1,9 +1,7 @@
-import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Btn } from "components/common/Buttons";
-import { Text } from "components/common/Text";
+import { Btn, Text } from "components/common";
 import { ArtDescription } from "components/layout/ArtDescription";
-import { LanguageContext } from "providers/LanguageProvider";
 import styles from "./SelectedCard.module.scss";
 
 interface SelectedTypes {
@@ -33,6 +31,7 @@ export const SelectedCard = ({
   width,
   height,
 }: SelectedTypes) => {
+  const { t } = useTranslation(["static", "dynamics"]);
   return (
     <>
       <div className={styles.selectedDescription}>
@@ -44,11 +43,11 @@ export const SelectedCard = ({
           />
           <div className={styles.selectedTitle}>
             <Text variant="header" size="xl">
-              {pageTitle}
+              {t(pageTitle, { ns: "dynamic" })}
             </Text>
           </div>
         </div>
-        <Text>{description}</Text>
+        <Text>{t(description, { ns: "dynamic" })}</Text>
       </div>
       <Btn
         as={Link}

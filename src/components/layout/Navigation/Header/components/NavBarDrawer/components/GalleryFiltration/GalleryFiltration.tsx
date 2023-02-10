@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Btn, Checkbox, MenuDrawer } from "components/common";
 import { category } from "utils/category";
 import { NavBarContext } from "../../../Header";
@@ -7,6 +8,7 @@ import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
 export const GalleryFiltration = () => {
+  const { t } = useTranslation(["static", "dynamics"]);
   const { selectedValues, dispatch } = useContext(FilterContext);
   const { setActiveDrawer, isOpen, setIsOpen } = useContext(NavBarContext);
 
@@ -30,14 +32,14 @@ export const GalleryFiltration = () => {
   return (
     <MenuDrawer variant="gallery">
       <div className={styles.navBarFilterlayout}>
-        <SingleCategory title="Availability">
+        <SingleCategory title={t("navBar.availability")}>
           <div className={styles.categoryContainer}>
             {category.availability.map((availability) => (
               <Checkbox
                 key={availability}
                 id={availability}
                 name={availability}
-                label={availability}
+                label={t(availability, { ns: "dynamic" })}
                 size="sm"
                 variant="textLight"
                 checked={selectedValues.includes(availability)}
@@ -46,14 +48,14 @@ export const GalleryFiltration = () => {
             ))}
           </div>
         </SingleCategory>
-        <SingleCategory title="Shape">
+        <SingleCategory title={t("navBar.shape")}>
           <div className={styles.categoryContainer}>
             {category.shape.map((shape) => (
               <Checkbox
                 key={shape}
                 id={shape}
                 name={shape}
-                label={shape}
+                label={t(shape, { ns: "dynamic" })}
                 size="sm"
                 variant="textLight"
                 checked={selectedValues.includes(shape)}
@@ -62,14 +64,14 @@ export const GalleryFiltration = () => {
             ))}
           </div>
         </SingleCategory>
-        <SingleCategory title="Technique">
+        <SingleCategory title={t("navBar.technique")}>
           <div className={styles.categoryContainer}>
             {category.technique.map((technique) => (
               <Checkbox
                 key={technique}
                 id={technique}
                 name={technique}
-                label={technique}
+                label={t(technique, { ns: "dynamic" })}
                 size="sm"
                 variant="textLight"
                 checked={selectedValues.includes(technique)}
@@ -78,7 +80,7 @@ export const GalleryFiltration = () => {
             ))}
           </div>
         </SingleCategory>
-        <SingleCategory title="Color">
+        <SingleCategory title={t("navBar.color")}>
           <div className={styles.categoryContainerColor}>
             {category.colors.map((color) => (
               <Checkbox
@@ -102,10 +104,10 @@ export const GalleryFiltration = () => {
           size="sm"
           onClick={handleCloseDrawer}
         >
-          let's see
+          {t("common.letsSee")}
         </Btn>
         <Btn variant="rect" upperCase fullWidth size="sm" onClick={handleReset}>
-          reset filters
+          {t("common.resetFilters")}
         </Btn>
       </div>
     </MenuDrawer>

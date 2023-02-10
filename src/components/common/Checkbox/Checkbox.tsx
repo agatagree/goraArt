@@ -8,7 +8,7 @@ type CheckboxProps = {
   id?: string;
   name?: string;
   value?: string;
-  label?: string;
+  label?: string | null;
   checked?: boolean;
   disabled?: boolean;
   type?: "checkbox" | "color";
@@ -52,11 +52,11 @@ export const Checkbox = ({
         onChange={onChange}
         style={{
           background: color,
-          backgroundSize: "cover",
+          backgroundSize: "cover"
         }}
         {...props}
       />
-      <Btn as="label" htmlFor={name} size={size} variant={variant}>
+      <Btn as="label" htmlFor={name} size={size} variant={variant} style={{textTransform:"capitalize"}}>
         {label}
       </Btn>
     </div>

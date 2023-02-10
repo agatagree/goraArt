@@ -21,7 +21,7 @@ colors: [
     color: `url("assets/mixColor.jpg")`,
   },
 ], 
-shape: ["Square", "Rectangular", "Triptych"],
-availability: ["Available", "Pre-order"],
+shape: ["square", "rectangular", "triptych"],
+availability: ["available", "pre-order"],
 technique: ["Oil paint on wooden board", "Oil paint on canvas"]
 }

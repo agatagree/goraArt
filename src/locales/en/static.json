@@ -1,14 +1,13 @@
 {
-  "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-    "part2": "Switch language between english and german using buttons above."
-  },
-  "learn": "xxxx",
   "navBar": {
     "gallery": "Gallery",
     "about": "About",
     "contact": "Contact",
-    "filter": "Filter"
+    "filter": "Filter",
+    "availability": "Availability",
+    "shape": "Shape",
+    "technique": "Technique",
+    "color": "Color"
   },
   "homePage": {
     "introMain": "Wojciech Góra",
@@ -16,21 +15,11 @@
     "introSubtitle": "Art to match your space",
     "tailor": "Original. Abstract. Tailored to your interior.",
     "detail": "Immersive. Textured. Full of details for you to find.",
-    "selectedTitle": "Discover more through selected artworks",
-    "selected": [
-      {
-        "subTitle": "Multi-layer",
-        "description": "Original technique is characterized by overlapping textures that creates multiple gradients of colors."
-      },
-      {
-        "subTitle": "Energy",
-        "description": "Each painting is simple in their geometrical form yet strong in character."
-      },
-      {
-        "subTitle": "Depth",
-        "description": "No flatness. Immerse yourself into amazing depth of colours and shades."
-      }
-    ],
+    "detailTitle": "Look closer",
+    "detailDescription": "You can discover paint strokes and new texture details every time you look closer on each painting.",
+    "detailBtn": "Read more",
+    "selectedTitle1": "Discover more",
+    "selectedTitle2": "through selected artworks",
     "selectedBtn": "See all works"
   },
   "aboutPage": {
@@ -38,7 +27,16 @@
     "subTitle": "Artist and his workshop.",
     "description": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients’ recognition in Europe e.g. UK or Spain. Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation. His paintings are characterized by own technique, mastered over the years, focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
   },
+  "singleArtPage": {
+    "ask for price": "Ask for price",
+    "Interested in this piece?": "Interested in this piece?"
+  },
   "contactPage": {
-    "title": "Interested in my art? Let’s talk."
+    "title": "Interested in my art? Let’s talk"
+  },
+  "common": {
+    "letsSee": "Let's see",
+    "resetFilters": "Reset filters",
+    "state": "State"
   }
 }

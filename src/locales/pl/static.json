@@ -1,44 +1,42 @@
 {
-  "description": {
-    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> speicheren und neuladen.",
-    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
-  },
-  "learn": "xxxx",
   "navBar": {
     "gallery": "Galeria",
     "about": "Artysta",
     "contact": "Kontakt",
-    "filter": "Filtruj"
+    "filter": "Filtruj",
+    "availability": "Dostępność",
+    "shape": "Rodzaj",
+    "technique": "Technika",
+    "color": "Kolor"
   },
   "homePage": {
     "introMain": "Wojciech Góra",
     "introSecondary": "malarstwo",
     "introSubtitle": "Dopasuj sztukę do swojego wnętrza",
-    "tailor": "Wyjątkowe. Abstrakcyjn. Specjalnie dopasowane do Twojego wnętrza.",
+    "tailor": "Wyjątkowe. Abstrakcyjne. Specjalnie dopasowane do Twojego wnętrza.",
     "detail": "Przyciagające uwagę. Bogactwo tekstur. Pełne niezwykłych detali",
-    "selectedTitle": "Dowiedz się więcej poprzez wybrane prace",
-    "selected": [
-      {
-        "subTitle": "Zróżnicowanie warstw",
-        "description": "Oryginalna technika charakteryzująca się nakładającymi się warstwami farby, tworząca niezwykłe przejścia kolorystyczne."
-      },
-      {
-        "subTitle": "Energia",
-        "description": "Każdy obraz jest jednoczesnie prosty w swojej formie, ale także emanuje niezwykłą siłą ekspresji."
-      },
-      {
-        "subTitle": "Głębia",
-        "description": "Nic nie jest płaskie. Doświadczaj poprzez niezwykłą glebię i bogactwo kolorów."
-      }
-    ],
-    "selectedBtn": "Zobacz wszytskie pracę"
+    "detailTitle": "Spójrz bliżej",
+    "detailDescription": "Możesz odkrywać pociągnięcia pędzla i nowe szczegóły tekstur za każdym razem, gdy przyjrzysz się bliżej każdemu obrazowi.",
+    "detailBtn": "Czytaj więcej",
+    "selectedTitle1": "Dowiedz się więcej:",
+    "selectedTitle2": "zobacz wybrane prace",
+    "selectedBtn": "Zobacz więcej"
   },
   "aboutPage": {
     "title": "Wojciech Góra współczesny malarz abstrakcyjny",
     "subTitle": "Artysta i jego warsztat.",
-    "description": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients’ recognition in Europe e.g. UK or Spain. Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation. His paintings are characterized by own technique, mastered over the years, focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
+    "description": "Absolwent Akademii Sztuk Pięknych w Gdańsku. Jego prace wystawiane były w całym kraju i zdobywały uznanie klientów w Europie m.in. Wielka Brytania czy Hiszpania. Doświadczenie w projektowaniu pozwala mu tworzyć z rzemieślniczą precyzją, pozostawiając jednocześnie miejsce na spontaniczność i improwizację. Jego obrazy charakteryzuje własna, doskonalona przez lata technika, skupiona na precyzyjnym detalu, geometrii i wielowarstwowej fakturze. Mimo wewnętrznej złożoności finalne kompozycje są zawsze spójne i mocne."
+  },
+  "singleArtPage": {
+    "ask for price": "Zapytaj o cenę",
+    "Interested in this piece?": "Zainteresował Cię ten obraz?"
   },
   "contactPage": {
-    "title": "Znalazłeś coś dla siebie? Skontaktuj się z nami."
+    "title": "Skontaktuj się z nami"
+  },
+  "common": {
+    "letsSee": "Pokaż produkty",
+    "resetFilters": "Wyczyść filtry",
+    "state": "Status"
   }
 }

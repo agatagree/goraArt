@@ -1,12 +1,13 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { Btn } from "components/common";
 import { NavBarContext } from "../Header";
-import { LanguageContext } from "providers/LanguageProvider";
 
 export const PrimaryNavigation = () => {
   const { setActiveDrawer, setIsOpen } = useContext(NavBarContext);
-  const { staticText } = useContext(LanguageContext);
+  const { t } = useTranslation();
+
   const handleClick = () => {
     setIsOpen(false);
     setActiveDrawer("");
@@ -20,10 +21,10 @@ export const PrimaryNavigation = () => {
         variant="mobileMenu"
         onClick={handleClick}
       >
-        {/* {staticText.navBar.gallery} */}
+        {t("navBar.gallery")}
       </Btn>
       <Btn as={NavLink} to="/about" variant="mobileMenu" onClick={handleClick}>
-        {/* {staticText.navBar.about} */}
+        {t("navBar.about")}
       </Btn>
       <Btn
         as={NavLink}
@@ -31,7 +32,7 @@ export const PrimaryNavigation = () => {
         variant="mobileMenu"
         onClick={handleClick}
       >
-        {/* {staticText.navBar.contact} */}
+        {t("navBar.contact")}
       </Btn>
     </>
   );

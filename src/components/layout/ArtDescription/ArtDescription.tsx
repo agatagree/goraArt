@@ -1,7 +1,5 @@
-// import { t } from "utils/translation"
-import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { Text } from "components/common";
-import { LanguageContext } from "providers/LanguageProvider";
 import styles from "./ArtDescription.module.scss";
 
 type SelectedTypes = {
@@ -21,22 +19,13 @@ export const ArtDescription = ({
   width,
   height,
 }: SelectedTypes) => {
-  const { language, translation } = useContext(LanguageContext);
-
-  const t = (props: string) => {
-    if (translation) {
-      const found = translation.find((obj) => obj.key === props);
-      if (found) {
-        return found[language];
-      }
-    }
-    return props;
-  };
+  const { t } = useTranslation(["static", "dynamics"]);
 
   return (
     <div className={styles.imgDescription}>
       <Text size="sm">
-        {title} {code} / {t(technique)} / {width}x{height}cm / {year}
+        {title} {code} / {t(technique, { ns: "dynamic" })} / {width}x{height}cm
+        / {year}
       </Text>
     </div>
   );

@@ -1,18 +1,15 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
 import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
-import { LanguageContext } from "providers/LanguageProvider";
 import styles from "./NavBar.module.scss";
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
-  // const { language, setLanguage } = useContext(LanguageContext);
-  const [language, setLanguage] = useState<"pl" | "en">("pl");
   const { i18n } = useTranslation();
 
   const pageName = useLocation();
@@ -22,15 +19,9 @@ export const NavBar = () => {
     } else setGallerymenuState(false);
   }, [pageName]);
 
-  // const handleTranslation = () => {
-  //   setLanguage(language === "PL" ? "EN" : "PL");
-  //   setLanguageBtn(language === "PL" ? "PL" : "EN");
-  // };
-
   const changeLanguage = () => {
-    setLanguage(language === "pl" ? "en" : "pl");
-    setLanguageBtn(language === "pl" ? "PL" : "EN");
-    i18n.changeLanguage(language);
+    setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");
+    i18n.changeLanguage(i18n.language === "pl" ? "en" : "pl");
   };
 
   return (
