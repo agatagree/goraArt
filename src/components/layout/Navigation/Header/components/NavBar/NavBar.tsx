@@ -7,6 +7,7 @@ import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
 import styles from "./NavBar.module.scss";
 
+
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
