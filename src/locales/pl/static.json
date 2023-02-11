@@ -1,0 +1,42 @@
+{
+  "navBar": {
+    "gallery": "Galeria",
+    "about": "Artysta",
+    "contact": "Kontakt",
+    "filter": "Filtruj",
+    "availability": "Dostępność",
+    "shape": "Rodzaj",
+    "technique": "Technika",
+    "color": "Kolor"
+  },
+  "homePage": {
+    "introMain": "Wojciech Góra",
+    "introSecondary": "malarstwo",
+    "introSubtitle": "Dopasuj sztukę do swojego wnętrza",
+    "tailor": "Wyjątkowe. Abstrakcyjne. Specjalnie dopasowane do Twojego wnętrza.",
+    "detail": "Przyciagające uwagę. Bogactwo tekstur. Pełne niezwykłych detali",
+    "detailTitle": "Spójrz bliżej",
+    "detailDescription": "Możesz odkrywać pociągnięcia pędzla i nowe szczegóły tekstur za każdym razem, gdy przyjrzysz się bliżej każdemu obrazowi.",
+    "detailBtn": "Czytaj więcej",
+    "selectedTitle1": "Dowiedz się więcej:",
+    "selectedTitle2": "zobacz wybrane prace",
+    "selectedBtn": "Zobacz więcej"
+  },
+  "aboutPage": {
+    "title": "Wojciech Góra współczesny malarz abstrakcyjny",
+    "subTitle": "Artysta i jego warsztat.",
+    "description": "Absolwent Akademii Sztuk Pięknych w Gdańsku. Jego prace wystawiane były w całym kraju i zdobywały uznanie klientów w Europie m.in. Wielka Brytania czy Hiszpania. Doświadczenie w projektowaniu pozwala mu tworzyć z rzemieślniczą precyzją, pozostawiając jednocześnie miejsce na spontaniczność i improwizację. Jego obrazy charakteryzuje własna, doskonalona przez lata technika, skupiona na precyzyjnym detalu, geometrii i wielowarstwowej fakturze. Mimo wewnętrznej złożoności finalne kompozycje są zawsze spójne i mocne."
+  },
+  "singleArtPage": {
+    "ask for price": "Zapytaj o cenę",
+    "Interested in this piece?": "Zainteresował Cię ten obraz?"
+  },
+  "contactPage": {
+    "title": "Skontaktuj się z nami"
+  },
+  "common": {
+    "letsSee": "Pokaż produkty",
+    "resetFilters": "Wyczyść filtry",
+    "state": "Status"
+  }
+}

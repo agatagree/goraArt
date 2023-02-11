@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Text } from "components/common";
 import styles from "./ArtDescription.module.scss";
 
@@ -18,10 +19,13 @@ export const ArtDescription = ({
   width,
   height,
 }: SelectedTypes) => {
+  const { t } = useTranslation(["static", "dynamics"]);
+
   return (
     <div className={styles.imgDescription}>
       <Text size="sm">
-        {title} {code} / {technique} / {width}x{height}cm / {year}
+        {title} {code} / {t(technique, { ns: "dynamic" })} / {width}x{height}cm
+        / {year}
       </Text>
     </div>
   );

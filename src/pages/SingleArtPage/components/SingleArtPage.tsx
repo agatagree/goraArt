@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams, NavLink } from "react-router-dom";
 import { onSnapshot } from "firebase/firestore";
 import { singleArtCollection } from "api";
@@ -12,6 +13,7 @@ export const SingleArtPage = () => {
   const [singleArt, setSingleArt] = useState<GalleryType>({} as GalleryType);
   const [load, setLoad] = useState(false);
   const { id } = useParams();
+  const { t } = useTranslation(["static", "dynamic"]);
 
   function setSingleArtWithId(data: GalleryType, id: string) {
     setSingleArt({ ...data, id });
@@ -38,14 +40,18 @@ export const SingleArtPage = () => {
               {singleArt.title} {singleArt.code}
             </Text>
             <Text>
-              {singleArt.technique} / {singleArt.dimensions.width}x
-              {singleArt.dimensions.height}cm / {singleArt.year}
+              {t(singleArt.technique, { ns: "dynamic" })} /{" "}
+              {singleArt.dimensions.width}x{singleArt.dimensions.height}cm /{" "}
+              {singleArt.year}
             </Text>
           </div>
           <div className={styles.descriptionContainer}>
-            <Text>Status: {singleArt.availability}</Text>
+            <Text>
+              {t("common.state")}:{" "}
+              {t(singleArt.availability, { ns: "dynamic" })}
+            </Text>
             <Btn as={NavLink} to="/contact" variant="rectDark">
-              Ask for price
+              {t("singleArtPage.ask for price")}
             </Btn>
           </div>
         </div>
@@ -53,9 +59,9 @@ export const SingleArtPage = () => {
         <Image img={singleArt.img.wiz} />
         <Image img={singleArt.img.zoom} />
         <div className={styles.descriptionContainer}>
-          <Text size="xl"> Interested in this piece?</Text>
+          <Text size="xl"> {t("singleArtPage.Interested in this piece?")}</Text>
           <Btn as={NavLink} to="/contact" variant="rectDark">
-            Ask for price
+            {t("singleArtPage.ask for price")}
           </Btn>
         </div>
       </MainLayout>

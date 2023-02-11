@@ -53,7 +53,7 @@ export const Btn = <E extends ElementType = "button">({
     color && color,
     fullWidth && styles.fullWidth,
     noWrap && styles.noWrap,
-    upperCase && styles.upperCase
+    upperCase && styles.upperCase,
   );
   return (
     <Component

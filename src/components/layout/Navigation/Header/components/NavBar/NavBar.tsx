@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
@@ -6,8 +7,11 @@ import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
 import styles from "./NavBar.module.scss";
 
+
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
+  const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
+  const { i18n } = useTranslation();
 
   const pageName = useLocation();
   useEffect(() => {
@@ -15,6 +19,11 @@ export const NavBar = () => {
       setGallerymenuState(true);
     } else setGallerymenuState(false);
   }, [pageName]);
+
+  const changeLanguage = () => {
+    setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");
+    i18n.changeLanguage(i18n.language === "pl" ? "en" : "pl");
+  };
 
   return (
     <>
@@ -32,7 +41,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className={styles.navBarLinksContainer}>
-          <Btn>PL</Btn>
+          <Btn onClick={changeLanguage}>{languageBtn}</Btn>
           <BurgerMenu />
         </div>
       </div>

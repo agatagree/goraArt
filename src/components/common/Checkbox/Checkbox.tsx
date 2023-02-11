@@ -8,7 +8,7 @@ type CheckboxProps = {
   id?: string;
   name?: string;
   value?: string;
-  label?: string;
+  label?: string | null;
   checked?: boolean;
   disabled?: boolean;
   type?: "checkbox" | "color";
@@ -53,10 +53,16 @@ export const Checkbox = ({
         style={{
           background: color,
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
         {...props}
       />
-      <Btn as="label" htmlFor={name} size={size} variant={variant}>
+      <Btn
+        as="label"
+        htmlFor={name}
+        size={size}
+        variant={variant}
+      >
         {label}
       </Btn>
     </div>

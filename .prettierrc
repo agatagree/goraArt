@@ -5,6 +5,7 @@
     "^react(.*)",
     "^firebase(.*)",
     "^api",
+    "^locales",
     "^routes/",
     "^components/",
     "^utils",

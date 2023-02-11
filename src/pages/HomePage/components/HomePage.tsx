@@ -11,17 +11,17 @@ import { Tailor } from "./TailorSection";
 
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
-  const [load, setLoad] = useState(false);
+  const [galleryLoad, setGalleryLoad] = useState(false);
 
   useEffect(() => {
     const q = query(galleryCollection, where("mainPage", "==", true));
     onSnapshot(q, (art) => {
       setGallery(getDataFromSnapshot(art));
-      setLoad(true);
+      setGalleryLoad(true);
     });
-  }, [load]);
+  }, [galleryLoad]);
 
-  if (load === false) {
+  if (!galleryLoad) {
     return <Loader />;
   }
 

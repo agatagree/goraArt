@@ -1,20 +1,22 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Btn, Text } from "components/common";
 import { GalleryType } from "utils/Types";
 import styles from "./Detail.module.scss";
 
 export const Detail = ({ data }: { data: GalleryType[] }) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.detailSectionLayout}>
       <div className={styles.detailSectionMessage}>
         <div className={styles.detailTitle}>
           <Text variant="header" size="xxxl">
-            {data[0].mainPageData.title}
+            {t("homePage.detailTitle")}
           </Text>
         </div>
-        <Text>{data[0].mainPageData.description}</Text>
+        <Text>{t("homePage.detailDescription")}</Text>
         <Btn as={Link} to="/about" variant="arrow" size="xl">
-          Read more
+          {t("homePage.detailBtn")}
         </Btn>
       </div>
       <img
