@@ -52,11 +52,17 @@ export const Checkbox = ({
         onChange={onChange}
         style={{
           background: color,
-          backgroundSize: "cover"
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
         {...props}
       />
-      <Btn as="label" htmlFor={name} size={size} variant={variant} style={{textTransform:"capitalize"}}>
+      <Btn
+        as="label"
+        htmlFor={name}
+        size={size}
+        variant={variant}
+      >
         {label}
       </Btn>
     </div>

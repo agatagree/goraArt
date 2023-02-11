@@ -11,6 +11,9 @@ export const singleArtCollection = (docId) => doc(db, collectionGallery, docId);
 export const collectionTranslations = "/translate";
 export const translationCollection = collection(db, collectionTranslations);
 
+export const collectionCategory = "/category";
+export const categoryCollection = collection(db, collectionCategory);
+
 export const collectionBanner = "banner";
 export const bannerStorage = "/banner";
 export const bannerCollection = collection(db, collectionBanner);
