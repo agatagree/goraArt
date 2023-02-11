@@ -4,14 +4,13 @@ import styles from "./HalfRowLayout.module.scss";
 
 type LayoutProps = {
   children: ReactNode;
-  index?: string;
   variant?: "reverse";
 };
 
-export const HalfRowLayout = ({ children, index, variant }: LayoutProps) => {
+export const HalfRowLayout = ({ children, variant }: LayoutProps) => {
   const classItem = classNames(styles.layout, variant && styles[variant]);
   return (
-    <div key={index} className={classItem}>
+    <div className={classItem}>
       {children}
     </div>
   );

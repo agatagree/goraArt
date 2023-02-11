@@ -19,20 +19,8 @@ export const Selected = ({ data }: { data: GalleryType[] }) => {
       </div>
       <div className={styles.selectedLayout}>
         {data.map((card) => (
-          <HalfRowLayout key={card.id} index={card.id} variant="reverse">
-            <SelectedCard
-              cardId={card.id}
-              pageTitle={card.mainPageData.title}
-              icon={card.mainPageData.icon}
-              description={card.mainPageData.description}
-              img={card.img.cover}
-              title={card.title}
-              code={card.code}
-              year={card.year}
-              technique={card.technique}
-              width={card.dimensions.width}
-              height={card.dimensions.height}
-            />
+          <HalfRowLayout key={card.id} variant="reverse">
+            <SelectedCard card={card} />
           </HalfRowLayout>
         ))}
       </div>

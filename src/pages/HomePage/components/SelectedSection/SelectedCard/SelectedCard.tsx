@@ -3,34 +3,10 @@ import { Link } from "react-router-dom";
 import { Btn, Text } from "components/common";
 import { ArtDescription } from "components/layout/ArtDescription";
 import styles from "./SelectedCard.module.scss";
+import { GalleryType } from "utils/Types";
 
-interface SelectedTypes {
-  cardId: string;
-  pageTitle: string;
-  icon: string;
-  description: string;
-  img: string;
-  year: number;
-  technique: string;
-  title: string;
-  code: string;
-  width: number;
-  height: number;
-}
 
-export const SelectedCard = ({
-  cardId,
-  pageTitle,
-  icon,
-  description,
-  img,
-  year,
-  technique,
-  title,
-  code,
-  width,
-  height,
-}: SelectedTypes) => {
+export const SelectedCard = ({card} : { card: GalleryType}) => {
   const { t } = useTranslation(["static", "dynamics"]);
   return (
     <>
@@ -38,30 +14,30 @@ export const SelectedCard = ({
         <div className={styles.selectedTitleContainer}>
           <img
             className={styles.selectedMessageTitleIcon}
-            src={icon}
-            alt={title}
+            src={card.mainPageData.icon}
+            alt={card.mainPageData.title}
           />
           <div className={styles.selectedTitle}>
             <Text variant="header" size="xl">
-              {t(pageTitle, { ns: "dynamic" })}
+              {t(card.mainPageData.title, { ns: "dynamic" })}
             </Text>
           </div>
         </div>
-        <Text>{t(description, { ns: "dynamic" })}</Text>
+        <Text>{t(card.mainPageData.description, { ns: "dynamic" })}</Text>
       </div>
       <Btn
         as={Link}
-        to={`/gallery/${cardId}`}
+        to={`/gallery/${card.id}`}
         className={styles.selectedImgWrapper}
       >
-        <img className={styles.selectedImgSide} src={img} alt={title} />
+        <img className={styles.selectedImgSide} src={card.img.cover} alt={card.title} />
         <ArtDescription
-          title={title}
-          code={code}
-          year={year}
-          technique={technique}
-          width={width}
-          height={height}
+          title={card.title}
+          code={card.code}
+          year={card.year}
+          technique={card.technique}
+          width={card.dimensions.width}
+          height={card.dimensions.height}
         />
       </Btn>
     </>
