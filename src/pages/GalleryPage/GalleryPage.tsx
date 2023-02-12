@@ -5,6 +5,7 @@ import { getDataFromSnapshot, galleryCollection } from "api";
 import { Btn, Loader } from "components/common";
 import { ArtDescription, MessagePage } from "components/layout";
 import { GalleryType } from "utils/Types";
+import { GalleryCardSkeleton } from "./components/GalleryCardSkeleton/GalleryCardSkeleton";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryPage.module.scss";
 
@@ -36,16 +37,13 @@ export const GalleryPage = () => {
     setLoad(true);
   }, [selectedValues, load, gallery]);
 
-  if (load === false) {
-    return <Loader />;
-  }
-
   if (emptySearch === true) {
     return <MessagePage message={"search"} />;
   }
 
   return (
     <div className={styles.galleryLayout}>
+      {!load && <GalleryCardSkeleton cards={6} />}
       {gallery.map((card) => (
         <Btn
           as={Link}

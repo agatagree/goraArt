@@ -1,5 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { I18nextProvider, initReactI18next } from "react-i18next";
+import "react-loading-skeleton/dist/skeleton.css";
 import { BrowserRouter } from "react-router-dom";
 import translationEnglish from "locales/en/static.json";
 import translationPolish from "locales/pl/static.json";
