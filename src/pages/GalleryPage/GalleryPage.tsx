@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { onSnapshot, query, where } from "firebase/firestore";
 import { getDataFromSnapshot, galleryCollection } from "api";
-import { Btn, Loader } from "components/common";
+import { Btn } from "components/common";
 import { ArtDescription, MessagePage } from "components/layout";
 import { GalleryType } from "utils/Types";
 import { GalleryCardSkeleton } from "./components/GalleryCardSkeleton/GalleryCardSkeleton";
