@@ -7,17 +7,14 @@
   @include md {
     gap: $spacing120;
   }
-  @include sm {
-    gap:  $spacing60;
-  }
 }
 
 .selectedMainText {
-  padding: $spacing120 0 $spacing60 0;
+  padding: $spacing180 0;
   align-self: flex-start;
 
   @include sm {
-    padding: $spacing80 0 $spacing40 0;
+    padding: $spacing120 0;
   }
 }
 
