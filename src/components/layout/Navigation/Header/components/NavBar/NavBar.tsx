@@ -1,24 +1,28 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
 import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
+import { FilterContext } from "providers/FilterProvider";
 import styles from "./NavBar.module.scss";
-
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
   const { i18n } = useTranslation();
+  const { selectedValues, dispatch } = useContext(FilterContext);
 
   const pageName = useLocation();
   useEffect(() => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
-    } else setGallerymenuState(false);
-  }, [pageName]);
+    } else {
+      setGallerymenuState(false);
+      selectedValues && dispatch({ type: "CLEAR_SELECTION" });
+    }
+  }, [pageName, dispatch, selectedValues]);
 
   const changeLanguage = () => {
     setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");

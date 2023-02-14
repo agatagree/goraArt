@@ -5,10 +5,10 @@
   flex-direction: column;
   align-items: center;
   max-width: 1440px;
-  padding: $spacing180 $spacing60;
+  padding: $spacing180 $spacing60 $spacing120 $spacing60;
 
   @include sm {
-    padding: $spacing120 $spacing24;
+    padding: $spacing120 $spacing24 $spacing60 $spacing24;
   }
 }
 

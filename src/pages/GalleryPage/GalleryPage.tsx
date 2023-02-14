@@ -23,6 +23,7 @@ export const GalleryPage = () => {
       );
       onSnapshot(q, (card) => {
         setGallery(getDataFromSnapshot(card));
+        setLoad(true);
       });
       if (gallery.length === 0) {
         setEmptySearch(true);
@@ -32,12 +33,12 @@ export const GalleryPage = () => {
     } else {
       onSnapshot(galleryCollection, (card) => {
         setGallery(getDataFromSnapshot(card));
+        setLoad(true);
       });
     }
-    setLoad(true);
   }, [selectedValues, load, gallery]);
 
-  if (emptySearch === true) {
+  if (emptySearch) {
     return <MessagePage message={"search"} />;
   }
 
