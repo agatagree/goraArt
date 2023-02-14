@@ -9,11 +9,16 @@ export const GalleryCardSkeleton = ({ cards }: { cards: number }) => {
         .map((card, index) => (
           <div className={styles.skeletonContainer} key={index}>
             <div className={styles.skeletonContent}>
-              <Skeleton height={"100%"} width={"100%"} />
-              <Skeleton />
+              <div className={styles.skeletonContenerArt}>
+                <div className={styles.skeletonArt}>
+                  <Skeleton height={"100%"} width={"100%"} />
+                </div>
+              </div>
+              <Skeleton className={styles.skeletonBox} />
             </div>
           </div>
         ))}
     </>
   );
 };
+//
