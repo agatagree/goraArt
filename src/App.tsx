@@ -46,15 +46,15 @@ export const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       <I18nextProvider i18n={i18n}>
-        <FilterProvider>
-          <BrowserRouter>
-            <div className={styles.layout}>
+        <BrowserRouter>
+          <div className={styles.layout}>
+            <FilterProvider>
               <Header />
               <AppRouts />
-              <Footer />
-            </div>
-          </BrowserRouter>
-        </FilterProvider>
+            </FilterProvider>
+            <Footer />
+          </div>
+        </BrowserRouter>
       </I18nextProvider>
     </Suspense>
   );

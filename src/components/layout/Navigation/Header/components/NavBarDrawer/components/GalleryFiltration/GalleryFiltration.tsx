@@ -2,39 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
 import { categoryCollection, getDataFromSnapshot } from "api";
-import { Btn, Checkbox, Loader, MenuDrawer } from "components/common";
+import { Btn, Loader, MenuDrawer, Text } from "components/common";
+import { MessagePage } from "components/layout";
 import { NavBarContext } from "../../../Header";
-import { SingleCategory } from "./SingleCategory";
+import { CategoryCheckbox } from "./CategoryCheckbox";
+import { TagsType, ColorType } from "./types/TagsTypes";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
-type ColorType = {
-  name: string;
-  color: string;
-};
-
-type TagsType = {
-  id: string;
-  colors: ColorType[];
-  shape: string[];
-  availability: string[];
-  technique: string[];
-};
-
 export const GalleryFiltration = () => {
   const { t } = useTranslation(["static", "dynamics"]);
-  const { selectedValues, dispatch } = useContext(FilterContext);
+  const { dispatch } = useContext(FilterContext);
   const { setActiveDrawer, isOpen, setIsOpen } = useContext(NavBarContext);
   const [tags, setTags] = useState<TagsType[]>([]);
   const [loadTags, setLoadTags] = useState(false);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      dispatch({ type: "SELECT_VALUE", payload: event.target.name });
-    } else {
-      dispatch({ type: "DESELECT_VALUE", payload: event.target.name });
-    }
-  };
 
   const handleReset = () => {
     dispatch({ type: "CLEAR_SELECTION" });
@@ -55,98 +36,53 @@ export const GalleryFiltration = () => {
   if (!loadTags) {
     return <Loader />;
   }
-
+  if (!tags[0]) {
+    return <MessagePage message={"search"} />;
+  }
   return (
-    <>
-      {tags[0] ? (
-        <MenuDrawer variant="gallery">
-          <div className={styles.navBarFilterlayout}>
-            <SingleCategory title={t("navBar.availability")}>
-              <div className={styles.categoryContainer}>
-                {tags[0].availability.map((availability) => (
-                  <Checkbox
-                    key={availability}
-                    id={availability}
-                    name={availability}
-                    label={t(availability, { ns: "dynamic" })}
-                    size="sm"
-                    variant="textLight"
-                    checked={selectedValues.includes(availability)}
-                    onChange={handleChange}
-                  />
-                ))}
+      <MenuDrawer variant="gallery">
+        <div className={styles.navBarFilterlayout}>
+          {Object.entries(tags[0])
+            .filter(([key, _value]) => key !== "id")
+            .map(([key, value]: [string, string | ColorType[] | string[]]) => (
+              <div key={key} className={styles.categoryLayout}>
+                <Text variant="smallHeader" size="sm">
+                  {t(`navBar.${key}`)}
+                </Text>
+                <div
+                  className={
+                    key !== "color"
+                      ? styles.categoryContainer
+                      : styles.categoryContainerColor
+                  }
+                >
+                  {Object.entries(value).map(([key, value]) => (
+                    <CategoryCheckbox value={value} key={key} />
+                  ))}
+                </div>
               </div>
-            </SingleCategory>
-            <SingleCategory title={t("navBar.shape")}>
-              <div className={styles.categoryContainer}>
-                {tags[0].shape.map((shape) => (
-                  <Checkbox
-                    key={shape}
-                    id={shape}
-                    name={shape}
-                    label={t(shape, { ns: "dynamic" })}
-                    size="sm"
-                    variant="textLight"
-                    checked={selectedValues.includes(shape)}
-                    onChange={handleChange}
-                  />
-                ))}
-              </div>
-            </SingleCategory>
-            <SingleCategory title={t("navBar.technique")}>
-              <div className={styles.categoryContainer}>
-                {tags[0].technique.map((technique) => (
-                  <Checkbox
-                    key={technique}
-                    id={technique}
-                    name={technique}
-                    label={t(technique, { ns: "dynamic" })}
-                    size="sm"
-                    variant="textLight"
-                    checked={selectedValues.includes(technique)}
-                    onChange={handleChange}
-                  />
-                ))}
-              </div>
-            </SingleCategory>
-            <SingleCategory title={t("navBar.color")}>
-              <div className={styles.categoryContainerColor}>
-                {tags[0].colors.map((color) => (
-                  <Checkbox
-                    key={color.name}
-                    id={color.name}
-                    name={color.name}
-                    size="sm"
-                    color={color.color}
-                    checked={selectedValues.includes(color.name)}
-                    onChange={handleChange}
-                  />
-                ))}
-              </div>
-            </SingleCategory>
-          </div>
-          <div className={styles.filterGroupButton}>
-            <Btn
-              variant="rectDark"
-              upperCase
-              fullWidth
-              size="sm"
-              onClick={handleCloseDrawer}
-            >
-              {t("common.letsSee")}
-            </Btn>
-            <Btn
-              variant="rect"
-              upperCase
-              fullWidth
-              size="sm"
-              onClick={handleReset}
-            >
-              {t("common.resetFilters")}
-            </Btn>
-          </div>
-        </MenuDrawer>
-      ) : null}
-    </>
+            ))}
+        </div>
+        <div className={styles.filterGroupButton}>
+          <Btn
+            variant="rectDark"
+            upperCase
+            fullWidth
+            size="sm"
+            onClick={handleCloseDrawer}
+          >
+            {t("common.letsSee")}
+          </Btn>
+          <Btn
+            variant="rect"
+            upperCase
+            fullWidth
+            size="sm"
+            onClick={handleReset}
+          >
+            {t("common.resetFilters")}
+          </Btn>
+        </div>
+      </MenuDrawer>
   );
 };
