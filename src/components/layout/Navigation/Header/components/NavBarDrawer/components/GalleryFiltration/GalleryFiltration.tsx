@@ -2,11 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
 import { categoryCollection, getDataFromSnapshot } from "api";
-import { Btn, Loader, MenuDrawer, Text } from "components/common";
+import { Btn, Loader, MenuDrawer } from "components/common";
 import { MessagePage } from "components/layout";
 import { NavBarContext } from "../../../Header";
-import { CategoryCheckbox } from "./CategoryCheckbox";
-import { TagsType, ColorType } from "./types/TagsTypes";
+import { TagsType } from "./types/TagsTypes";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
