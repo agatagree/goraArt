@@ -22,7 +22,7 @@ export const NavBar = () => {
       setGallerymenuState(false);
       dispatch({ type: "CLEAR_SELECTION" });
     }
-  }, [pageName]);
+  }, [pageName, dispatch]);
 
   const changeLanguage = () => {
     setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");
