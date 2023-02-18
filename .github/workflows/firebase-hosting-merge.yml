@@ -19,5 +19,3 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_GORA0_8BDF5 }}"
           channelId: live
           projectId: gora0-8bdf5
-          env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
