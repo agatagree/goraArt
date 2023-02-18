@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
 import { categoryCollection, getDataFromSnapshot } from "api";
-import { Btn, Loader, MenuDrawer } from "components/common";
+import { Btn, Loader, MenuDrawer, Text } from "components/common";
 import { MessagePage } from "components/layout";
 import { NavBarContext } from "../../../Header";
-import { TagsType } from "./types/TagsTypes";
+import { CategoryCheckbox } from "./CategoryCheckbox";
+import { TagsType, ColorType } from "./types/TagsTypes";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
@@ -41,7 +42,7 @@ export const GalleryFiltration = () => {
   return (
       <MenuDrawer variant="gallery">
         <div className={styles.navBarFilterlayout}>
-          {/* {Object.entries(tags[0])
+          {Object.entries(tags[0])
             .filter(([key, _value]) => key !== "id")
             .map(([key, value]: [string, string | ColorType[] | string[]]) => (
               <div key={key} className={styles.categoryLayout}>
@@ -60,7 +61,7 @@ export const GalleryFiltration = () => {
                   ))}
                 </div>
               </div>
-            ))} */}
+            ))}
         </div>
         <div className={styles.filterGroupButton}>
           <Btn
