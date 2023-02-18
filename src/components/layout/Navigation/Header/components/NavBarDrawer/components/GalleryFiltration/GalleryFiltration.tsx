@@ -11,7 +11,7 @@ import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
 export const GalleryFiltration = () => {
-  const { t } = useTranslation(["static", "dynamics"]);
+  const { t } = useTranslation();
   const { dispatch } = useContext(FilterContext);
   const { setActiveDrawer, isOpen, setIsOpen } = useContext(NavBarContext);
   const [tags, setTags] = useState<TagsType[]>([]);
