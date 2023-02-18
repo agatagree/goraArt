@@ -2,7 +2,7 @@ export const LoginPage = () => {
   return (
     <>
     <div>
-      login
+      login test
     </div>
     </>
   )
