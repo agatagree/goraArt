@@ -6,8 +6,11 @@ import {
   GalleryPage,
   HomePage,
   SingleArtPage,
+  LoginPage,
+  AdminPage
 } from "pages";
 import styles from "./AppRouts.module.scss";
+
 
 export const AppRouts = () => {
   return (
@@ -18,6 +21,8 @@ export const AppRouts = () => {
         <Route path="/gallery/:id" element={<SingleArtPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/adminPage" element={<AdminPage />} />
         <Route path="*" element={<MessagePage message={"pageNotFound"} />} />
       </Routes>
     </div>

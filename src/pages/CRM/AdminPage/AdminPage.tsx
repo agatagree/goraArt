@@ -2,7 +2,7 @@ export const AdminPage = () => {
   return (
     <>
     <div>
-      admin
+      admin test
     </div>
     </>
   )
