@@ -12,7 +12,7 @@ export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
   const { i18n } = useTranslation();
-  // const { selectedValues, dispatch } = useContext(FilterContext);
+  const { dispatch } = useContext(FilterContext);
 
   const pageName = useLocation();
   useEffect(() => {
@@ -20,7 +20,7 @@ export const NavBar = () => {
       setGallerymenuState(true);
     } else {
       setGallerymenuState(false);
-      // selectedValues && dispatch({ type: "CLEAR_SELECTION" });
+      dispatch({ type: "CLEAR_SELECTION" });
     }
   }, [pageName]);
 

@@ -7,7 +7,7 @@ import { GalleryType } from "utils/Types";
 
 
 export const SelectedCard = ({card} : { card: GalleryType}) => {
-  const { t } = useTranslation(["static", "dynamics"]);
+  const { t } = useTranslation("dynamic");
   return (
     <>
       <div className={styles.selectedDescription}>
