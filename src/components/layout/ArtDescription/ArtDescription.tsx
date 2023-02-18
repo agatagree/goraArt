@@ -19,7 +19,7 @@ export const ArtDescription = ({
   width,
   height,
 }: SelectedTypes) => {
-  const { t } = useTranslation(["static", "dynamics"]);
+  const { t } = useTranslation(["static", "dynamic"]);
 
   return (
     <div className={styles.imgDescription}>

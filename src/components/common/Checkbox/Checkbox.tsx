@@ -8,7 +8,7 @@ type CheckboxProps = {
   id?: string;
   name?: string;
   value?: string;
-  label?: string | null;
+  label?: string | undefined;
   checked?: boolean;
   disabled?: boolean;
   type?: "checkbox" | "color";

@@ -1,9 +1,0 @@
-@use "styles/Helpers/" as *;
-
-.categoryLayout {
-  border-top: 1px solid $grey200;
-  padding: $spacing10 0;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing10;
-}

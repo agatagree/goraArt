@@ -4,7 +4,7 @@ import { GalleryType } from "utils/Types";
 import styles from "./Tailor.module.scss";
 
 export const Tailor = ({ data }: { data: GalleryType[] }) => {
-  const { t } = useTranslation("static");
+  const { t } = useTranslation();
 
   return (
     <>

@@ -7,7 +7,7 @@ import { GalleryType } from "utils/Types";
 
 
 export const SelectedCard = ({card} : { card: GalleryType}) => {
-  const { t } = useTranslation(["static", "dynamics"]);
+  const { t } = useTranslation("dynamic");
   return (
     <>
       <div className={styles.selectedDescription}>
@@ -19,11 +19,11 @@ export const SelectedCard = ({card} : { card: GalleryType}) => {
           />
           <div className={styles.selectedTitle}>
             <Text variant="header" size="xl">
-              {t(card.mainPageData.title, { ns: "dynamic" })}
+              {t(card.mainPageData.title, "selected works", { ns: "dynamic" })}
             </Text>
           </div>
         </div>
-        <Text>{t(card.mainPageData.description, { ns: "dynamic" })}</Text>
+        <Text>{t(card.mainPageData.description, "", { ns: "dynamic" })}</Text>
       </div>
       <Btn
         as={Link}

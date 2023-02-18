@@ -5,9 +5,10 @@ import {
   ContactPage,
   GalleryPage,
   HomePage,
-  SingleArtPage,
+  SingleArtPage
 } from "pages";
 import styles from "./AppRouts.module.scss";
+
 
 export const AppRouts = () => {
   return (
