@@ -42,7 +42,7 @@ export const GalleryFiltration = () => {
   return (
       <MenuDrawer variant="gallery">
         <div className={styles.navBarFilterlayout}>
-          {Object.entries(tags[0])
+          {/* {Object.entries(tags[0])
             .filter(([key, _value]) => key !== "id")
             .map(([key, value]: [string, string | ColorType[] | string[]]) => (
               <div key={key} className={styles.categoryLayout}>
@@ -61,7 +61,7 @@ export const GalleryFiltration = () => {
                   ))}
                 </div>
               </div>
-            ))}
+            ))} */}
         </div>
         <div className={styles.filterGroupButton}>
           <Btn
