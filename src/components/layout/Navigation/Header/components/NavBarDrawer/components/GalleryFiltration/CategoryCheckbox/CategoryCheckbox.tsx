@@ -9,7 +9,7 @@ type CategoryListProps = {
 };
 
 export const CategoryCheckbox = ({ value }: CategoryListProps) => {
-  const { t } = useTranslation(["static", "dynamics"]);
+  const { t } = useTranslation("dynamic");
   const { selectedValues, dispatch } = useContext(FilterContext);
 
   const valueName = typeof value !== "string" ? value.name : value;
