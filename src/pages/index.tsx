@@ -3,4 +3,3 @@ export * from "./ContactPage";
 export * from "./GalleryPage";
 export * from "./HomePage";
 export * from "./SingleArtPage";
-export * from "./CRM"
