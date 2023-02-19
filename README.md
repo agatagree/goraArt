@@ -1,6 +1,6 @@
 # GORA
 Portfolio website for an artist🎨 Work in progress
-[See it live!](https://gora0-8bdf5.web.app/)
+
 
 
 🛠 Tools: React, Typescript, Firebase, CSS Modules, SASS.
