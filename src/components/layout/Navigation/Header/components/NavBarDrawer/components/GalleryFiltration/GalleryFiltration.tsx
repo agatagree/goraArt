@@ -17,6 +17,8 @@ export const GalleryFiltration = () => {
   const [tags, setTags] = useState<TagsType[]>([]);
   const [loadTags, setLoadTags] = useState(false);
 
+  console.log("GalleryFiltration");
+
   const handleReset = () => {
     dispatch({ type: "CLEAR_SELECTION" });
   };
@@ -40,49 +42,43 @@ export const GalleryFiltration = () => {
     return <MessagePage message={"search"} />;
   }
   return (
-      <MenuDrawer variant="gallery">
-        <div className={styles.navBarFilterlayout}>
-          {Object.entries(tags[0])
-            .filter(([key, _value]) => key !== "id")
-            .map(([key, value]: [string, string | ColorType[] | string[]]) => (
-              <div key={key} className={styles.categoryLayout}>
-                <Text variant="smallHeader" size="sm">
-                  {t(`navBar.${key}`)}
-                </Text>
-                <div
-                  className={
-                    key !== "color"
-                      ? styles.categoryContainer
-                      : styles.categoryContainerColor
-                  }
-                >
-                  {Object.entries(value).map(([key, value]) => (
-                    <CategoryCheckbox value={value} key={key} />
-                  ))}
-                </div>
+    <MenuDrawer variant="gallery">
+      <div className={styles.navBarFilterlayout}>
+        {Object.entries(tags[0])
+          .filter(([key, _value]) => key !== "id")
+          .map(([key, value]: [string, string | ColorType[] | string[]]) => (
+            <div key={key} className={styles.categoryLayout}>
+              <Text variant="smallHeader" size="sm">
+                {t(`navBar.${key}`)}
+              </Text>
+              <div
+                className={
+                  key !== "color"
+                    ? styles.categoryContainer
+                    : styles.categoryContainerColor
+                }
+              >
+                {Object.entries(value).map(([key, value]) => (
+                  <CategoryCheckbox value={value} key={key} />
+                ))}
               </div>
-            ))}
-        </div>
-        <div className={styles.filterGroupButton}>
-          <Btn
-            variant="rectDark"
-            upperCase
-            fullWidth
-            size="sm"
-            onClick={handleCloseDrawer}
-          >
-            {t("common.letsSee")}
-          </Btn>
-          <Btn
-            variant="rect"
-            upperCase
-            fullWidth
-            size="sm"
-            onClick={handleReset}
-          >
-            {t("common.resetFilters")}
-          </Btn>
-        </div>
-      </MenuDrawer>
+            </div>
+          ))}
+      </div>
+      <div className={styles.filterGroupButton}>
+        <Btn
+          variant="rectDark"
+          upperCase
+          fullWidth
+          size="sm"
+          onClick={handleCloseDrawer}
+        >
+          {t("common.letsSee")}
+        </Btn>
+        <Btn variant="rect" upperCase fullWidth size="sm" onClick={handleReset}>
+          {t("common.resetFilters")}
+        </Btn>
+      </div>
+    </MenuDrawer>
   );
 };

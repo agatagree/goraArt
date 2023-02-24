@@ -18,7 +18,6 @@ const defaultState = {
 };
 export const NavBarContext = createContext<NavBrContextInterface>(defaultState);
 
-
 export const Header = () => {
   const [activeDrawer, setActiveDrawer] = useState("");
   const [isOpen, setIsOpen] = useState(false);
