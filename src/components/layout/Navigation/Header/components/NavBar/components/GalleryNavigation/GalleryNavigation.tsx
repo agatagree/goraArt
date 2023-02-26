@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Btn } from "components/common";
-import { NavBarContext } from "../../../Header";
+import { NavBarContext } from "../../../../Header";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryNavigation.module.scss";
 

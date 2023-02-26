@@ -1,7 +1,7 @@
-import { useState, createContext } from "react";
-import { NavBar } from "./NavBar/NavBar";
-import { NavBarDrawer } from "./NavBarDrawer/NavBarDrawer";
-import { NavBarOverlay } from "./NavBarOverlay/NavBarOverlay";
+import { useState, createContext, useMemo } from "react";
+import { NavBar } from "./components/NavBar/NavBar";
+import { NavBarDrawer } from "./components/NavBarDrawer/NavBarDrawer";
+import { NavBarOverlay } from "./components/NavBarOverlay/NavBarOverlay";
 import styles from "./Header.module.scss";
 
 interface NavBrContextInterface {
@@ -22,10 +22,15 @@ export const Header = () => {
   const [activeDrawer, setActiveDrawer] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log("header");
+
+  const value = useMemo(
+    () => ({ activeDrawer, setActiveDrawer, isOpen, setIsOpen }),
+    [isOpen, activeDrawer]
+  );
+
   return (
-    <NavBarContext.Provider
-      value={{ activeDrawer, setActiveDrawer, isOpen, setIsOpen }}
-    >
+    <NavBarContext.Provider value={value}>
       <header className={styles.navBarWrapper}>
         <NavBar />
         {isOpen ? <NavBarDrawer /> : null}

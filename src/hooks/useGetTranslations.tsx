@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import { initReactI18next } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
 import { getDataFromSnapshot, translationCollection } from "api";
 import i18next from "i18next";
-import detector from "i18next-browser-languagedetector";
-import backend from "i18next-http-backend";
 
 export const useGetTranslations = () => {
   const [translation, setTranslation] = useState<{ [key: string]: string }[]>(
@@ -12,16 +9,11 @@ export const useGetTranslations = () => {
   );
 
   useEffect(() => {
-    onSnapshot(translationCollection, (data) => {
+    const unsubscribe = onSnapshot(translationCollection, (data) => {
       setTranslation(getDataFromSnapshot(data));
     });
+    return unsubscribe;
   }, []);
-
-  i18next.use(detector).use(initReactI18next).use(backend).init({
-    defaultNS: "static",
-    lng: "pl",
-    fallbackLng: "en",
-  });
   i18next.addResourceBundle(
     "en",
     "dynamic",
@@ -33,5 +25,5 @@ export const useGetTranslations = () => {
     translation[0] && translation[0].PL
   );
 
-  return { i18next };
+  return;
 };

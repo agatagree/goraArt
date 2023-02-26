@@ -12,13 +12,17 @@ import { Tailor } from "./TailorSection";
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [galleryLoad, setGalleryLoad] = useState(false);
+  console.log("homepage")
 
   useEffect(() => {
-    const q = query(galleryCollection, where("mainPage", "==", true));
-    onSnapshot(q, (art) => {
-      setGallery(getDataFromSnapshot(art));
-      setGalleryLoad(true);
-    });
+    const unsubscribe = onSnapshot(
+      query(galleryCollection, where("mainPage", "==", true)),
+      (art) => {
+        setGallery(getDataFromSnapshot(art));
+        setGalleryLoad(true);
+      }
+    );
+    return unsubscribe;
   }, [galleryLoad]);
 
   if (!galleryLoad) {

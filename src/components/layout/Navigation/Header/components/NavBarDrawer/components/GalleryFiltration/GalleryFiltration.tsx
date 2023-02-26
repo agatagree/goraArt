@@ -4,7 +4,7 @@ import { onSnapshot } from "firebase/firestore";
 import { categoryCollection, getDataFromSnapshot } from "api";
 import { Btn, Loader, MenuDrawer, Text } from "components/common";
 import { MessagePage } from "components/layout";
-import { NavBarContext } from "../../../Header";
+import { NavBarContext } from "../../../../Header";
 import { CategoryCheckbox } from "./CategoryCheckbox";
 import { TagsType, ColorType } from "./types/TagsTypes";
 import { FilterContext } from "providers/FilterProvider";
@@ -17,8 +17,6 @@ export const GalleryFiltration = () => {
   const [tags, setTags] = useState<TagsType[]>([]);
   const [loadTags, setLoadTags] = useState(false);
 
-  console.log("GalleryFiltration");
-
   const handleReset = () => {
     dispatch({ type: "CLEAR_SELECTION" });
   };
@@ -29,10 +27,11 @@ export const GalleryFiltration = () => {
   };
 
   useEffect(() => {
-    onSnapshot(categoryCollection, (tag) => {
+    const unsubscribe = onSnapshot(categoryCollection, (tag) => {
       setTags(getDataFromSnapshot(tag));
       setLoadTags(true);
     });
+    return unsubscribe;
   }, [loadTags]);
 
   if (!loadTags) {

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useMemo, useReducer } from "react";
 import { FilterReducer } from "providers/FilterReducer";
 
 export type FilterContextType = {
@@ -15,8 +15,12 @@ export const FilterContext = createContext<FilterContextType>(initialState);
 export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [selectedValues, dispatch] = useReducer(FilterReducer, []);
 
+  const value = useMemo(() => ({
+    selectedValues, dispatch
+  }),[selectedValues])
+
   return (
-    <FilterContext.Provider value={{ selectedValues, dispatch }}>
+    <FilterContext.Provider value={value}>
       {children}
     </FilterContext.Provider>
   );

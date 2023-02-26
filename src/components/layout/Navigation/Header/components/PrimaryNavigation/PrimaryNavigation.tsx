@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { Btn } from "components/common";
-import { NavBarContext } from "../Header";
+import { NavBarContext } from "../../Header";
 
 export const PrimaryNavigation = () => {
   const { setActiveDrawer, setIsOpen } = useContext(NavBarContext);
