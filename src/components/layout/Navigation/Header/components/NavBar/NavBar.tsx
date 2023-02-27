@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
+import { NavBarContext } from "../../Header";
 import { PrimaryNavigation } from "../PrimaryNavigation";
 import { BurgerMenu, GalleryNavigation } from "./components";
 import { FilterContext } from "providers/FilterProvider";
@@ -13,6 +14,7 @@ export const NavBar = () => {
   const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
   const { i18n } = useTranslation();
   const { dispatch } = useContext(FilterContext);
+  const { setIsOpen } = useContext(NavBarContext);
 
   const pageName = useLocation();
   useEffect(() => {
@@ -33,7 +35,7 @@ export const NavBar = () => {
     <>
       <div className={styles.navBarLayout}>
         <div className={styles.navBarLinksContainer}>
-          <Btn as={NavLink} to="/">
+          <Btn as={NavLink} to="/" onClick={() => setIsOpen(false)}>
             <img
               className={styles.navBarIcon}
               src="/assets/logo.svg"

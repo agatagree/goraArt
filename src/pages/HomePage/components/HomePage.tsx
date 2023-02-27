@@ -12,7 +12,6 @@ import { Tailor } from "./TailorSection";
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [galleryLoad, setGalleryLoad] = useState(false);
-  console.log("homepage")
 
   useEffect(() => {
     const unsubscribe = onSnapshot(

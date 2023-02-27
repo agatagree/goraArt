@@ -14,7 +14,6 @@ import "styles/global.scss";
 
 export const App = () => {
   useGetTranslations();
-  console.log('app')
 
   return (
     <Suspense fallback={<Loader />}>

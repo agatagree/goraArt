@@ -22,8 +22,6 @@ export const Header = () => {
   const [activeDrawer, setActiveDrawer] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log("header");
-
   const value = useMemo(
     () => ({ activeDrawer, setActiveDrawer, isOpen, setIsOpen }),
     [isOpen, activeDrawer]
