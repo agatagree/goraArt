@@ -4,7 +4,7 @@ import { onSnapshot } from "firebase/firestore";
 import { categoryCollection, getDataFromSnapshot } from "api";
 import { Btn, Loader, MenuDrawer, Text } from "components/common";
 import { MessagePage } from "components/layout";
-import { NavBarContext } from "../../../Header";
+import { NavBarContext } from "../../../../Header";
 import { CategoryCheckbox } from "./CategoryCheckbox";
 import { TagsType, ColorType } from "./types/TagsTypes";
 import { FilterContext } from "providers/FilterProvider";
@@ -27,10 +27,11 @@ export const GalleryFiltration = () => {
   };
 
   useEffect(() => {
-    onSnapshot(categoryCollection, (tag) => {
+    const unsubscribe = onSnapshot(categoryCollection, (tag) => {
       setTags(getDataFromSnapshot(tag));
       setLoadTags(true);
     });
+    return unsubscribe;
   }, [loadTags]);
 
   if (!loadTags) {
@@ -40,49 +41,43 @@ export const GalleryFiltration = () => {
     return <MessagePage message={"search"} />;
   }
   return (
-      <MenuDrawer variant="gallery">
-        <div className={styles.navBarFilterlayout}>
-          {Object.entries(tags[0])
-            .filter(([key, _value]) => key !== "id")
-            .map(([key, value]: [string, string | ColorType[] | string[]]) => (
-              <div key={key} className={styles.categoryLayout}>
-                <Text variant="smallHeader" size="sm">
-                  {t(`navBar.${key}`)}
-                </Text>
-                <div
-                  className={
-                    key !== "color"
-                      ? styles.categoryContainer
-                      : styles.categoryContainerColor
-                  }
-                >
-                  {Object.entries(value).map(([key, value]) => (
-                    <CategoryCheckbox value={value} key={key} />
-                  ))}
-                </div>
+    <MenuDrawer variant="gallery">
+      <div className={styles.navBarFilterlayout}>
+        {Object.entries(tags[0])
+          .filter(([key, _value]) => key !== "id")
+          .map(([key, value]: [string, string | ColorType[] | string[]]) => (
+            <div key={key} className={styles.categoryLayout}>
+              <Text variant="smallHeader" size="sm">
+                {t(`navBar.${key}`)}
+              </Text>
+              <div
+                className={
+                  key !== "color"
+                    ? styles.categoryContainer
+                    : styles.categoryContainerColor
+                }
+              >
+                {Object.entries(value).map(([key, value]) => (
+                  <CategoryCheckbox value={value} key={key} />
+                ))}
               </div>
-            ))}
-        </div>
-        <div className={styles.filterGroupButton}>
-          <Btn
-            variant="rectDark"
-            upperCase
-            fullWidth
-            size="sm"
-            onClick={handleCloseDrawer}
-          >
-            {t("common.letsSee")}
-          </Btn>
-          <Btn
-            variant="rect"
-            upperCase
-            fullWidth
-            size="sm"
-            onClick={handleReset}
-          >
-            {t("common.resetFilters")}
-          </Btn>
-        </div>
-      </MenuDrawer>
+            </div>
+          ))}
+      </div>
+      <div className={styles.filterGroupButton}>
+        <Btn
+          variant="rectDark"
+          upperCase
+          fullWidth
+          size="sm"
+          onClick={handleCloseDrawer}
+        >
+          {t("common.letsSee")}
+        </Btn>
+        <Btn variant="rect" upperCase fullWidth size="sm" onClick={handleReset}>
+          {t("common.resetFilters")}
+        </Btn>
+      </div>
+    </MenuDrawer>
   );
 };

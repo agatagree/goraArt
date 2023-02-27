@@ -4,8 +4,8 @@
   "importOrder": [
     "^react(.*)",
     "^firebase(.*)",
-    "^api",
-    "^locales",
+    "^api/",
+    "^locales/",
     "^routes/",
     "^components/",
     "^utils",

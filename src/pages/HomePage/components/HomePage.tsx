@@ -14,11 +14,14 @@ export const HomePage = () => {
   const [galleryLoad, setGalleryLoad] = useState(false);
 
   useEffect(() => {
-    const q = query(galleryCollection, where("mainPage", "==", true));
-    onSnapshot(q, (art) => {
-      setGallery(getDataFromSnapshot(art));
-      setGalleryLoad(true);
-    });
+    const unsubscribe = onSnapshot(
+      query(galleryCollection, where("mainPage", "==", true)),
+      (art) => {
+        setGallery(getDataFromSnapshot(art));
+        setGalleryLoad(true);
+      }
+    );
+    return unsubscribe;
   }, [galleryLoad]);
 
   if (!galleryLoad) {

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavBarContext } from "../../../Header";
+import { NavBarContext } from "../../../../Header";
 import styles from "./BurgerMenu.module.scss";
 
 export const BurgerMenu = () => {

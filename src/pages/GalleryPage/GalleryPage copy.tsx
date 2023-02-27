@@ -12,25 +12,33 @@ import styles from "./GalleryPage.module.scss";
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [load, setLoad] = useState(false);
+  const [emptySearch, setEmptySearch] = useState(false);
   const { selectedValues } = useContext(FilterContext);
 
   useEffect(() => {
-    const unsubsribe = onSnapshot(
-      selectedValues.length > 0
-        ? query(
-            galleryCollection,
-            where("tags", "array-contains-any", selectedValues)
-          )
-        : galleryCollection,
-      (card) => {
+    if (selectedValues.length > 0) {
+      const q = query(
+        galleryCollection,
+        where("tags", "array-contains-any", selectedValues)
+      );
+      onSnapshot(q, (card) => {
         setGallery(getDataFromSnapshot(card));
         setLoad(true);
+      });
+      if (gallery.length === 0) {
+        setEmptySearch(true);
+      } else {
+        setEmptySearch(false);
       }
-    );
-    return unsubsribe;
+    } else {
+      onSnapshot(galleryCollection, (card) => {
+        setGallery(getDataFromSnapshot(card));
+        setLoad(true);
+      });
+    }
   }, [selectedValues]);
 
-  if (load && gallery.length === 0) {
+  if (emptySearch) {
     return <MessagePage message={"search"} />;
   }
 
