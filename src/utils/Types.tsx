@@ -22,11 +22,12 @@ export type GalleryType = {
     description: string;
     icon: string;
   };
-}
+  order: number;
+};
 
 export type TranslationTypes = {
   id: string;
   key: string;
   EN: string;
   PL: string;
-}
+};

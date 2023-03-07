@@ -6,7 +6,7 @@ export const GalleryCardSkeleton = ({ cards }: { cards: number }) => {
     <>
       {Array(cards)
         .fill(0)
-        .map((card, index) => (
+        .map((_card, index) => (
           <div className={styles.skeletonContainer} key={index}>
             <div className={styles.skeletonContent}>
               <div className={styles.skeletonContenerArt}>
@@ -21,4 +21,4 @@ export const GalleryCardSkeleton = ({ cards }: { cards: number }) => {
     </>
   );
 };
-//
+

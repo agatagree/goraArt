@@ -1,9 +1,4 @@
-import {
-  useContext,
-  useState,
-  useEffect,
-  useMemo,
-} from "react";
+import { useContext, useState, useEffect, useRef, useCallback, useMemo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {
   onSnapshot,
@@ -33,42 +28,45 @@ export const GalleryPage = () => {
   const [totalCount, setTotalCount] = useState<number>(0);
   const { selectedValues } = useContext(FilterContext);
 
-  const memoizedTotalCountFromServer = useMemo(() => {
-    return selectedValues.length > 0
-      ? query(
-          galleryCollection,
-          where("tags", "array-contains-any", selectedValues)
-        )
-      : galleryCollection;
-  }, [selectedValues]);
 
-  const memoizedQuery = useMemo(() => {
-    return selectedValues.length > 0
-      ? query(
-          galleryCollection,
-          orderBy("order"),
-          where("tags", "array-contains-any", selectedValues),
-          limit(6)
-        )
-      : query(galleryCollection, orderBy("order"), limit(6));
-  }, [selectedValues]);
+
+
 
   useEffect(() => {
     const fetchCount = async () => {
-      const snapshot = await getCountFromServer(memoizedTotalCountFromServer);
+      const q =
+        selectedValues.length > 0
+          ? query(
+              galleryCollection,
+              where("tags", "array-contains-any", selectedValues)
+            )
+          : galleryCollection;
+      const snapshot = await getCountFromServer(q);
       const galleryNum = snapshot.data().count;
       setTotalCount(galleryNum);
     };
     fetchCount();
-    const unsubsribe = onSnapshot(memoizedQuery, (card) => {
-      setGallery(getDataFromSnapshot(card));
-      setLoad(true);
-      setLastDoc(card.docs[card.docs.length - 1]);
-      setHasMore(getDataFromSnapshot(card).length < totalCount);
-    });
+    const unsubsribe = onSnapshot(
+      selectedValues.length > 0
+        ? query(
+            galleryCollection,
+            orderBy("order"),
+            where("tags", "array-contains-any", selectedValues),
+            limit(6)
+          )
+        : query(galleryCollection, orderBy("order"), limit(6)),
+      (card) => {
+        setGallery(getDataFromSnapshot(card));
+        setLoad(true);
+        setLastDoc(card.docs[card.docs.length - 1]);
+        setHasMore(
+          getDataFromSnapshot(card).length < totalCount ? true : false
+        );
+      }
+    );
 
     return unsubsribe;
-  }, [memoizedQuery, totalCount, memoizedTotalCountFromServer]);
+  }, [selectedValues, totalCount]);
 
   const handleMore = () => {
     const unsubsribe = onSnapshot(
@@ -91,6 +89,8 @@ export const GalleryPage = () => {
         setLastDoc(card.docs[card.docs.length - 1]);
         setHasMore(
           [...gallery, ...getDataFromSnapshot(card)].length < totalCount
+            ? true
+            : false
         );
       }
     );
