@@ -37,6 +37,8 @@
   align-items: center;
   text-decoration: none;
   padding: 0 $spacing30 $spacing80 $spacing30;
+  // transition: opacity 400ms ease-in-out 0s;
+  position: relative;
 
   @include md {
     padding: 0 $spacing10 $spacing60 $spacing10;
@@ -52,4 +54,9 @@
   display: block;
   object-fit: contain;
   margin-bottom: $spacing10;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
