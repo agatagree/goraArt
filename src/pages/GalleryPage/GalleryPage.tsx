@@ -1,64 +1,122 @@
-import { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { onSnapshot, query, where } from "firebase/firestore";
-import { getDataFromSnapshot, galleryCollection } from "api";
-import { Btn } from "components/common";
-import { ArtDescription, MessagePage } from "components/layout";
+import {
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import {
+  onSnapshot,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+  QueryDocumentSnapshot,
+  DocumentData,
+  getCountFromServer,
+} from "firebase/firestore";
+import { MessagePage } from "components/layout";
 import { GalleryType } from "utils/Types";
-import { GalleryCardSkeleton } from "./components/GalleryCardSkeleton/GalleryCardSkeleton";
+import { GallerySingleItem, GalleryCardSkeleton } from "./components";
+import { getDataFromSnapshot, galleryCollection } from "api";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryPage.module.scss";
 
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
   const [load, setLoad] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const [lastDoc, setLastDoc] = useState<
+    QueryDocumentSnapshot<DocumentData> | undefined
+  >(undefined);
+  const [totalCount, setTotalCount] = useState<number>(0);
   const { selectedValues } = useContext(FilterContext);
 
+  const memoizedTotalCountFromServer = useMemo(() => {
+    return selectedValues.length > 0
+      ? query(
+          galleryCollection,
+          where("tags", "array-contains-any", selectedValues)
+        )
+      : galleryCollection;
+  }, [selectedValues]);
+
+  const memoizedQuery = useMemo(() => {
+    return selectedValues.length > 0
+      ? query(
+          galleryCollection,
+          orderBy("order"),
+          where("tags", "array-contains-any", selectedValues),
+          limit(6)
+        )
+      : query(galleryCollection, orderBy("order"), limit(6));
+  }, [selectedValues]);
+
   useEffect(() => {
+    const fetchCount = async () => {
+      const snapshot = await getCountFromServer(memoizedTotalCountFromServer);
+      const galleryNum = snapshot.data().count;
+      setTotalCount(galleryNum);
+    };
+    fetchCount();
+    const unsubsribe = onSnapshot(memoizedQuery, (card) => {
+      setGallery(getDataFromSnapshot(card));
+      setLoad(true);
+      setLastDoc(card.docs[card.docs.length - 1]);
+      setHasMore(getDataFromSnapshot(card).length < totalCount);
+    });
+
+    return unsubsribe;
+  }, [memoizedQuery, totalCount, memoizedTotalCountFromServer]);
+
+  const handleMore = () => {
     const unsubsribe = onSnapshot(
       selectedValues.length > 0
         ? query(
             galleryCollection,
-            where("tags", "array-contains-any", selectedValues)
+            orderBy("order"),
+            where("tags", "array-contains-any", selectedValues),
+            startAfter(lastDoc),
+            limit(6)
           )
-        : galleryCollection,
+        : query(
+            galleryCollection,
+            orderBy("order"),
+            startAfter(lastDoc),
+            limit(6)
+          ),
       (card) => {
-        setGallery(getDataFromSnapshot(card));
-        setLoad(true);
+        setGallery((gallery) => [...gallery, ...getDataFromSnapshot(card)]);
+        setLastDoc(card.docs[card.docs.length - 1]);
+        setHasMore(
+          [...gallery, ...getDataFromSnapshot(card)].length < totalCount
+        );
       }
     );
     return unsubsribe;
-  }, [selectedValues]);
+  };
 
   if (load && gallery.length === 0) {
     return <MessagePage message={"search"} />;
   }
 
   return (
-    <div className={styles.galleryLayout}>
-      {!load && <GalleryCardSkeleton cards={6} />}
-      {gallery.map((card) => (
-        <Btn
-          as={Link}
-          to={`/gallery/${card.id}`}
-          className={styles.art}
-          key={card.id}
+    <>
+      <div className={styles.galleryContainer}>
+        <InfiniteScroll
+          dataLength={totalCount}
+          next={handleMore}
+          hasMore={hasMore}
+          loader={<GalleryCardSkeleton cards={2} />}
+          className={styles.galleryLayout}
         >
-          <img
-            className={styles.artImg}
-            src={card.img.cover}
-            alt={card.title}
-          />
-          <ArtDescription
-            title={card.title}
-            code={card.code}
-            year={card.year}
-            technique={card.technique}
-            width={card.dimensions.width}
-            height={card.dimensions.height}
-          />
-        </Btn>
-      ))}
-    </div>
+          {!load && <GalleryCardSkeleton cards={6} />}
+          {gallery.map((card) => (
+            <GallerySingleItem card={card} key={card.id} />
+          ))}
+        </InfiniteScroll>
+      </div>
+    </>
   );
 };
