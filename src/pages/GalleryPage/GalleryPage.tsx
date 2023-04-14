@@ -1,9 +1,4 @@
-import {
-  useContext,
-  useState,
-  useEffect,
-  useMemo,
-} from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {
   onSnapshot,
@@ -62,11 +57,10 @@ export const GalleryPage = () => {
     fetchCount();
     const unsubsribe = onSnapshot(memoizedQuery, (card) => {
       setGallery(getDataFromSnapshot(card));
-      setLoad(true);
       setLastDoc(card.docs[card.docs.length - 1]);
       setHasMore(getDataFromSnapshot(card).length < totalCount);
+      setLoad(true);
     });
-
     return unsubsribe;
   }, [memoizedQuery, totalCount, memoizedTotalCountFromServer]);
 
