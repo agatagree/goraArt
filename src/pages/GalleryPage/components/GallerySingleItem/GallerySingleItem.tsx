@@ -14,10 +14,14 @@ export const GallerySingleItem = ({ card }: { card: GalleryType }) => {
       to={`/gallery/${card.id}`}
       className={styles.art}
       key={card.id}
-      onMouseEnter={() => setImage(card.img.wiz)}
-      onMouseLeave={() => setImage(initialImage)}
     >
-      <img className={styles.artImg} src={image} alt={card.title} />
+      <img
+        className={styles.artImg}
+        src={image}
+        alt={card.title}
+        onMouseEnter={() => setImage(card.img.wiz)}
+        onMouseLeave={() => setImage(initialImage)}
+      />
       <ArtDescription
         title={card.title}
         code={card.code}

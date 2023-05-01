@@ -9,6 +9,7 @@
 }
 
 body {
+  min-height: 100svh;
   margin: 0;
   overflow-y: scroll;
   font-size: $fontSize18;
