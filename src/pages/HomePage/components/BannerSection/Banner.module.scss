@@ -1,38 +1,30 @@
 @use "styles/Helpers" as *;
 
 .layout {
-  height: 100vh;
+  height: 100svh;
   width: 100%;
-  background-color: $grey100;
-}
-
-.navigation {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 2;
-  display: block;
-}
-
-.progressBar {
-  width: 70%;
-  left: 15%;
-  height: 25px;
-  background-color: transparent;
-  position: absolute;
-  bottom: 25px;
   display: flex;
-  align-items: center;
-}
+  overflow: hidden;
+  .bannerImg {
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    max-width: calc(100% - 545px);
+    @include xl {
+      max-width: 100%;
+    }
+  }
+  .bannerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include md {
+      justify-content: flex-start;
+    }
+  }
 
-.progressBarBtn {
-  height: 3px;
-  width: 100%;
-  gap: 5px;
-  background-color: $grey100;
-
-  &Active {
-    @extend .progressBarBtn;
-    background-color: $darkGrey500;
+  @include md {
+    flex-direction: column;
   }
 }

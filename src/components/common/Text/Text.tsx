@@ -12,10 +12,12 @@ type TextOwnProps<E extends ElementType> = {
     | "mainHeader"
     | "subHeader"
     | "basicHeader"
-    | "smallHeader";
+    | "smallHeader"
+    | "mainHeaderSubText";
   children: ReactNode;
   as?: E;
   capitalize?: boolean;
+  suffixIcon?: ReactNode;
 };
 
 type TextProps<E extends ElementType> = TextOwnProps<E> &
@@ -28,6 +30,7 @@ export const Text = <E extends ElementType = "p">({
   children,
   capitalize,
   as,
+  suffixIcon,
 }: TextProps<E>) => {
   const Component = as || "p";
   const classItem = classNames(
@@ -38,5 +41,10 @@ export const Text = <E extends ElementType = "p">({
     capitalize && styles.capitalize
   );
 
-  return <Component className={classItem}>{children}</Component>;
+  return (
+    <Component className={classItem}>
+      {children}
+      {suffixIcon}
+    </Component>
+  );
 };

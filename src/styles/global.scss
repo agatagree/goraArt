@@ -46,10 +46,11 @@ body {
 }
 
 .xl {
-  font-size: $fontSize30;
+  font-size: $fontSize32;
   letter-spacing: $fontLs2;
+  
   @include sm {
-    font-size: $fontSize18;
+    font-size: $fontSize24;
   }
 }
 

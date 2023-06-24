@@ -22,7 +22,7 @@
   font-size: $fontSize64;
 
   @include md {
-    font-size: $fontSize48;
+    font-size: $fontSize40;
   }
   @include sm {
     font-size: $fontSize36;
@@ -30,17 +30,22 @@
 }
 
 .mainHeader {
-  font-weight: $fontWeights400;
+  font-weight: $fontWeights500;
   letter-spacing: $fontLs2M;
-  font-size: $fontSize80;
+  font-size: $fontSize64;
   line-height: 1.2;
 
-  @include md {
-    font-size: $fontSize64;
+  @include xl {
+    font-size: $fontSize40;
   }
+}
 
-  @include sm {
-    font-size: $fontSize36;
+.mainHeaderSubText {
+  font-weight: $fontWeights400;
+  letter-spacing: $fontLs4;
+  font-size: $fontSize32;
+  @include lg {
+    font-size: $fontSize24;
   }
 }
 

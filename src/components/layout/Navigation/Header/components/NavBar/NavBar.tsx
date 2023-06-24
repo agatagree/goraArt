@@ -33,7 +33,7 @@ export const NavBar = () => {
             <img
               className={styles.navBarIcon}
               src="/assets/logo.svg"
-              alt="logo"
+              alt="Gora logo"
             />
           </Btn>
           <div className={styles.navBarLinksWrapper}>
