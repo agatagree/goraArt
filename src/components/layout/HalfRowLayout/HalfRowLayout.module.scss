@@ -6,13 +6,11 @@
   align-items: center;
   width: 100%;
   gap: $spacing60;
+  background-color: lightpink;
   @include md {
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-  }
-  @include sm {
-    gap: $spacing30;
   }
 }
 

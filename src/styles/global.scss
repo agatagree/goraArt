@@ -63,8 +63,11 @@ body {
 
 .xxxl {
   font-size: $fontSize48;
+  @include xl {
+    font-size: $fontSize40;
+  }
   @include sm {
-    font-size: $fontSize30;
+    font-size: $fontSize36;
   }
 }
 

@@ -13,14 +13,15 @@
     "introMain": "Wojciech Góra",
     "introSecondary": "paintings",
     "introSubtitle": "Art for your space",
-    "tailor": "Original. Abstract. Tailored to your interior.",
+    "tailor": "Abstract oil paintings in the original technique.",
     "detail": "Immersive. Textured. Full of details for you to find.",
     "detailTitle": "Look closer",
     "detailDescription": "You can discover paint strokes and new texture details every time you look closer on each painting.",
     "detailBtn": "Read more",
     "selectedTitle1": "Discover more",
     "selectedTitle2": "through selected artworks",
-    "selectedBtn": "See all works"
+    "selectedBtn": "See all artworks",
+    "offerTitle": "Explore offer"
   },
   "aboutPage": {
     "title": "Wojciech Góra: the contemporary abstract painter based in Poland.",

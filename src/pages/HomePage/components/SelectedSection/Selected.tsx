@@ -10,13 +10,11 @@ export const Selected = ({ data }: { data: GalleryType[] }) => {
   const { t } = useTranslation();
   return (
     <div>
-      <div className={styles.selectedMainText}>
         <Text variant="subHeader">
           {t("homePage.selectedTitle1")}
           <br />
           {t("homePage.selectedTitle2")}
         </Text>
-      </div>
       <div className={styles.selectedLayout}>
         {data.map((card) => (
           <HalfRowLayout key={card.id} variant="reverse">

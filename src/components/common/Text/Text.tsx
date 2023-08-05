@@ -18,6 +18,7 @@ type TextOwnProps<E extends ElementType> = {
   as?: E;
   capitalize?: boolean;
   suffixIcon?: ReactNode;
+  preWrap?: boolean;
 };
 
 type TextProps<E extends ElementType> = TextOwnProps<E> &
@@ -31,6 +32,7 @@ export const Text = <E extends ElementType = "p">({
   capitalize,
   as,
   suffixIcon,
+  preWrap,
 }: TextProps<E>) => {
   const Component = as || "p";
   const classItem = classNames(
@@ -38,7 +40,8 @@ export const Text = <E extends ElementType = "p">({
     variant && styles[variant],
     size && size,
     color && color,
-    capitalize && styles.capitalize
+    capitalize && styles.capitalize,
+    preWrap && styles.preWrap
   );
 
   return (

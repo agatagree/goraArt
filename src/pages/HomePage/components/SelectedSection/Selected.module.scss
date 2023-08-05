@@ -10,17 +10,19 @@
 }
 
 .selectedMainText {
-  padding: $spacing180 0;
+  padding-bottom: $spacing120;
   align-self: flex-start;
 
-  @include sm {
+  @include md {
     padding: $spacing120 0;
   }
 }
 
 .selectedButton {
-  padding-left: $spacing120;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: $spacing120;
   @include lg {
-    padding: 0;
+    padding-top: $spacing40;
   }
 }

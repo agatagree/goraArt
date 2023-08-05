@@ -2,11 +2,10 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Btn, Text } from "components/common";
 import { ArtDescription } from "components/layout/ArtDescription";
-import styles from "./SelectedCard.module.scss";
 import { GalleryType } from "utils/Types";
+import styles from "./SelectedCard.module.scss";
 
-
-export const SelectedCard = ({card} : { card: GalleryType}) => {
+export const SelectedCard = ({ card }: { card: GalleryType }) => {
   const { t } = useTranslation("dynamic");
   return (
     <>
@@ -23,14 +22,20 @@ export const SelectedCard = ({card} : { card: GalleryType}) => {
             </Text>
           </div>
         </div>
-        <Text>{t(card.mainPageData.description, "", { ns: "dynamic" })}</Text>
+        <div className={styles.selectedDescriptionText}>
+          <Text>{t(card.mainPageData.description, "", { ns: "dynamic" })}</Text>
+        </div>
       </div>
       <Btn
         as={Link}
         to={`/gallery/${card.id}`}
         className={styles.selectedImgWrapper}
       >
-        <img className={styles.selectedImgSide} src={card.img.cover} alt={card.title} />
+        <img
+          className={styles.selectedImgSide}
+          src={card.img.cover}
+          alt={card.title}
+        />
         <ArtDescription
           title={card.title}
           code={card.code}

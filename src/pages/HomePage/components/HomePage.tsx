@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { onSnapshot, where, query } from "firebase/firestore";
-import { getDataFromSnapshot, galleryCollection } from "api";
 import { Loader } from "components/common";
 import { MainLayout } from "components/layout";
 import { GalleryType } from "utils/Types";
 import { BannerIntro } from "./BannerSection";
-import { Detail } from "./DetailSection";
+import { Offer } from "./OfferSection";
 import { Selected } from "./SelectedSection";
 import { Tailor } from "./TailorSection";
+import { getDataFromSnapshot, galleryCollection } from "api";
 
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
@@ -46,10 +46,11 @@ export const HomePage = () => {
   return (
     <>
       <BannerIntro />
+
       <MainLayout>
-        <Tailor data={tailorSectionData} />
+        <Tailor />
         <Selected data={selectedSectionData} />
-        <Detail data={detailSectionData} />
+        <Offer />
       </MainLayout>
     </>
   );

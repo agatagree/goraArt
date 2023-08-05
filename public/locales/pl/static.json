@@ -13,14 +13,15 @@
     "introMain": "Wojciech Góra",
     "introSecondary": "malarstwo",
     "introSubtitle": "Sztuka dla Twojego wnętrza",
-    "tailor": "Wyjątkowe. Abstrakcyjne. Specjalnie dopasowane do Twojego wnętrza.",
+    "tailor": "Abstrakcyjne obrazy olejne w autorskiej technice.",
     "detail": "Przyciagające uwagę. Bogactwo tekstur. Pełne niezwykłych detali",
     "detailTitle": "Spójrz bliżej",
     "detailDescription": "Możesz odkrywać pociągnięcia pędzla i nowe szczegóły tekstur za każdym razem, gdy przyjrzysz się bliżej każdemu obrazowi.",
     "detailBtn": "Czytaj więcej",
-    "selectedTitle1": "Dowiedz się więcej:",
-    "selectedTitle2": "zobacz wybrane prace",
-    "selectedBtn": "Zobacz więcej"
+    "selectedTitle1": "Odkryj więcej",
+    "selectedTitle2": "przez wybrane prace:",
+    "selectedBtn": "Wszystkie prace",
+    "offerTitle": "Do wyboru, do koloru"
   },
   "aboutPage": {
     "title": "Wojciech Góra współczesny malarz abstrakcyjny",

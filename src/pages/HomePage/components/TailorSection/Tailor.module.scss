@@ -1,21 +1,29 @@
 @use "styles/Helpers" as *;
 
+.layout {
+  height: 100svh;
+  display: flex;
+  width: 100%;
+  @include md {
+    height: auto;
+  }
+  @include sm {
+    height: auto;
+  }
+}
+
 .introText {
-  max-width: 760px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  gap: 12px;
 }
 
 .introImg {
-  width: auto;
-  padding: 0 $spacing120;
-  max-height: 80vh;
-  background-color: transparent;
-  min-height: 200px;
-  margin-top: $spacing180;
+  max-height: 70%;
 
   @include md {
     max-width: 100%;
-    padding: 0;
-    margin-top: $spacing60;
+    max-height: auto;
   }
 }

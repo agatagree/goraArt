@@ -6,7 +6,11 @@
   gap: $spacing40;
   padding: $spacing60;
 
-  @include xl {
+  @include md {
+    padding: $spacing60;
+  }
+
+  @include sm {
     gap: $spacing24;
     padding: $spacing60 $spacing24;
   }

@@ -10,7 +10,7 @@
     object-fit: cover;
     aspect-ratio: 1/1;
     max-width: calc(100% - 545px);
-    @include xl {
+    @include md {
       max-width: 100%;
     }
   }

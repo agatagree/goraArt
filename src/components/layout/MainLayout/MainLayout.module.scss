@@ -4,11 +4,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
-  padding: $spacing180 $spacing60 $spacing120 $spacing60;
+  max-width: 1600px;
+  padding: 0 $spacing60 $spacing120 $spacing60;
 
+
+  @include md {
+    padding-top: $spacing120;
+  }
   @include sm {
-    padding: $spacing120 $spacing24 $spacing60 $spacing24;
+    padding: $spacing60 $spacing24 $spacing60 $spacing24;
   }
 }
 
