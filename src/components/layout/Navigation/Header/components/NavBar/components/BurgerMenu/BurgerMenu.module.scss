@@ -1,6 +1,6 @@
 @use "styles/Helpers/" as *;
 
-.burgerWrapper {
+.wrapper {
   display: none;
 
   @include sm {
@@ -21,11 +21,11 @@
     }
 
     &Active {
-      .burgerContent {
+      .content {
         transform: translate(3px);
       }
       .line {
-        background: $darkGrey500;
+        background: $darkGrey300;
       }
       .top {
         transform: rotate(45deg) translate(0.5px, 0);
@@ -43,36 +43,21 @@
   }
 }
 
-.burgerWrapperActive {
-  display: none;
-  @include md {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: auto;
-  }
-}
-
-.burgerContent {
-  width: 16px;
-  height: 16px;
+.content {
+  width: $spacing24;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
   div {
-    width: 16px;
-    height: 1.2px;
+    width: $spacing24;
+    height: 2px;
     border-radius: 10px;
     position: relative;
-    background-color: $darkGrey500;
-    transform-origin: 1.2px;
+    background-color: $darkGrey300;
+    transform-origin: 2px;
 
     .top {
       transform-origin: 0% 0%;

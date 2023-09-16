@@ -1,18 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Btn } from "components/common";
 import { NavBarContext } from "../../Header";
 import { PrimaryNavigation } from "../PrimaryNavigation";
+import { LanguageBtn } from "../PrimaryNavigation/components/LanguageBtn";
 import { BurgerMenu, GalleryNavigation } from "./components";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./NavBar.module.scss";
 
 export const NavBar = () => {
   const [galleryMenuState, setGallerymenuState] = useState(false);
-  const [languageBtn, setLanguageBtn] = useState<"PL" | "EN">("EN");
-  const { i18n } = useTranslation();
+
   const { dispatch } = useContext(FilterContext);
   const { setIsOpen } = useContext(NavBarContext);
 
@@ -26,28 +25,23 @@ export const NavBar = () => {
     }
   }, [pageName, dispatch]);
 
-  const changeLanguage = () => {
-    setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");
-    i18n.changeLanguage(i18n.language === "pl" ? "en" : "pl");
-  };
-
   return (
     <>
-      <div className={styles.navBarLayout}>
-        <div className={styles.navBarLinksContainer}>
+      <div className={styles.layout}>
+        <div className={styles.linksContainer}>
           <Btn as={NavLink} to="/" onClick={() => setIsOpen(false)}>
             <img
-              className={styles.navBarIcon}
+              className={styles.icon}
               src="/assets/logo.svg"
-              alt="logo"
+              alt="Gora logo"
             />
           </Btn>
-          <div className={styles.navBarLinksWrapper}>
+          <div className={styles.linksWrapper}>
             <PrimaryNavigation />
           </div>
-        </div>
-        <div className={styles.navBarLinksContainer}>
-          <Btn onClick={changeLanguage}>{languageBtn}</Btn>
+          <div className={styles.linksWrapper}>
+            <LanguageBtn />
+          </div>
           <BurgerMenu />
         </div>
       </div>

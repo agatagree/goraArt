@@ -1,1 +1,1 @@
-export * from "./components/SingleArtPage";
+export * from "./SingleArtPage";

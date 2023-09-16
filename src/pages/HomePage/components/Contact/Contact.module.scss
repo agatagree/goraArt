@@ -1,0 +1,31 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  padding: $spacing100 0;
+  text-align: center;
+}
+
+.subtitle {
+  padding-bottom: $spacing40;
+  display: flex;
+  justify-content: center;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing14;
+  text-align: center;
+}

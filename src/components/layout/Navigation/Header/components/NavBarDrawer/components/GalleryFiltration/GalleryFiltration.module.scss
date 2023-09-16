@@ -3,10 +3,10 @@
 .navBarFilterlayout {
   height: 100%;
   justify-content: space-between;
-  padding-top: $spacing40;
+  padding-top: $spacing64;
 
   @include sm {
-    height: calc(100vh - 160px);
+    height: calc(100svh - 176px);
   }
 }
 
@@ -30,24 +30,24 @@
   flex: 1;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid $darkGrey500;
+  border: 1px solid $darkGrey300;
   border-radius: 0;
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-transform: uppercase;
 
   &:hover {
-    background-color: $darkGrey500;
+    background-color: $darkGrey300;
     color: $white100;
   }
 
   &Apply {
     @extend .filterBtn;
-    background-color: $darkGrey500;
+    background-color: $darkGrey300;
     color: $white100;
     &:hover {
       background-color: transparent;
-      color: $darkGrey500;
+      color: $darkGrey300;
     }
   }
 }
@@ -59,4 +59,3 @@
   flex-direction: column;
   gap: $spacing10;
 }
-

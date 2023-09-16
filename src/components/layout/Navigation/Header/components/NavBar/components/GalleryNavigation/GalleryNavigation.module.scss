@@ -1,16 +1,24 @@
 @use "styles/Helpers/" as *;
 
-.navBarGallery {
+.layout {
   width: 100%;
   padding: 0 16px;
+  height: $spacing64;
   background-color: white;
+  @include sm {
+    height: $spacing40;
+  }
 
   &Container {
     border-top: 1px solid $grey200;
-    min-height: $spacing40;
+    min-height: $spacing64;
     padding: 8px 0;
     display: flex;
     justify-content: flex-end;
     gap: $spacing10;
+
+    @include sm {
+      min-height: $spacing40;
+    }
   }
 }

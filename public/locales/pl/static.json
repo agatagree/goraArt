@@ -12,15 +12,32 @@
   "homePage": {
     "introMain": "Wojciech Góra",
     "introSecondary": "malarstwo",
-    "introSubtitle": "Dopasuj sztukę do swojego wnętrza",
-    "tailor": "Wyjątkowe. Abstrakcyjne. Specjalnie dopasowane do Twojego wnętrza.",
+    "introSubtitle": "Sztuka dla Twojego wnętrza",
+    "introSection": {
+      "introTitle": "Abstrakcyjne obrazy olejne w autorskiej technice."
+    },
     "detail": "Przyciagające uwagę. Bogactwo tekstur. Pełne niezwykłych detali",
     "detailTitle": "Spójrz bliżej",
     "detailDescription": "Możesz odkrywać pociągnięcia pędzla i nowe szczegóły tekstur za każdym razem, gdy przyjrzysz się bliżej każdemu obrazowi.",
     "detailBtn": "Czytaj więcej",
-    "selectedTitle1": "Dowiedz się więcej:",
-    "selectedTitle2": "zobacz wybrane prace",
-    "selectedBtn": "Zobacz więcej"
+    "selectedTitle1": "Odkryj więcej",
+    "selectedTitle2": "przez wybrane prace:",
+    "selectedBtn": "Wszystkie prace",
+    "offerSection": {
+      "offerMainTitle": "Do wyboru, do koloru",
+      "offer-title-1": "Galeria prac",
+      "offer-description-1": "Sprawdź galerię dostępnych obrazów i wybierz pracę, która do ciebie przemawia.",
+      "offer-title-2": "Obraz inspirowany",
+      "offer-description-2": "Jeśli wybrany obraz z galerii jest niedostępny, zamów pracę inspirowaną w podobnym stylu.",
+      "offer-title-3": "Sztuka pod wnętrze",
+      "offer-description-3": "Stwórzmy obraz od zera spersonalizowany pod Twoje wnętrze."
+    },
+    "contactSection": {
+      "title": "Coś Cię zainteresowało?",
+      "subtitle": "Daj znać.",
+      "e-mail": "w.goora@gmail.com",
+      "telephone": "+48 505 285 476"
+    }
   },
   "aboutPage": {
     "title": "Wojciech Góra współczesny malarz abstrakcyjny",
@@ -31,12 +48,10 @@
     "ask for price": "Zapytaj o cenę",
     "Interested in this piece?": "Zainteresował Cię ten obraz?"
   },
-  "contactPage": {
-    "title": "Skontaktuj się z nami"
-  },
   "common": {
     "letsSee": "Pokaż produkty",
     "resetFilters": "Wyczyść filtry",
-    "state": "Status"
+    "state": "Status",
+    "imgTitle": "Wojciech Góra malarstwo"
   }
 }

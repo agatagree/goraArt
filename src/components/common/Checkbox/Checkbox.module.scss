@@ -17,14 +17,14 @@
   cursor: pointer;
 
   &:checked {
-    background-color: $darkGrey500;
-    border-color: $darkGrey500;
+    background-color: $darkGrey300;
+    border-color: $darkGrey300;
   }
 
   &Color {
     &:checked {
-      border-color: $darkGrey500;
-      outline: 3px solid $darkGrey500;
+      border-color: $darkGrey300;
+      outline: 3px solid $darkGrey300;
     }
   }
 }

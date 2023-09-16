@@ -9,19 +9,14 @@
 }
 
 body {
+  min-height: 100svh;
   margin: 0;
   overflow-y: scroll;
-  font-size: $fontSize18;
-  color: $darkGrey500;
+  font-size: $fontSize16;
+  color: $darkGrey300;
 }
 
-.xs {
-  font-size: $fontSize12;
-  @include sm {
-    font-size: $fontSize10;
-  }
-}
-
+// SIZES
 .sm {
   font-size: $fontSize14;
   @include sm {
@@ -30,55 +25,26 @@ body {
 }
 
 .md {
-  font-size: $fontSize18;
-  @include sm {
-    font-size: $fontSize16;
-  }
-}
-
-.lg {
-  font-size: $fontSize24;
-  letter-spacing: $fontLs4;
-  @include sm {
-    font-size: $fontSize16;
-  }
-}
-
-.xl {
-  font-size: $fontSize30;
+  font-size: $fontSize32;
   letter-spacing: $fontLs2;
-  @include sm {
-    font-size: $fontSize18;
-  }
-}
-
-.xxl {
-  font-size: $fontSize36;
+  
   @include sm {
     font-size: $fontSize24;
   }
 }
 
-.xxxl {
-  font-size: $fontSize48;
+.lg {
+  font-size: $fontSize40;
   @include sm {
-    font-size: $fontSize30;
+    font-size: $fontSize24;
   }
 }
 
-// colors:
+// COLORS
 .primary {
-  color: $darkGrey500;
-}
-
-.primaryLight {
-  color: $white100;
+  color: $darkGrey300;
 }
 
 .primaryOrange {
   color: $primaryOrange;
-}
-
-.secondary {
-  color: $darkGrey200;
 }

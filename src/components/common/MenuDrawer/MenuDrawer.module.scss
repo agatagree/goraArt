@@ -8,21 +8,19 @@
   position: absolute;
   z-index: 5;
   top: $spacing40;
-  height: calc(100vh - 108px);
-  padding: 0 $spacing16 $spacing16 $spacing16;
+  height: calc(100svh - 108px);
+  padding: 0 $spacing16 $spacing8 $spacing16;
 
   @include sm {
-    height: calc(100vh - 88px);
+    height: calc(100svh - 72px);
   }
 }
 
 .gallery {
-  height: calc(100vh - 148px);
+  height: calc(100svh - 176px);
   top: $spacing80;
 
   @include sm {
-    height: calc(100vh - 128px);
+    height: calc(100svh - 112px);
   }
 }
-
-

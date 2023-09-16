@@ -18,9 +18,10 @@ export type GalleryType = {
   mainPage: boolean;
   mainPageData: {
     mainPagePosition: number;
+    mainPageSection: string;
     title: string;
     description: string;
-    icon: string;
+    icon?: string;
   };
   order: number;
 };

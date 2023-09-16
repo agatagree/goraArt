@@ -53,7 +53,7 @@ export const Btn = <E extends ElementType = "button">({
     color && color,
     fullWidth && styles.fullWidth,
     noWrap && styles.noWrap,
-    upperCase && styles.upperCase,
+    upperCase && styles.upperCase
   );
   return (
     <Component
@@ -64,12 +64,12 @@ export const Btn = <E extends ElementType = "button">({
       target={target || "_self"}
       {...props}
     >
+      {children}
       {variant === "arrow" ? (
         <VscArrowRight
           className={hoverState ? styles.arrowRotate : styles.arrow}
         />
       ) : null}
-      {children}
     </Component>
   );
 };

@@ -1,0 +1,23 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  padding-left: $spacing120;
+
+  @include lg {
+    padding-left: 0;
+  }
+}
+
+.wrapper {
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing24;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing16;
+  align-items: center;
+}

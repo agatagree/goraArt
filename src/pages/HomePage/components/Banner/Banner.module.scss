@@ -1,0 +1,32 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+
+  .bannerImg {
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    max-width: calc(100% - 545px);
+    @include md {
+      max-width: 100%;
+    }
+  }
+
+  .bannerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include md {
+      justify-content: flex-start;
+    }
+  }
+
+  @include md {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,11 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  width: 100%;
+  padding: $spacing100 $spacing60 $spacing100 $spacing120;
+
+  @include lg {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
