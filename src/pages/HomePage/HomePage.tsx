@@ -3,7 +3,7 @@ import { onSnapshot, where, query } from "firebase/firestore";
 import { Loader } from "components/common";
 import { MainLayout } from "components/layout";
 import { GalleryType } from "utils/Types";
-import { Banner, Intro, Selected, Offer, About, Contact } from "./components";
+import { About, Banner, Contact, Intro, Offer, Selected } from "./components";
 import { HomePageSection } from "./enums";
 import { getMainPageSectionData } from "./utils";
 import { getDataFromSnapshot, galleryCollection } from "api";
