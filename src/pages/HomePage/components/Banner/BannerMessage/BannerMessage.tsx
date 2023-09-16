@@ -7,13 +7,13 @@ export const BannerMessage = () => {
   return (
     <div className={styles.bannerTextlayout}>
       <Text variant="mainHeader" color="primary">
-        {t("homePage.introMain")}
+        {t("home-page.banner.title-1")}
         <br />
-        {t("homePage.introSecondary")}
+        {t("home-page.banner.title-2")}
       </Text>
       <div className={styles.heroSubtextContainer}>
         <Text variant="mainHeaderSubText" color="primary">
-          {t("homePage.introSubtitle")}
+          {t("home-page.banner.subtitle")}
         </Text>
       </div>
     </div>

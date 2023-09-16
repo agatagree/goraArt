@@ -13,9 +13,9 @@ export const Selected: FC<SelectedProps> = ({ data }) => {
       <SectionTitleLayout
         text={
           <>
-            {t("homePage.selectedTitle1")}
+            {t("home-page.selected.title-1")}
             <br />
-            {t("homePage.selectedTitle2")}
+            {t("home-page.selected.title-2")}
           </>
         }
       />
@@ -46,7 +46,7 @@ export const Selected: FC<SelectedProps> = ({ data }) => {
       </div>
       <div className={styles.buttonMore}>
         <Btn as={Link} to="/gallery" size="lg" variant="arrow">
-          {t("homePage.selectedBtn")}
+          {t("home-page.selected.btn")}
         </Btn>
       </div>
     </>

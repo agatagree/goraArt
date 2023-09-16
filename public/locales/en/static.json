@@ -9,52 +9,50 @@
     "technique": "Technique",
     "color": "Color"
   },
-  "homePage": {
-    "introMain": "Wojciech Góra",
-    "introSecondary": "paintings",
-    "introSubtitle": "Art for your space",
-    "introSection": {
-      "introTitle": "Abstract oil paintings in the original technique"
+  "home-page": {
+    "banner": {
+      "title-1": "Wojciech Góra",
+      "title-2": "paintings",
+      "subtitle": "Art for your space"
     },
-    "detail": "Immersive. Textured. Full of details for you to find.",
-    "detailTitle": "Look closer",
-    "detailDescription": "You can discover paint strokes and new texture details every time you look closer on each painting.",
-    "detailBtn": "Read more",
-    "selectedTitle1": "Discover more",
-    "selectedTitle2": "through selected artworks",
-    "selectedBtn": "See all artworks",
-    "offerSection": {
-      "offerMainTitle": "Explore offer",
-      "offer-title-1": "Catalogue of available art",
-      "offer-description-1": "Choose from wide range of art, available right away by special delivery without leaving home.",
-      "offer-title-2": "Customized paintings",
-      "offer-description-2": "Created specially for you, based on selected pattern. Possible color, size, technique modifications.",
-      "offer-title-3": "Personalised design",
-      "offer-description-3": "Designed from scratch to match your space and style."
+    "intro": {
+      "title": "Abstract oil paintings in the original technique"
     },
-    "aboutPage": {
+    "selected": {
+      "title-1": "Discover more",
+      "title-2": "through selected artworks",
+      "btn": "See all artworks"
+    },
+    "offer": {
+      "main-title": "Explore offer",
+      "title-1": "Catalogue of available art",
+      "description-1": "Choose from wide range of art, available right away by special delivery without leaving home.",
+      "title-2": "Customized paintings",
+      "description-2": "Created specially for you, based on selected pattern. Possible color, size, technique modifications.",
+      "title-3": "Personalised design",
+      "description-3": "esigned from scratch to match your space and style."
+    },
+    "about": {
       "title": "Wojciech Góra",
-      "subTitle": "Artist and his workshop.",
-      "description-01": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients recognition in Europe e.g. UK or Spain.",
-      "description-02": "Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation.",
-      "description-03": "His paintings are characterized by own technique, mastered over the years,focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
+      "description-1": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients recognition in Europe e.g. UK or Spain.",
+      "description-2": "Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation.",
+      "description-3": "His paintings are characterized by own technique, mastered over the years,focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
     },
-    "contactSection": {
+    "contact": {
       "title": "Interested in my art?",
       "subtitle": "Let's talk.",
       "e-mail": "w.goora@gmail.com",
       "telephone": "+48 505 285 476"
     }
   },
-
-  "singleArtPage": {
-    "ask for price": "Ask for price",
-    "Interested in this piece?": "Interested in this piece?"
+  "single-art-page": {
+    "ask-for-price": "Ask for price",
+    "interested-in-this-piece?": "Interested in this piece?"
   },
   "common": {
-    "letsSee": "Let's see",
-    "resetFilters": "Reset filters",
+    "lets-see": "Let's see",
+    "reset-filters": "Reset filters",
     "state": "State",
-    "imgTitle": "Wojciech Góra paintings"
+    "imgg-title": "Wojciech Góra paintings"
   }
 }

@@ -6,9 +6,9 @@ export const Intro = () => {
 
   return (
     <HalfRowLayout
-      title={t("homePage.introSection.introTitle")}
+      title={t("home-page.intro.title")}
       imgPath="/assets/tailor.png"
-      artTitle={t("common.imgTitle")}
+      artTitle={t("common.img-title")}
     />
   );
 };
