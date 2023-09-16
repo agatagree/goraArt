@@ -14,10 +14,10 @@ import {
 import { ArtItem } from "components/feature";
 import { MessagePage } from "components/layout";
 import { GalleryType } from "utils/Types";
+import { GalleryCardSkeleton } from "./components";
 import { getDataFromSnapshot, galleryCollection } from "api";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryPage.module.scss";
-import { GalleryCardSkeleton } from "./components";
 
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
@@ -109,6 +109,7 @@ export const GalleryPage = () => {
           {!load && <GalleryCardSkeleton cards={6} />}
           {gallery.map((card) => (
             <ArtItem
+              key={card.id}
               artId={card.id}
               artTitle={card.title}
               artViz={card.img.wiz}

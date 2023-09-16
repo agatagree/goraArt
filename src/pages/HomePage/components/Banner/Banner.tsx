@@ -4,7 +4,7 @@ import styles from "./Banner.module.scss";
 
 export const Banner = () => {
   const { t } = useTranslation();
-  const imgTitle = t("common.imgTitle");
+  const imgTitle = t("common.img-title");
   return (
     <div className={styles.layout}>
       <img

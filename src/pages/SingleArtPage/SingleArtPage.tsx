@@ -50,7 +50,7 @@ export const SingleArtPage = () => {
               {t(singleArt.availability, { ns: "dynamic" })}
             </Text>
             <Btn as={NavLink} to="/contact" variant="rectDark">
-              {t("singleArtPage.ask for price")}
+              {t("single-art-page.ask-for-price")}
             </Btn>
           </div>
         </div>
@@ -58,9 +58,9 @@ export const SingleArtPage = () => {
         <Image img={singleArt.img.wiz} />
         <Image img={singleArt.img.zoom} />
         <div className={styles.descriptionContainer}>
-          <Text size="md"> {t("singleArtPage.Interested in this piece?")}</Text>
+          <Text size="md"> {t("single-art-page.interested-in-this-piece?")}</Text>
           <Btn as={NavLink} to="/contact" variant="rectDark">
-            {t("singleArtPage.ask for price")}
+            {t("single-art-page.ask-for-price")}
           </Btn>
         </div>
       </MainLayout>

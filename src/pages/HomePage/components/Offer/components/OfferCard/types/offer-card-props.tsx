@@ -1,5 +1,4 @@
 export type OfferCardProps = {
-  title: string;
-  description: string;
   imgPath: string;
+  id: number
 };

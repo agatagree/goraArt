@@ -6,16 +6,16 @@ export const About = () => {
 
   return (
     <HalfRowLayout
-      title={t("homePage.aboutPage.title")}
+      title={t("home-page.about.title")}
       description={
-        <div>
-          {t("homePage.aboutPage.description-01")} <br />
-          <br /> {t("homePage.aboutPage.description-02")} <br />
-          <br /> {t("homePage.aboutPage.description-03")}{" "}
-        </div>
+        <>
+          {t("home-page.about.description-1")} <br />
+          <br /> {t("home-page.about.description-2")} <br />
+          <br /> {t("home-page.about.description-3")}{" "}
+        </>
       }
       imgPath="/assets/aboutImg.png"
-      artTitle={t("common.imgTitle")}
+      artTitle={t("common.img-title")}
     />
   );
 };

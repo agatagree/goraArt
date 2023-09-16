@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
-import { categoryCollection, getDataFromSnapshot } from "api";
 import { Btn, Loader, MenuDrawer, Text } from "components/common";
 import { MessagePage } from "components/layout";
 import { NavBarContext } from "../../../../Header";
 import { CategoryCheckbox } from "./CategoryCheckbox";
 import { TagsType, ColorType } from "./types/TagsTypes";
+import { categoryCollection, getDataFromSnapshot } from "api";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryFiltration.module.scss";
 
@@ -72,10 +72,10 @@ export const GalleryFiltration = () => {
           size="sm"
           onClick={handleCloseDrawer}
         >
-          {t("common.letsSee")}
+          {t("common.lets-see")}
         </Btn>
         <Btn variant="rect" upperCase fullWidth size="sm" onClick={handleReset}>
-          {t("common.resetFilters")}
+          {t("common.reset-filters")}
         </Btn>
       </div>
     </MenuDrawer>

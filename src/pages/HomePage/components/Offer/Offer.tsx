@@ -9,14 +9,13 @@ export const Offer: FC<OfferProps> = ({ data }) => {
   const { t } = useTranslation();
   return (
     <>
-      <SectionTitleLayout text={t("homePage.offerSection.offerMainTitle")} />
+      <SectionTitleLayout text={t("home-page.offer.main-title")} />
       <div className={styles.layout}>
         {data.map((element) => (
           <OfferCard
-            title={element.mainPageData.title}
-            description={element.mainPageData.description}
-            imgPath={element.img.wiz}
             key={element.mainPageData.mainPagePosition}
+            id={element.mainPageData.mainPagePosition}
+            imgPath={element.img.wiz}
           />
         ))}
       </div>
