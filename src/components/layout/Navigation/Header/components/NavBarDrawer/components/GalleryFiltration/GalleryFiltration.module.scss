@@ -30,24 +30,24 @@
   flex: 1;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid $darkGrey500;
+  border: 1px solid $darkGrey300;
   border-radius: 0;
   padding: $spacing10 $spacing16;
   letter-spacing: $fontLs2;
   text-transform: uppercase;
 
   &:hover {
-    background-color: $darkGrey500;
+    background-color: $darkGrey300;
     color: $white100;
   }
 
   &Apply {
     @extend .filterBtn;
-    background-color: $darkGrey500;
+    background-color: $darkGrey300;
     color: $white100;
     &:hover {
       background-color: transparent;
-      color: $darkGrey500;
+      color: $darkGrey300;
     }
   }
 }

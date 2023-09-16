@@ -27,31 +27,39 @@
   grid-column: span 1;
 }
 
-.art {
+.artContainer {
   object-fit: contain;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 0 $spacing30 $spacing80 $spacing30;
-  // transition: opacity 400ms ease-in-out 0s;
   position: relative;
+}
 
+.artContainerWithBorders {
+  @extend .artContainer;
+  padding: 0 $spacing30 $spacing80 $spacing30;
   @include md {
     padding: 0 $spacing10 $spacing60 $spacing10;
   }
 }
 
 .artImg {
+  width: 100%;
+  display: block;
+}
+
+.artImgWithBorders {
+  @extend .artImg;
   min-height: 80px;
   min-width: 80px;
-  width: 100%;
+
   height: 100%;
   max-height: 50vh;
-  display: block;
+
   object-fit: contain;
   margin-bottom: $spacing10;
   transition: opacity 0.4s ease-in-out;
@@ -59,4 +67,10 @@
   &:hover {
     opacity: 0.9;
   }
+}
+
+.artImgFull {
+  @extend .artImg;
+  min-height: 200px;
+  object-fit: contain;
 }

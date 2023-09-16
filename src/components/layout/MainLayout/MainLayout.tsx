@@ -1,13 +1,18 @@
-import { ReactNode } from "react";
+import { FC } from "react";
 import { classNames } from "utils/css";
+import { MainLayoutProps } from "./types/main-layout-props";
 import styles from "./MainLayout.module.scss";
 
-type MainLayoutProps = {
-  children: ReactNode;
-  gap?: "g180" | "g120" | "g60";
-};
+export const MainLayout: FC<MainLayoutProps> = ({
+  children,
+  gap,
+  fullHeight,
+}) => {
+  const classLayout = classNames(
+    styles.layout,
+    fullHeight && styles.fullHeight,
+    gap && styles[gap]
+  );
 
-export const MainLayout = ({ children, gap }: MainLayoutProps) => {
-  const classItem = classNames(styles.layout, gap && styles[gap]);
-  return <div className={classItem}>{children}</div>;
+  return <div className={classLayout}>{children}</div>;
 };

@@ -1,2 +1,2 @@
-export type Size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxl" | "xxxl";
-export type Color = "primary" | "primaryLight" | "secondary" | "primaryOrange";
+export type Size = "sm" | "md" | "lg";
+export type Color = "primary";

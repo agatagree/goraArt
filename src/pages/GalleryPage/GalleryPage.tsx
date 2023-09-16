@@ -11,12 +11,13 @@ import {
   DocumentData,
   getCountFromServer,
 } from "firebase/firestore";
+import { ArtItem } from "components/feature";
 import { MessagePage } from "components/layout";
 import { GalleryType } from "utils/Types";
-import { GallerySingleItem, GalleryCardSkeleton } from "./components";
 import { getDataFromSnapshot, galleryCollection } from "api";
 import { FilterContext } from "providers/FilterProvider";
 import styles from "./GalleryPage.module.scss";
+import { GalleryCardSkeleton } from "./components";
 
 export const GalleryPage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
@@ -107,7 +108,17 @@ export const GalleryPage = () => {
         >
           {!load && <GalleryCardSkeleton cards={6} />}
           {gallery.map((card) => (
-            <GallerySingleItem card={card} key={card.id} />
+            <ArtItem
+              artId={card.id}
+              artTitle={card.title}
+              artViz={card.img.wiz}
+              artCover={card.img.cover}
+              artCode={card.code}
+              artYear={card.year}
+              artTechnique={card.technique}
+              artWidth={card.dimensions.width}
+              artHeight={card.dimensions.height}
+            />
           ))}
         </InfiniteScroll>
       </div>

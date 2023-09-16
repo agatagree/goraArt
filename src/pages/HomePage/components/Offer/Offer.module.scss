@@ -1,0 +1,12 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  width: 100%;
+  display: flex;
+  gap: $spacing40;
+  padding-bottom: $spacing100;
+
+  @include md {
+    flex-direction: column;
+  }
+}

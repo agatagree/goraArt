@@ -4,25 +4,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   max-width: 1600px;
-  padding: 0 $spacing60 $spacing120 $spacing60;
-
+  width: 100%;
+  padding: $spacing240 $spacing60 $spacing120 $spacing60;
 
   @include md {
-    padding-top: $spacing120;
+    padding-top: $spacing180;
   }
+
   @include sm {
     padding: $spacing60 $spacing24 $spacing60 $spacing24;
-  }
-}
-
-.g180 {
-  gap: $spacing180;
-  @include md {
-    gap: $spacing120;
-  }
-  @include sm {
-    gap: $spacing60;
   }
 }
 
@@ -36,9 +28,17 @@
   }
 }
 
-.g60 {
-  gap: $spacing60;
-  @include sm {
-    gap: $spacing30;
+.fullHeight {
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include md {
+    padding-top: $spacing180;
+    padding-bottom: $spacing180;
+  }
+
+  @include md {
+    padding-top: $spacing120;
+    padding-bottom: $spacing150;
   }
 }

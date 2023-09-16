@@ -5,7 +5,7 @@
 }
 
 .galleryLayout {
-  padding: 200px $spacing24 $spacing80 $spacing24;
+  padding: $spacing200 $spacing24 $spacing80 $spacing24;
   display: grid;
   grid-auto-columns: 1fr;
   width: 100%;

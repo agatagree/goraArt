@@ -2,7 +2,7 @@
 
 .btn,
 .text,
-.textLight, 
+.textLight,
 .rect,
 .arrow {
   font-weight: $fontWeights500;
@@ -11,7 +11,6 @@
   background-color: transparent;
   border: none;
   font-size: $fontSize18;
-  
 
   &:hover,
   &:active &:not([disabled]) {
@@ -24,7 +23,7 @@
     outline: $darkGrey200;
   }
   &:global.active {
-    font-weight: $fontWeights700;
+    font-weight: $fontWeights600;
   }
 }
 
@@ -41,7 +40,7 @@
 
 .rect,
 .rectDark {
-  border: 1px solid $darkGrey500;
+  border: 1px solid $darkGrey300;
   border-radius: 0;
   background-color: transparent;
   padding: $spacing10 $spacing16;
@@ -57,7 +56,7 @@
   &:hover,
   &:active {
     &:not([disabled]) {
-      background-color: $darkGrey500;
+      background-color: $darkGrey300;
       color: $white100;
     }
   }
@@ -71,17 +70,17 @@
 }
 
 .rectDark {
-  background-color: $darkGrey500;
+  background-color: $darkGrey300;
   color: $white100;
   &:hover {
     background-color: $white100;
-    color: $darkGrey500;
+    color: $darkGrey300;
   }
 }
 
 .arrow {
   transform: rotate(0deg);
-  margin-right: $spacing10;
+  margin-left: $spacing10;
   vertical-align: middle;
   font-size: $spacing30;
 
@@ -94,7 +93,7 @@
 
 .mobileMenu {
   @include sm {
-    font-size: $fontSize36;
+    font-size: $fontSize32;
     font-weight: 400;
   }
 }

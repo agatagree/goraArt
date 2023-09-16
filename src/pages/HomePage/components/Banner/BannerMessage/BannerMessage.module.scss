@@ -1,0 +1,22 @@
+@use "styles/Helpers/" as *;
+
+.bannerTextlayout {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing40;
+  padding: $spacing60;
+
+  @include md {
+    padding: $spacing60;
+  }
+
+  @include sm {
+    gap: $spacing24;
+    padding: $spacing60 $spacing24;
+  }
+}
+
+.heroSubtextContainer {
+  display: flex;
+  flex-wrap: nowrap;
+}

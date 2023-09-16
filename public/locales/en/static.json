@@ -13,7 +13,9 @@
     "introMain": "Wojciech Góra",
     "introSecondary": "paintings",
     "introSubtitle": "Art for your space",
-    "tailor": "Abstract oil paintings in the original technique.",
+    "introSection": {
+      "introTitle": "Abstract oil paintings in the original technique"
+    },
     "detail": "Immersive. Textured. Full of details for you to find.",
     "detailTitle": "Look closer",
     "detailDescription": "You can discover paint strokes and new texture details every time you look closer on each painting.",
@@ -21,23 +23,38 @@
     "selectedTitle1": "Discover more",
     "selectedTitle2": "through selected artworks",
     "selectedBtn": "See all artworks",
-    "offerTitle": "Explore offer"
+    "offerSection": {
+      "offerMainTitle": "Explore offer",
+      "offer-title-1": "Catalogue of available art",
+      "offer-description-1": "Choose from wide range of art, available right away by special delivery without leaving home.",
+      "offer-title-2": "Customized paintings",
+      "offer-description-2": "Created specially for you, based on selected pattern. Possible color, size, technique modifications.",
+      "offer-title-3": "Personalised design",
+      "offer-description-3": "Designed from scratch to match your space and style."
+    },
+    "aboutPage": {
+      "title": "Wojciech Góra",
+      "subTitle": "Artist and his workshop.",
+      "description-01": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients recognition in Europe e.g. UK or Spain.",
+      "description-02": "Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation.",
+      "description-03": "His paintings are characterized by own technique, mastered over the years,focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
+    },
+    "contactSection": {
+      "title": "Interested in my art?",
+      "subtitle": "Let's talk.",
+      "e-mail": "w.goora@gmail.com",
+      "telephone": "+48 505 285 476"
+    }
   },
-  "aboutPage": {
-    "title": "Wojciech Góra: the contemporary abstract painter based in Poland.",
-    "subTitle": "Artist and his workshop.",
-    "description": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients’ recognition in Europe e.g. UK or Spain. Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation. His paintings are characterized by own technique, mastered over the years, focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
-  },
+
   "singleArtPage": {
     "ask for price": "Ask for price",
     "Interested in this piece?": "Interested in this piece?"
   },
-  "contactPage": {
-    "title": "Interested in my art? Let’s talk"
-  },
   "common": {
     "letsSee": "Let's see",
     "resetFilters": "Reset filters",
-    "state": "State"
+    "state": "State",
+    "imgTitle": "Wojciech Góra paintings"
   }
 }

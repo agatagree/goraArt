@@ -1,6 +1,6 @@
 @use "styles/Helpers/" as *;
 
-.navBarLayout {
+.layout {
   width: 100%;
   min-height: $spacing64;
   background-color: white;
@@ -13,7 +13,7 @@
   }
 }
 
-.navBarLinksContainer {
+.linksContainer {
   display: flex;
   align-items: center;
   padding: 0 $spacing24;
@@ -24,7 +24,7 @@
   }
 }
 
-.navBarIcon {
+.icon {
   width: 32px;
   height: 32px;
   vertical-align: middle;
@@ -35,7 +35,7 @@
   }
 }
 
-.navBarLinksWrapper {
+.linksWrapper {
   display: flex;
   align-items: center;
   gap: $spacing40;

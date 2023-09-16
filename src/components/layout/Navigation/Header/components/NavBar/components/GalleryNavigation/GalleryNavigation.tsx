@@ -16,8 +16,8 @@ export const GalleryNavigation = () => {
   };
 
   return (
-    <div className={styles.navBarGallery}>
-      <div className={styles.navBarGalleryContainer}>
+    <div className={styles.layout}>
+      <div className={styles.layoutContainer}>
         <Btn size="sm" onClick={handleDrawer}>
           {t("navBar.filter")}
           {selectedValues.length !== 0 && `: ${selectedValues.length}`}

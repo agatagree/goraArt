@@ -10,12 +10,12 @@ export const Detail = ({ data }: { data: GalleryType[] }) => {
     <div className={styles.detailSectionLayout}>
       <div className={styles.detailSectionMessage}>
         <div className={styles.detailTitle}>
-          <Text variant="header" size="xxxl">
+          <Text variant="header" size="lg">
             {t("homePage.detailTitle")}
           </Text>
         </div>
         <Text>{t("homePage.detailDescription")}</Text>
-        <Btn as={Link} to="/about" variant="arrow" size="xl">
+        <Btn as={Link} to="/about" variant="arrow" size="md">
           {t("homePage.detailBtn")}
         </Btn>
       </div>

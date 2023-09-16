@@ -1,39 +1,59 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { Btn } from "components/common";
-import { ArtDescription } from "components/layout";
-import { GalleryType } from "utils/Types";
-import styles from "./GallerySingleItem.module.scss";
+import { ArtDescription } from "./ArtDescription";
+import styles from "./ArtItem.module.scss";
 
 interface ArtItemProps {
-  as: "image" | "link";
-  art: GalleryType;
+  artTitle: string;
+  artId: string;
+  artViz: string;
+  artCode: string;
+  artYear: number;
+  artTechnique: string;
+  artWidth: number;
+  artHeight: number;
+  artCover: string;
+  isFullWidth?: boolean;
 }
 
-export const ArtItem: FC<ArtItemProps> = ({ as, art }) => {
-  const initialImage = art.img.cover;
+export const ArtItem: FC<ArtItemProps> = ({
+  artTitle,
+  artId,
+  artViz,
+  artCover,
+  artCode,
+  artYear,
+  artTechnique,
+  artWidth,
+  artHeight,
+  isFullWidth,
+}) => {
+  const initialImage = artCover;
   const [image, setImage] = useState(initialImage);
   return (
     <Btn
       as={Link}
-      to={`/gallery/${art.id}`}
-      className={styles.art}
-      key={art.id}
+      to={`/gallery/${artId}`}
+      className={
+        isFullWidth ? styles.artContainer : styles.artContainerWithBorders
+      }
+      key={artId}
     >
       <img
-        className={styles.artImg}
+        className={isFullWidth ? styles.artImgFull : styles.artImgWithBorders}
         src={image}
-        alt={art.title}
-        onMouseEnter={() => setImage(art.img.wiz)}
+        alt={artTitle}
+        onMouseEnter={() => setImage(artViz)}
         onMouseLeave={() => setImage(initialImage)}
       />
       <ArtDescription
-        title={art.title}
-        code={art.code}
-        year={art.year}
-        technique={art.technique}
-        width={art.dimensions.width}
-        height={art.dimensions.height}
+        title={artTitle}
+        code={artCode}
+        year={artYear}
+        technique={artTechnique}
+        width={artWidth}
+        height={artHeight}
       />
     </Btn>
   );

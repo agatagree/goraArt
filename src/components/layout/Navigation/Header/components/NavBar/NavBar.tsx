@@ -27,19 +27,19 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className={styles.navBarLayout}>
-        <div className={styles.navBarLinksContainer}>
+      <div className={styles.layout}>
+        <div className={styles.linksContainer}>
           <Btn as={NavLink} to="/" onClick={() => setIsOpen(false)}>
             <img
-              className={styles.navBarIcon}
+              className={styles.icon}
               src="/assets/logo.svg"
               alt="Gora logo"
             />
           </Btn>
-          <div className={styles.navBarLinksWrapper}>
+          <div className={styles.linksWrapper}>
             <PrimaryNavigation />
           </div>
-          <div className={styles.navBarLinksWrapper}>
+          <div className={styles.linksWrapper}>
             <LanguageBtn />
           </div>
           <BurgerMenu />

@@ -1,26 +1,23 @@
 @use "styles/Helpers" as *;
 
-@mixin layout {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  gap: $spacing60;
-  background-color: lightpink;
-  @include md {
-    flex-direction: column;
-    align-items: flex-start;
-    align-content: flex-start;
+.reverse {
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    @include md {
+      flex-direction: column;
+    }
   }
 }
 
-.layout {
-  @include layout();
-}
+.wrapper {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  align-items: center;
 
-.reverse {
-  &:nth-of-type(even) {
-    @include layout();
-    flex-direction: row-reverse;
+  @include md {
+    width: 100%;
+    height: 100%;
   }
 }

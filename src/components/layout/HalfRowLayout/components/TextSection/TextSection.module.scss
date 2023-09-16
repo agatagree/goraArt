@@ -1,53 +1,23 @@
 @use "styles/Helpers" as *;
 
-.sectionWrapper {
-  width: 50%;
-  padding: 0 $spacing60 0 $spacing120;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing24;
+.layout {
+  padding-left: $spacing120;
 
   @include lg {
-    padding: 0;
-  }
-  @include md {
-    width: 100%;
+    padding-left: 0;
   }
 }
 
-.sectionTitleContainer {
+.wrapper {
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing24;
+}
+
+.title {
   display: flex;
   flex-wrap: wrap;
   gap: $spacing16;
   align-items: center;
 }
-
-.sectionTitle {
-  white-space: nowrap;
-}
-
-.sectionDescription {
-  max-width: 360px;
-}
-
-////
-.selectedImgWrapper {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  @include md {
-    width: 100%;
-  }
-}
-
-.selectedImgSide {
-  width: 100%;
-  min-height: 200px;
-  display: block;
-  object-fit: cover;
-  background-color: $grey100;
-}
-
-

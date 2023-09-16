@@ -1,0 +1,27 @@
+@use "styles/Helpers" as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: $spacing30;
+}
+
+.imgContainer {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  background-color: $grey100;
+  min-height: 200px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing12;
+
+  @include md {
+    max-width: 410px;
+  }
+}

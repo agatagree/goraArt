@@ -11,17 +11,15 @@ export const BurgerMenu = () => {
   };
 
   return (
-    <>
-      <button
-        className={isOpen ? styles.burgerWrapperActive : styles.burgerWrapper}
-        onClick={handleDrawer}
-      >
-        <div className={styles.burgerContent}>
-          <div className={`${styles.line} ${styles.top}`} />
-          <div className={`${styles.line} ${styles.middle}`} />
-          <div className={`${styles.line} ${styles.bottom}`} />
-        </div>
-      </button>
-    </>
+    <button
+      className={isOpen ? styles.wrapperActive : styles.wrapper}
+      onClick={handleDrawer}
+    >
+      <div className={styles.content}>
+        <div className={`${styles.line} ${styles.top}`} />
+        <div className={`${styles.line} ${styles.middle}`} />
+        <div className={`${styles.line} ${styles.bottom}`} />
+      </div>
+    </button>
   );
 };
