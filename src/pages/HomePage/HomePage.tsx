@@ -36,8 +36,12 @@ export const HomePage = () => {
           data={getMainPageSectionData(gallery, HomePageSection.Selected)}
         />
         <Offer data={getMainPageSectionData(gallery, HomePageSection.Offer)} />
-        <About />
-        <Contact />
+        <div id="about">
+          <About />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
       </MainLayout>
     </>
   );
