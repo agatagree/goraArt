@@ -1,34 +1,27 @@
-import { Suspense } from "react";
-import { I18nextProvider } from "react-i18next";
 import "react-loading-skeleton/dist/skeleton.css";
-import { BrowserRouter } from "react-router-dom";
-
-import { Loader } from "components/common";
-import {Footer, Header } from "components/layout";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { MessagePage } from "components/layout";
+import { RootLayout } from "components/layout";
 import "./i18n";
-import { useGetTranslations } from "hooks/useGetTranslations";
-import i18next from "i18next";
-import { FilterProvider } from "providers/FilterProvider";
-import styles from "./App.module.scss";
+import { GalleryPage, HomePage, SingleArtPage } from "pages";
 import "styles/global.scss";
-import { AppRouts } from "routes";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="/gallery" element={<GalleryPage />} />
+      <Route path="/gallery/:id" element={<SingleArtPage />} />
+      <Route path="*" element={<MessagePage message={"pageNotFound"} />} />
+    </Route>
+  )
+);
 
 export const App = () => {
-  useGetTranslations();
-
-  return (
-    <Suspense fallback={<Loader />}>
-      <BrowserRouter>
-        <div className={styles.layout}>
-          <I18nextProvider i18n={i18next}>
-            <FilterProvider>
-              <Header />
-              <AppRouts />
-            </FilterProvider>
-          </I18nextProvider>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </Suspense>
-  );
+  return <RouterProvider router={router} />;
 };
