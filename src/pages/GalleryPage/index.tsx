@@ -1,3 +1,3 @@
 export * from "./GalleryPage";
-export * from "./components/index"
+export * from "./components"
 
