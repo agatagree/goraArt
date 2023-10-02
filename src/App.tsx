@@ -1,12 +1,9 @@
 import "react-loading-skeleton/dist/skeleton.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
-import { MessagePage } from "components/layout";
-import { RootLayout } from "components/layout";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { MessagePage, RootLayout } from "components/layout";
 import "./i18n";
-import { GalleryListPage, GalleryPage, HomePage, SingleArtPage } from "pages";
+import { GalleryPage, HomePage } from "pages";
+import { GalleryListPage, SingleArtPage } from "pages/GalleryPage";
 import "styles/global.scss";
 
 const router = createBrowserRouter([

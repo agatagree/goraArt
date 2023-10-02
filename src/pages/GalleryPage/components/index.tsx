@@ -1,2 +1,2 @@
-export * from "./GalleryListPage"
-export * from "./SingleArtPage"
+export * from "./GalleryListPage/GalleryListPage"
+export * from "./SingleArtPage/SingleArtPage"
