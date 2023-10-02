@@ -1,1 +1,2 @@
-export * from "./GalleryCardSkeleton/GalleryCardSkeleton"
+export * from "./GalleryListPage"
+export * from "./SingleArtPage"
