@@ -1,5 +1,15 @@
 @use "styles/Helpers/" as *;
 
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 .wrapper {
   display: none;
 
@@ -9,36 +19,32 @@
     align-items: center;
     width: 30px;
     height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
     transition: all 0.25s;
     margin-left: auto;
 
     &:focus {
       outline: $darkGrey200;
     }
+  }
 
-    &Active {
-      .content {
-        transform: translate(3px);
-      }
-      .line {
-        background: $darkGrey300;
-      }
-      .top {
-        transform: rotate(45deg) translate(0.5px, 0);
-        transition: 0.25s ease-in-out;
-      }
-      .middle {
-        transform: scaleY(0);
-        transition: 0.25s ease-in-out;
-      }
-      .bottom {
-        transform: rotate(-45deg) translate(0.5px, 0);
-        transition: 0.25s ease-in-out;
-      }
+  &Active {
+    .content {
+      transform: translate(3px);
+    }
+    .line {
+      background: $darkGrey300;
+    }
+    .top {
+      transform: rotate(45deg) translate(0.5px, 0);
+      transition: 0.25s ease-in-out;
+    }
+    .middle {
+      transform: scaleY(0);
+      transition: 0.25s ease-in-out;
+    }
+    .bottom {
+      transform: rotate(-45deg) translate(0, 0.5px);
+      transition: 0.25s ease-in-out;
     }
   }
 }
@@ -53,11 +59,11 @@
 
   div {
     width: $spacing24;
-    height: 2px;
+    height: 1.9px;
     border-radius: 10px;
     position: relative;
     background-color: $darkGrey300;
-    transform-origin: 2px;
+    transform-origin: 1.9px;
 
     .top {
       transform-origin: 0% 0%;

@@ -16,6 +16,7 @@ export const NavBar = () => {
   const { setIsOpen } = useContext(NavBarContext);
 
   const pageName = useLocation();
+  
   useEffect(() => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
