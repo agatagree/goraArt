@@ -13,6 +13,7 @@ export const Footer = () => {
             src="/assets/logo.svg"
             alt="logo"
             className={styles.footerIcon}
+            loading="lazy"
           />
         </Btn>
         <Text size="sm">&copy; {new Date().getFullYear()} tamaga studio</Text>

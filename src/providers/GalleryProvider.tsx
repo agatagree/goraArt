@@ -48,6 +48,7 @@ export const GalleryProvider = ({ children }: { children: ReactNode }) => {
   >(undefined);
   const [totalCount, setTotalCount] = useState<number>(0);
   const { selectedValues } = useContext(FilterContext);
+  const galleryItemNumber = 6
 
   const memoizedTotalCountFromServer = useMemo(() => {
     return selectedValues.length > 0
@@ -64,9 +65,9 @@ export const GalleryProvider = ({ children }: { children: ReactNode }) => {
           galleryCollection,
           orderBy("order"),
           where("tags", "array-contains-any", selectedValues),
-          limit(9)
+          limit(galleryItemNumber)
         )
-      : query(galleryCollection, orderBy("order"), limit(9));
+      : query(galleryCollection, orderBy("order"), limit(galleryItemNumber));
   }, [selectedValues]);
 
   useEffect(() => {
@@ -93,13 +94,13 @@ export const GalleryProvider = ({ children }: { children: ReactNode }) => {
             orderBy("order"),
             where("tags", "array-contains-any", selectedValues),
             startAfter(lastDoc),
-            limit(9)
+            limit(galleryItemNumber)
           )
         : query(
             galleryCollection,
             orderBy("order"),
             startAfter(lastDoc),
-            limit(9)
+            limit(galleryItemNumber)
           ),
       (card) => {
         setGallery((gallery) => [...gallery, ...getDataFromSnapshot(card)]);

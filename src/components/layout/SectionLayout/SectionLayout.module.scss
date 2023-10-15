@@ -15,10 +15,12 @@
     align-content: flex-start;
     height: auto;
     max-height: none;
+    padding-top: $spacing150;
   }
 
   @include sm {
     height: auto;
     max-height: none;
+    padding-top: $spacing100;
   }
 }

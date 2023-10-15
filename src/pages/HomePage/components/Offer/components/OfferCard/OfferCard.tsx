@@ -12,7 +12,7 @@ export const OfferCard: FC<OfferCardProps> = ({
   const imgTitle = t("common.img-title");
   return (
     <div className={styles.layout}>
-      <img src={imgPath} alt={imgTitle} className={styles.imgContainer} />
+      <img src={imgPath} alt={imgTitle} className={styles.imgContainer} loading="lazy"/>
       <div className={styles.textContainer}>
         <Text variant="basicHeader">{t(`home-page.offer.title-${id}`)}</Text>
         <Text>{t(`home-page.offer.description-${id}`)}</Text>
