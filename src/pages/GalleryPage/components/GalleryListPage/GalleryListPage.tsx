@@ -1,8 +1,8 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import { ArtItem } from "components/feature";
 import { MessagePage } from "components/layout";
+import { GalleryCardSkeletonList } from "./components/GalleryCardSkeletonList";
 import { useGallery } from "providers/GalleryProvider";
-import { GalleryCardSkeleton } from "./components/GalleryCardSkeleton/GalleryCardSkeleton";
 import styles from "./GalleryListPage.module.scss";
 
 export const GalleryListPage = () => {
@@ -19,10 +19,10 @@ export const GalleryListPage = () => {
           dataLength={totalCount}
           next={handleMore}
           hasMore={hasMore}
-          loader={<GalleryCardSkeleton cards={2} />}
+          loader={<GalleryCardSkeletonList cards={2} />}
           className={styles.galleryLayout}
         >
-          {!load && <GalleryCardSkeleton cards={6} />}
+          {!load && <GalleryCardSkeletonList cards={6} />}
           {gallery.map((card) => (
             <ArtItem
               key={card.id}

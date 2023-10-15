@@ -11,6 +11,7 @@
     object-fit: cover;
     aspect-ratio: 1/1;
     max-width: calc(100% - 545px);
+    background-color: $skeleton;
     @include md {
       max-width: 100%;
     }

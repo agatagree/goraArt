@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { Btn } from "components/common";
+import { classNames } from "utils/css";
 import { ArtDescription } from "./ArtDescription";
 import styles from "./ArtItem.module.scss";
 
@@ -32,29 +33,41 @@ export const ArtItem: FC<ArtItemProps> = ({
   const initialImage = artCover;
   const [image, setImage] = useState(initialImage);
   return (
-    <Btn
-      as={Link}
-      to={`/gallery/${artId}`}
+    <div
       className={
         isFullWidth ? styles.artContainer : styles.artContainerWithBorders
       }
       key={artId}
     >
-      <img
-        className={isFullWidth ? styles.artImgFull : styles.artImgWithBorders}
-        src={image}
-        alt={artTitle}
-        onMouseEnter={() => setImage(artViz)}
-        onMouseLeave={() => setImage(initialImage)}
-      />
-      <ArtDescription
-        title={artTitle}
-        code={artCode}
-        year={artYear}
-        technique={artTechnique}
-        width={artWidth}
-        height={artHeight}
-      />
-    </Btn>
+      <div className={styles.artContent}>
+        <div className={styles.imgContainerArt}>
+          <Btn
+            as={Link}
+            to={`/gallery/${artId}`}
+            className={classNames(
+              styles.artImg,
+              isFullWidth && styles.artImgFull
+            )}
+          >
+            <img
+              className={styles.artImgWithBorders}
+              src={image}
+              alt={artTitle}
+              onMouseEnter={() => setImage(artViz)}
+              onMouseLeave={() => setImage(initialImage)}
+              loading="lazy"
+            />
+          </Btn>
+        </div>
+        <ArtDescription
+          title={artTitle}
+          code={artCode}
+          year={artYear}
+          technique={artTechnique}
+          width={artWidth}
+          height={artHeight}
+        />
+      </div>
+    </div>
   );
 };

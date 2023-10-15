@@ -30,6 +30,7 @@ export const MessagePage = ({ message }: MessageName) => {
         className={styles.messageImg}
         alt={messageType[message].alt}
         src={messageType[message].img}
+        loading="lazy"
       />
       <Text>{messageType[message].text}</Text>
     </div>
