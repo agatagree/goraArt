@@ -64,7 +64,9 @@ export const Btn = <E extends ElementType = "button">({
       target={target || "_self"}
       {...props}
     >
-      {children}
+      <div className={classNames(variant === "arrow" && styles.arrowText)}>
+        {children}
+      </div>
       {variant === "arrow" ? (
         <VscArrowRight
           className={hoverState ? styles.arrowRotate : styles.arrow}

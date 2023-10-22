@@ -10,7 +10,7 @@
   padding: $spacing240 $spacing60 $spacing120 $spacing60;
 
   @include md {
-    padding-top: $spacing180;
+    padding-top: $spacing60;
   }
 
   @include sm {
@@ -33,12 +33,12 @@
   padding-top: 0;
 
   @include md {
-    padding-top: $spacing180;
+    padding-top: $spacing60;
     padding-bottom: $spacing180;
   }
 
   @include md {
-    padding-top: $spacing120;
+    padding-top: $spacing60;
     padding-bottom: $spacing150;
   }
 }

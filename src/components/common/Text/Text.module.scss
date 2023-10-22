@@ -6,7 +6,7 @@
   line-height: 135%;
 
   @include sm {
-    font-size: $fontSize18;
+    font-size: $fontSize16;
   }
 }
 @mixin header {
@@ -16,45 +16,52 @@
 
 .mainHeader {
   @include header();
-  letter-spacing: $fontLs2M;
+  line-height: $fontLh130;
+  letter-spacing: $fontLs128S;
   font-size: $fontSize64;
 
-  @include xl {
-    font-size: $fontSize40;
+  @include sm {
+    font-size: $fontSize32;
   }
 }
 
-.mainHeaderSubText {
-  @include header();
-  letter-spacing: $fontLs64M;
-  font-size: $fontSize32;
-
-  @include lg {
-    font-size: $fontSize24;
-  }
-}
 
 .subHeader {
-  @include header();
-  letter-spacing: $fontLs64M;
+  font-weight: $fontWeights400;
+  letter-spacing: $fontLs64S;
+  line-height: $fontLh150;
   display: flex;
   align-items: center;
+  font-size: $fontSize28;
+
+  @include sm {
+    font-size: $fontSize20;
+    line-height: $fontLh140;
+    max-width: 257px;
+  }
 }
 
-.subHeader {
-  font-size: $fontSize40;
+.subHeaderMedium {
+  font-weight: $fontWeights500;
+  letter-spacing: $fontLs64S;
+  line-height: $fontLh140;
+  display: flex;
+  align-items: center;
+  font-size: $fontSize28;
 
-  @include md {
-    font-size: $fontSize32;
+  @include sm {
+    font-size: $fontSize20;
   }
 }
 
 .basicHeader {
   @include header();
-  font-size: $fontSize24;
+  font-size: $fontSize48;
+  line-height: $fontLh130;
+  letter-spacing: $fontLs128S;
 
   @include sm {
-    font-size: $fontSize16;
+    font-size: $fontSize32;
   }
 }
 

@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { Btn } from "components/common";
-import { HalfRowLayout, SectionTitleLayout } from "components/layout";
+import {
+  HalfRowLayout,
+  HalfRowLayoutVariant,
+  SectionTitleLayout,
+  TextSectionLayoutVariant,
+} from "components/layout";
 import { SelectedProps } from "./types/selected-props";
 import styles from "./Selected.module.scss";
 
@@ -20,14 +23,15 @@ export const Selected: FC<SelectedProps> = ({ data }) => {
         }
       />
       <div className={styles.layout}>
-        {data.map((element) => (
+        {data.map((element, index) => (
           <HalfRowLayout
             key={element.id}
-            variant="reverse"
+            variant={HalfRowLayoutVariant.reverse}
             icon={element.mainPageData.icon}
             title={t(element.mainPageData.title, "selected works", {
               ns: "dynamic",
             })}
+            textSectionVariant={TextSectionLayoutVariant.square}
             description={t(element.mainPageData.description, "", {
               ns: "dynamic",
             })}
@@ -41,13 +45,9 @@ export const Selected: FC<SelectedProps> = ({ data }) => {
             artTechnique={element.technique}
             artWidth={element.dimensions.width}
             artHeight={element.dimensions.height}
+            isEndingBtn={index === data.length - 1}
           />
         ))}
-      </div>
-      <div className={styles.buttonMore}>
-        <Btn as={Link} to="/gallery" size="lg" variant="arrow">
-          {t("home-page.selected.btn")}
-        </Btn>
       </div>
     </>
   );

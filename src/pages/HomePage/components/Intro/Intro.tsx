@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { HalfRowLayout } from "components/layout";
+import { TextVariant } from "components/common";
+import { HalfRowLayout, HalfRowLayoutVariant } from "components/layout";
 
 export const Intro = () => {
   const { t } = useTranslation();
@@ -7,8 +8,10 @@ export const Intro = () => {
   return (
     <HalfRowLayout
       title={t("home-page.intro.title")}
+      titleVariant={TextVariant.subHeader}
       imgPath="/assets/tailor.png"
       artTitle={t("common.img-title")}
+      variant={HalfRowLayoutVariant.mobileReverse}
     />
   );
 };

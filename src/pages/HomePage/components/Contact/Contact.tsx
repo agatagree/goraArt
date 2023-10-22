@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Text } from "components/common";
+import { Text, TextVariant } from "components/common";
 import { SectionLayout } from "components/layout";
 import styles from "./Contact.module.scss";
 
@@ -10,10 +10,14 @@ export const Contact = () => {
     <SectionLayout className={styles.layout}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          <Text variant="mainHeader">{t("home-page.contact.title")}</Text>
+          <Text variant={TextVariant.mainHeader}>
+            {t("home-page.contact.title")}
+          </Text>
         </div>
         <div className={styles.subtitle}>
-          <Text variant="subHeader">{t("home-page.contact.subtitle")}</Text>
+          <Text variant={TextVariant.subHeader}>
+            {t("home-page.contact.subtitle")}
+          </Text>
         </div>
         <div className={styles.contactInfo}>
           <Text>{t("home-page.contact.e-mail")}</Text>

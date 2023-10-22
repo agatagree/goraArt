@@ -15,21 +15,25 @@ $skeleton: #ebebeb;
 $fontSize12: 12px;
 $fontSize14: 14px;
 $fontSize16: 16px;
-$fontSize18: 18px;
+$fontSize20: 20px;
 $fontSize24: 24px;
+$fontSize28: 28px;
 $fontSize32: 32px;
-$fontSize40: 40px;
+$fontSize48: 48px;
 $fontSize64: 64px;
 
 //FONT WEIGHT
 $fontWeights400: 400;
 $fontWeights500: 500;
-$fontWeights600: 600;
 
 //FONT LETTER SPACING
-$fontLs2: 1.28px;
-$fontLs2M: -1.28px;
-$fontLs64M: -0.64px;
+$fontLs64S: -0.64px;
+$fontLs128S: -1.28px;
+
+//FONT LINE HEIGHT
+$fontLh130: 130%;
+$fontLh140: 140%;
+$fontLh150: 150%;
 
 //SPACING
 $spacing8: 8px;
@@ -47,6 +51,7 @@ $spacing64: 64px;
 $spacing80: 80px;
 $spacing100: 100px;
 $spacing120: 120px;
+$spacing160: 160px;
 $spacing150: 150px;
 $spacing180: 180px;
 $spacing200: 200px;

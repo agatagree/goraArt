@@ -17,6 +17,10 @@ body {
 }
 
 // SIZES
+.xs {
+  font-size: $fontSize12;
+}
+
 .sm {
   font-size: $fontSize14;
   @include sm {
@@ -25,18 +29,23 @@ body {
 }
 
 .md {
-  font-size: $fontSize32;
-  letter-spacing: $fontLs2;
-  
+  font-size: $fontSize28;
   @include sm {
-    font-size: $fontSize24;
+    font-size: $fontSize20;
   }
 }
 
 .lg {
-  font-size: $fontSize40;
+  font-size: $fontSize48;
   @include sm {
-    font-size: $fontSize24;
+    font-size: $fontSize32;
+  }
+}
+
+.xl {
+  font-size: $fontSize64;
+  @include sm {
+    font-size: $fontSize32;
   }
 }
 

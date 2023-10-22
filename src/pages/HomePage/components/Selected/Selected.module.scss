@@ -9,14 +9,3 @@
     gap: $spacing120;
   }
 }
-
-.buttonMore {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: $spacing48 0;
-
-  @include lg {
-    padding-top: $spacing40;
-  }
-}
