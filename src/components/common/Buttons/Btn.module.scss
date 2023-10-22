@@ -5,12 +5,14 @@
 .textLight,
 .rect,
 .arrow {
+  display: flex;
+  flex-wrap: nowrap;
   font-weight: $fontWeights500;
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  font-size: $fontSize18;
+  font-size: $fontSize16;
 
   &:hover,
   &:active &:not([disabled]) {
@@ -23,7 +25,7 @@
     outline: $darkGrey200;
   }
   &:global.active {
-    font-weight: $fontWeights600;
+    font-weight: $fontWeights500;
   }
 }
 
@@ -44,7 +46,6 @@
   border-radius: 0;
   background-color: transparent;
   padding: $spacing10 $spacing16;
-  letter-spacing: $fontLs2;
   text-align: center;
 
   &Negative {
@@ -82,7 +83,18 @@
   transform: rotate(0deg);
   margin-left: $spacing10;
   vertical-align: middle;
-  font-size: $spacing30;
+  font-size: $fontSize28;
+  font-weight: $fontWeights500;
+  letter-spacing: $fontLs64S;
+  line-height: $fontLh140;
+
+  .arrowText {
+    border-bottom: 2px solid;
+  }
+
+  @include sm {
+    font-size: $fontSize24;
+  }
 
   &Rotate {
     @extend .arrow;
@@ -92,9 +104,11 @@
 }
 
 .mobileMenu {
+  line-height: $fontLh150;
   @include sm {
     font-size: $fontSize32;
     font-weight: 400;
+    line-height: $fontLh140;
   }
 }
 

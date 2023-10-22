@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { onSnapshot } from "firebase/firestore";
-import { Btn, Loader, MenuDrawer, Text } from "components/common";
+import { Btn, Loader, MenuDrawer, Text, TextVariant } from "components/common";
 import { MessagePage } from "components/layout";
 import { NavBarContext } from "../../../../Header";
 import { CategoryCheckbox } from "./CategoryCheckbox";
@@ -47,7 +47,7 @@ export const GalleryFiltration = () => {
           .filter(([key, _value]) => key !== "id")
           .map(([key, value]: [string, string | ColorType[] | string[]]) => (
             <div key={key} className={styles.categoryLayout}>
-              <Text variant="smallHeader" size="sm">
+              <Text variant={TextVariant.smallHeader} size="sm">
                 {t(`navBar.${key}`)}
               </Text>
               <div

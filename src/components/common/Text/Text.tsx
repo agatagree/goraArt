@@ -1,19 +1,13 @@
 import { ReactNode, ElementType, ComponentProps } from "react";
 import { classNames } from "utils/css";
 import { Color, Size } from "../commonTypes";
+import { TextVariant } from "./enums/text-variant.enum";
 import styles from "./Text.module.scss";
 
 type TextOwnProps<E extends ElementType> = {
   size?: Size;
   color?: Color;
-  variant?:
-    | "text"
-    | "header"
-    | "mainHeader"
-    | "subHeader"
-    | "basicHeader"
-    | "smallHeader"
-    | "mainHeaderSubText";
+  variant?: TextVariant;
   children: ReactNode;
   as?: E;
   capitalize?: boolean;

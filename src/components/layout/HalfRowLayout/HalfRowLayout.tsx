@@ -7,6 +7,7 @@ import styles from "./HalfRowLayout.module.scss";
 
 export const HalfRowLayout: FC<HalfRowLayoutProps> = ({
   title,
+  titleVariant,
   description,
   icon,
   variant,
@@ -21,11 +22,22 @@ export const HalfRowLayout: FC<HalfRowLayoutProps> = ({
   artWidth,
   artHeight,
   artCover,
+  textSectionVariant,
+  isEndingBtn
 }) => {
   return (
-    <SectionLayout className={variant && styles[variant]}>
+    <SectionLayout
+      className={(variant && styles[variant])}
+    >
       <div className={styles.wrapper}>
-        <TextSection title={title} description={description} icon={icon} />
+        <TextSection
+          title={title}
+          titleVariant={titleVariant}
+          description={description}
+          icon={icon}
+          textSectionVariant={textSectionVariant}
+          isEndingBtn={isEndingBtn}
+        />
       </div>
       <div className={styles.wrapper}>
         <ImgSection

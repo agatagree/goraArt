@@ -10,6 +10,13 @@
   }
 }
 
+.mobileReverse {
+  @include md {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+}
+
 .wrapper {
   width: 50%;
   height: 80%;
