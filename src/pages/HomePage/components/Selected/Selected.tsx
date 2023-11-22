@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { TextVariant } from "components/common";
 import {
   HalfRowLayout,
   HalfRowLayoutVariant,
@@ -26,11 +27,12 @@ export const Selected: FC<SelectedProps> = ({ data }) => {
         {data.map((element, index) => (
           <HalfRowLayout
             key={element.id}
-            variant={HalfRowLayoutVariant.reverse}
+            variant={HalfRowLayoutVariant.alternating}
             icon={element.mainPageData.icon}
             title={t(element.mainPageData.title, "selected works", {
               ns: "dynamic",
             })}
+            titleVariant={TextVariant.subHeaderMedium}
             textSectionVariant={TextSectionLayoutVariant.square}
             description={t(element.mainPageData.description, "", {
               ns: "dynamic",

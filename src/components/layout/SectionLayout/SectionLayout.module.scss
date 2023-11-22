@@ -15,6 +15,7 @@
     align-content: flex-start;
     height: auto;
     max-height: none;
+    gap: $spacing40;
   }
 
   @include sm {

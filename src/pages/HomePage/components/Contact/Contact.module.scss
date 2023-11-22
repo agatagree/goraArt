@@ -13,7 +13,7 @@
 
 .title {
   text-align: center;
-  padding: $spacing100 0;
+  padding: $spacing80 0;
   text-align: center;
 }
 
@@ -26,6 +26,35 @@
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: $spacing14;
+  gap: $spacing20;
   text-align: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  padding-top: $spacing30;
+  gap: $spacing30;
+
+  @include md {
+    gap: $spacing8;
+  }
+}
+
+.iconBtn {
+  @include md {
+    width: $spacing30;
+    height: $spacing30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  font-size: $fontSize24;
+
+  @include md {
+    font-size: $fontSize16;
+  }
 }

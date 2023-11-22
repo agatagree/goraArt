@@ -1,0 +1,17 @@
+@use "styles/Helpers" as *;
+
+.description {
+  width: 480px;
+
+  @include xxl {
+    width: 420px;
+  }
+
+  @include lg {
+    width: 320px;
+  }
+
+  @include md {
+    width: 100%;
+  }
+}

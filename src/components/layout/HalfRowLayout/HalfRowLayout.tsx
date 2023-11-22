@@ -1,4 +1,7 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { Btn } from "components/common";
 import { SectionLayout } from "../SectionLayout";
 import { ImgSection } from "./components/ImgSection";
 import { TextSection } from "./components/TextSection";
@@ -23,12 +26,11 @@ export const HalfRowLayout: FC<HalfRowLayoutProps> = ({
   artHeight,
   artCover,
   textSectionVariant,
-  isEndingBtn
+  isEndingBtn,
 }) => {
+  const { t } = useTranslation();
   return (
-    <SectionLayout
-      className={(variant && styles[variant])}
-    >
+    <SectionLayout className={variant && styles[variant]}>
       <div className={styles.wrapper}>
         <TextSection
           title={title}
@@ -54,6 +56,13 @@ export const HalfRowLayout: FC<HalfRowLayoutProps> = ({
           artCover={artCover}
         />
       </div>
+      {isEndingBtn && (
+        <div className={styles.btn}>
+          <Btn as={Link} to="/gallery" variant="arrow">
+            {t("home-page.selected.btn")}
+          </Btn>
+        </div>
+      )}
     </SectionLayout>
   );
 };

@@ -7,6 +7,7 @@ import { About, Banner, Contact, Intro, Offer, Selected } from "./components";
 import { HomePageSection } from "./enums";
 import { getMainPageSectionData } from "./utils";
 import { getDataFromSnapshot, galleryCollection } from "api";
+import styles from "./Home.module.scss";
 
 export const HomePage = () => {
   const [gallery, setGallery] = useState<GalleryType[]>([]);
@@ -36,10 +37,10 @@ export const HomePage = () => {
           data={getMainPageSectionData(gallery, HomePageSection.Selected)}
         />
         <Offer data={getMainPageSectionData(gallery, HomePageSection.Offer)} />
-        <div id="about">
+        <div id="about" className={styles.wrapper}>
           <About />
         </div>
-        <div id="contact">
+        <div id="contact" className={styles.wrapper}>
           <Contact />
         </div>
       </MainLayout>

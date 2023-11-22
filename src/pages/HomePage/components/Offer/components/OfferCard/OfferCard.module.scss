@@ -19,7 +19,7 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: $spacing12;
+  gap: $spacing10;
 
   @include md {
     max-width: 410px;
