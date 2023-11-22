@@ -4,7 +4,7 @@
   padding-left: $spacing120;
   position: relative;
 
-  @include lg {
+  @include xl {
     padding-left: 0;
   }
 }
@@ -13,11 +13,17 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 410px;
   display: flex;
   flex-direction: column;
   gap: $spacing24;
   min-width: 260px;
+
+  @include md {
+    position: inherit;
+    top: auto;
+    transform: none;
+    min-width: 200px;
+  }
 }
 
 .title {
@@ -39,8 +45,20 @@
   aspect-ratio: 1/1;
   width: 100%;
 
+  @include md {
+    aspect-ratio: auto;
+  }
+
+  .wrapper {
+    max-width: 410px;
+  }
+
   .btn {
     position: absolute;
     bottom: 0;
+
+    @include md {
+      display: none;
+    }
   }
 }

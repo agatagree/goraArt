@@ -4,10 +4,15 @@
   width: 100%;
   display: flex;
   gap: $spacing40;
-  padding-bottom: $spacing100;
+  padding: 0 $spacing120 $spacing100;
+
+  @include xl {
+    padding: 0;
+  }
 
   @include md {
     flex-direction: column;
-    padding-bottom: 0;
+    padding: 0;
+    gap: $spacing120;
   }
 }

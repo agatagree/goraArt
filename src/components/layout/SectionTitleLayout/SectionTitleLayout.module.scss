@@ -10,6 +10,6 @@
   }
 
   @include sm {
-    padding-top: $spacing160;
+    padding: $spacing120 0 $spacing60;
   }
 }

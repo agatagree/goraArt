@@ -14,22 +14,48 @@
   }
 }
 
-.footerContainer {
+.Container {
   display: flex;
   gap: $spacing24;
   align-items: center;
+}
+
+.footerContainer {
+  @extend .Container;
   @include sm {
     gap: $spacing16;
   }
 }
 
-.footerIcon {
-  vertical-align: middle;
-  font-size: $fontSize16;
-  width: 20px;
+.btnContainer {
+  @extend .Container;
+  @include sm {
+    gap: 0;
+  }
+}
 
-  &Facebook {
-    @extend .footerIcon;
-    font-size: 20px;
+.iconBtn {
+  @include md {
+    width: $spacing30;
+    height: $spacing30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  vertical-align: middle;
+  font-size: $fontSize20;
+
+  @include md {
+    font-size: $fontSize16;
+  }
+}
+
+.logo {
+  @include md {
+    width: $spacing20;
+    height: $spacing20;
   }
 }

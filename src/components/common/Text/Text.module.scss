@@ -13,7 +13,6 @@
   font-weight: $fontWeights500;
 }
 
-
 .mainHeader {
   @include header();
   line-height: $fontLh130;
@@ -21,10 +20,9 @@
   font-size: $fontSize64;
 
   @include sm {
-    font-size: $fontSize32;
+    font-size: $fontSize40;
   }
 }
-
 
 .subHeader {
   font-weight: $fontWeights400;

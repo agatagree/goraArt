@@ -1,18 +1,36 @@
 @use "styles/Helpers" as *;
 
-.reverse {
+@mixin mobileLayout {
+  @include md {
+    flex-direction: column;
+  }
+}
+
+.alternating {
   &:nth-of-type(even) {
     flex-direction: row-reverse;
 
     @include md {
-      flex-direction: column;
+      @include mobileLayout;
     }
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+
+  @include xl {
+    padding-top: $spacing160;
+  }
+
+  @include md {
+    @include mobileLayout;
+    padding-top: $spacing120;
   }
 }
 
 .mobileReverse {
   @include md {
-    flex-direction: column;
     flex-direction: column-reverse;
   }
 }
@@ -26,5 +44,14 @@
   @include md {
     width: 100%;
     height: 100%;
+  }
+}
+
+.btn {
+  display: none;
+
+  @include md {
+    padding-top: $spacing40;
+    display: block;
   }
 }
