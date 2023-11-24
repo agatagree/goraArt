@@ -28,6 +28,13 @@ body {
   }
 }
 
+.s {
+  font-size: $fontSize16;
+  @include sm {
+    font-size: $fontSize20;
+  }
+}
+
 .md {
   font-size: $fontSize28;
   @include sm {

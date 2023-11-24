@@ -10,5 +10,9 @@ export const LanguageBtn = () => {
     setLanguageBtn(languageBtn === "PL" ? "EN" : "PL");
     i18n.changeLanguage(i18n.language === "pl" ? "en" : "pl");
   };
-  return <Btn onClick={changeLanguage}>{languageBtn}</Btn>;
+  return (
+    <Btn onClick={changeLanguage} size="s">
+      {languageBtn}
+    </Btn>
+  );
 };

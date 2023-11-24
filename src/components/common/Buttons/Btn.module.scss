@@ -106,9 +106,9 @@
 .mobileMenu {
   line-height: $fontLh150;
   @include sm {
-    font-size: $fontSize32;
+    font-size: $fontSize28;
     font-weight: 400;
-    line-height: $fontLh140;
+    line-height: $fontLh150;
   }
 }
 
