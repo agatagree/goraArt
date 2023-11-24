@@ -33,31 +33,25 @@ export const SingleArtPage = () => {
 
   return (
     <MainLayout gap="g120">
+      <Image img={singleArt.img.cover} />
+      <Image img={singleArt.img.wiz} />
+      <Image img={singleArt.img.zoom} />
       <div className={styles.description}>
         <div className={styles.descriptionContainer}>
           <Text variant={TextVariant.header} size="lg" capitalize>
             {singleArt.title} {singleArt.code}
           </Text>
           <Text>
-            {t(singleArt.technique, { ns: "dynamic" })} /{" "}
-            {singleArt.dimensions.width}x{singleArt.dimensions.height}cm /{" "}
-            {singleArt.year}
+            {t(singleArt.technique, { ns: "dynamic" })} {singleArt.year}
           </Text>
-        </div>
-        <div className={styles.descriptionContainer}>
+          <Text>
+            {t("single-art-page.size")}: {singleArt.dimensions.width}x
+            {singleArt.dimensions.height}cm
+          </Text>
           <Text>
             {t("common.state")}: {t(singleArt.availability, { ns: "dynamic" })}
           </Text>
-          <Btn as={NavLink} to="/contact" variant="rectDark">
-            {t("single-art-page.ask-for-price")}
-          </Btn>
         </div>
-      </div>
-      <Image img={singleArt.img.cover} />
-      <Image img={singleArt.img.wiz} />
-      <Image img={singleArt.img.zoom} />
-      <div className={styles.descriptionContainer}>
-        <Text size="md"> {t("single-art-page.interested-in-this-piece?")}</Text>
         <Btn as={NavLink} to="/contact" variant="rectDark">
           {t("single-art-page.ask-for-price")}
         </Btn>

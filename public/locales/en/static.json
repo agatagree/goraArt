@@ -33,10 +33,10 @@
       "description-3": "esigned from scratch to match your space and style."
     },
     "about": {
-      "title": "Wojciech Góra",
-      "description-1": "Graduate from the Academy of Fine Arts in Gdańsk. His works were exhibited in whole country and gain clients recognition in Europe e.g. UK or Spain.",
-      "description-2": "Experience in design allows him to create with craftsmanship precision and at the same time, leaving some space for spontaneity and improvisation.",
-      "description-3": "His paintings are characterized by own technique, mastered over the years,focused on precise details, geometry and multilayered textures. In spite inner complexity final compositions are always coherent & strong."
+      "title": "About me",
+      "description-1": "I am a graduate of the Academy of Fine Arts in Gdańsk. In my work, I combine experience in design with a passion for painting.",
+      "description-2": "This unusual combination makes my works balance between precision, minimalism, spontaneity and improvisation.",
+      "description-3": "I work based on my own oil technique, which I have been perfecting over the years, which is characterized by depth of texture, multi-layering and vivid colors."
     },
     "contact": {
       "title": "Interested in my art?",
@@ -47,7 +47,8 @@
   },
   "single-art-page": {
     "ask-for-price": "Ask for price",
-    "interested-in-this-piece?": "Interested in this piece?"
+    "interested-in-this-piece?": "Interested in this piece?",
+    "size": "Rozmiar:"
   },
   "common": {
     "lets-see": "Let's see",

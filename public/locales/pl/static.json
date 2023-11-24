@@ -20,23 +20,23 @@
     },
     "selected": {
       "title-1": "Odkryj więcej",
-      "title-2": "przez wybrane prace:",
+      "title-2": "przez wybrane prace.",
       "btn": "Wszystkie prace"
     },
     "offer": {
-      "main-title": "Do wyboru, do koloru",
-      "title-1": "Galeria prac",
-      "description-1": "Sprawdź galerię dostępnych obrazów i wybierz pracę, która do ciebie przemawia.",
+      "main-title": "Oferta, do wyboru do koloru.",
+      "title-1": "Wybór z galerii",
+      "description-1": "Sprawdź galerię dostępnych obrazów i wybierz pracę, która do Ciebie przemawia.",
       "title-2": "Obraz inspirowany",
       "description-2": "Jeśli wybrany obraz z galerii jest niedostępny, zamów pracę inspirowaną w podobnym stylu.",
       "title-3": "Sztuka pod wnętrze",
       "description-3": "Stwórzmy obraz od zera spersonalizowany pod Twoje wnętrze."
     },
     "about": {
-      "title": "Wojciech Góra",
-      "description-1": "Absolwent Akademii Sztuk Pięknych w Gdańsku. Jego prace wystawiane były w całym kraju i zdobywały uznanie klientów w Europie m.in. Wielka Brytania czy Hiszpania.",
-      "description-2": "Doświadczenie w projektowaniu pozwala mu tworzyć z rzemieślniczą precyzją, pozostawiając jednocześnie miejsce na spontaniczność i improwizację.",
-      "description-3": " Jego obrazy charakteryzuje własna, doskonalona przez lata technika, skupiona na precyzyjnym detalu, geometrii i wielowarstwowej fakturze. Mimo wewnętrznej złożoności finalne kompozycje są zawsze spójne i mocne."
+      "title": "O mnie",
+      "description-1": "Jestem absolwentem Akademii Sztuk Pięknych w Gdańsku.W swojej twórczości łączę doświadczenie w projektowaniu i designie z pasją malarską.",
+      "description-2": "To nietypowe połączenie sprawia, że moje prace balansują pomiędzy precyzją, minimalizmem, a spontanicznością i improwizacją.",
+      "description-3": "Pracuję w oparciu o doskonalenie przez lata olejną technikę własną, która charakteryzuje się głębią faktury, wielowarstwowością oraz żywą kolorystyką."
     },
     "contact": {
       "title": "Coś Cię zainteresowało?",
@@ -47,7 +47,8 @@
   },
   "single-art-page": {
     "ask-for-price": "Zapytaj o cenę",
-    "interested-in-this-piece?": "Zainteresował Cię ten obraz?"
+    "interested-in-this-piece?": "Zainteresował Cię ten obraz?",
+    "size": "Rozmiar:"
   },
   "common": {
     "lets-see": "Pokaż produkty",

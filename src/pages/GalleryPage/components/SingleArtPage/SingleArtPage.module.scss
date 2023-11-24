@@ -8,6 +8,7 @@
 
   &Container {
     @extend .description;
-    gap: $spacing24;
+    gap: $spacing16;
+    padding-bottom: $spacing24;
   }
 }
