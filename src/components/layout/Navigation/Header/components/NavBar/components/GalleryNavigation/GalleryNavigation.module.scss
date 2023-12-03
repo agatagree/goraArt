@@ -3,16 +3,17 @@
 .layout {
   width: 100%;
   padding: 0 16px;
-  height: $spacing64;
+  height: $spacing40;
   background-color: white;
+  z-index: 4;
   @include sm {
     height: $spacing40;
   }
 
   &Container {
     border-top: 1px solid $grey200;
-    min-height: $spacing64;
-    padding: 8px 0;
+    min-height: $spacing40;
+    padding: 12px 0;
     display: flex;
     justify-content: flex-end;
     gap: $spacing10;

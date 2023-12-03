@@ -35,12 +35,13 @@
 }
 
 .iconBtn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
   @include md {
     width: $spacing30;
     height: $spacing30;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -54,6 +55,9 @@
 }
 
 .logo {
+  width: $spacing20;
+  height: $spacing20;
+  object-fit: cover;
   @include md {
     width: $spacing20;
     height: $spacing20;

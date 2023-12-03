@@ -9,10 +9,10 @@
 
 .imgContainer {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   display: block;
   object-fit: cover;
-  background-color: $grey100;
+  background-color: $skeleton;
   min-height: 200px;
 }
 

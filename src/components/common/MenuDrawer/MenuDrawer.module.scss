@@ -7,20 +7,21 @@
   flex-direction: column;
   position: absolute;
   z-index: 5;
-  top: $spacing40;
+  top: $spacing48;
   height: calc(100svh - 108px);
   padding: 0 $spacing16 $spacing8 $spacing16;
 
   @include sm {
-    height: calc(100svh - 72px);
+    height: calc(100svh - 80px);
   }
 }
 
 .gallery {
-  height: calc(100svh - 176px);
-  top: $spacing80;
+  height: calc(100svh - 200px);
+  top: 104px;
 
   @include sm {
-    height: calc(100svh - 112px);
+    top: 86px;
+    height: calc(100svh - 118px);
   }
 }
