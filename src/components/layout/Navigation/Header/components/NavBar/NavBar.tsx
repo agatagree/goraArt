@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { Btn } from "components/common";
+import { Btn, Logo } from "components/common";
 import { NavBarContext } from "../../Header";
 import { PrimaryNavigation } from "../PrimaryNavigation";
 import { LanguageBtn } from "../PrimaryNavigation/components/LanguageBtn";
@@ -16,7 +16,7 @@ export const NavBar = () => {
   const { setIsOpen } = useContext(NavBarContext);
 
   const pageName = useLocation();
-  
+
   useEffect(() => {
     if (pageName.pathname === "/gallery") {
       setGallerymenuState(true);
@@ -31,11 +31,9 @@ export const NavBar = () => {
       <div className={styles.layout}>
         <div className={styles.linksContainer}>
           <Btn as={Link} to="/" onClick={() => setIsOpen(false)}>
-            <img
-              className={styles.icon}
-              src="/assets/logo.svg"
-              alt="Gora logo"
-            />
+            <span className={styles.icon}>
+              <Logo />
+            </span>
           </Btn>
           <div className={styles.linksWrapper}>
             <PrimaryNavigation />

@@ -7,9 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 4;
 
   @include sm {
-    min-height: $spacing40;
+    min-height: $spacing48;
   }
 }
 

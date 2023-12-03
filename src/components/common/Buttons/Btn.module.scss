@@ -13,7 +13,7 @@
   background-color: transparent;
   border: none;
   font-size: $fontSize16;
-
+  
   &:hover,
   &:active &:not([disabled]) {
     color: $primaryOrange;
@@ -87,6 +87,7 @@
   font-weight: $fontWeights500;
   letter-spacing: $fontLs64S;
   line-height: $fontLh140;
+  align-items: center;
 
   .arrowText {
     border-bottom: 2px solid;
@@ -122,6 +123,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
 }
 
 .noWrap {

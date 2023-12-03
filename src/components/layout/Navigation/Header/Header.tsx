@@ -41,8 +41,8 @@ export const Header = () => {
       >
         <NavBar />
         {isOpen ? <NavBarDrawer /> : null}
+        <NavBarOverlay />
       </header>
-      <NavBarOverlay />
     </NavBarContext.Provider>
   );
 };

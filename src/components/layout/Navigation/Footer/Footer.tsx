@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className={styles.footerContainer}>
         <Btn as={Link} to="/" className={styles.iconBtn}>
           <img
-            src="/assets/logo.svg"
+            src="/assets/logoSubstract.svg"
             alt="logo"
             className={styles.logo}
             loading="lazy"
