@@ -52,7 +52,7 @@ export const SingleArtPage = () => {
             {t("common.state")}: {t(singleArt.availability, { ns: "dynamic" })}
           </Text>
         </div>
-        <Btn as={NavLink} to="/contact" variant="rectDark">
+        <Btn as={NavLink} to="/#contact" variant="rectDark" reloadDocument>
           {t("single-art-page.ask-for-price")}
         </Btn>
       </div>
