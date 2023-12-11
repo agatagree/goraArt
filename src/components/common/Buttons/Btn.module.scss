@@ -13,7 +13,7 @@
   background-color: transparent;
   border: none;
   font-size: $fontSize16;
-  
+
   &:hover,
   &:active &:not([disabled]) {
     color: $primaryOrange;
@@ -52,12 +52,27 @@
     @extend .rect;
     color: $darkGrey200;
     border: 1px solid transparent;
+
+    &:hover,
+    &:active {
+      &:not([disabled]) {
+        background-color: $darkGrey300;
+        color: $white100;
+      }
+    }
+    &:disabled {
+      color: $darkGrey200;
+      border: 1px solid $darkGrey200;
+    }
+    &:focus {
+      outline: $darkGrey200;
+    }
   }
 
   &:hover,
   &:active {
     &:not([disabled]) {
-      background-color: $darkGrey300;
+      background-color: $darkGrey300Hover;
       color: $white100;
     }
   }

@@ -35,33 +35,32 @@
 
 .artImg {
   width: 100%;
-  flex: 1;
+  display: block;
   max-height: 50vh;
   max-width: 50vh;
-  aspect-ratio: 1/1 !important;
+  aspect-ratio: 1/1;
   align-self: center;
   background-color: $skeleton;
+}
 
-  @include md {
-    width: 35vw;
-    height: auto;
+
+.artImgWithBorders {
+  display: block;
+  height: 100%;
+  max-height: 50vh;
+  max-width: 50vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 0.9;
   }
 }
 
 .artImgFull {
   max-height: 100%;
   max-width: 100%;
-}
-
-.artImgWithBorders {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  transition: opacity 0.4s ease-in-out;
-
-  &:hover {
-    opacity: 0.9;
-  }
 }
 
 .artImgSkeleton {

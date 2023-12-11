@@ -50,7 +50,10 @@ export const ArtItem: FC<ArtItemProps> = ({
             )}
           >
             <img
-              className={styles.artImgWithBorders}
+              className={classNames(
+                styles.artImgWithBorders,
+                isFullWidth && styles.artImgFull
+              )}
               src={image}
               alt={artTitle}
               onMouseEnter={() => setImage(artViz)}

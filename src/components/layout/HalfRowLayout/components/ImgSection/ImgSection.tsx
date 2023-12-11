@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { ArtItem } from "components/feature";
 import { HalfRowImgSectionProps } from "../../types/half-row-img-section-props";
 import styles from "./ImgSection.module.scss";
+import { ArtItem } from "components/feature";
 
 export const ImgSection: FC<HalfRowImgSectionProps> = ({
   imgPath,

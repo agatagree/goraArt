@@ -1,9 +1,9 @@
 import InfiniteScroll from "react-infinite-scroll-component";
-import { ArtItem } from "components/feature";
 import { MessagePage } from "components/layout";
 import { GalleryCardSkeletonList } from "./components/GalleryCardSkeletonList";
 import { useGallery } from "providers/GalleryProvider";
 import styles from "./GalleryListPage.module.scss";
+import { ArtItem } from "components/feature";
 
 export const GalleryListPage = () => {
   const { gallery, load, handleMore, hasMore, totalCount } = useGallery();
