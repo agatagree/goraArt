@@ -43,7 +43,6 @@
   background-color: $skeleton;
 }
 
-
 .artImgWithBorders {
   display: block;
   height: 100%;
@@ -55,6 +54,10 @@
 
   &:hover {
     opacity: 0.9;
+  }
+
+  @include md {
+    max-width: 100%;
   }
 }
 

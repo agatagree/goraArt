@@ -30,10 +30,15 @@ export const NavBar = () => {
     <>
       <div className={styles.layout}>
         <div className={styles.linksContainer}>
-          <Btn as={Link} to="/" onClick={() => setIsOpen(false)}>
-            <span className={styles.icon}>
+          <Btn
+            as={Link}
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className={styles.iconBtn}
+          >
+            <div className={styles.icon}>
               <Logo />
-            </span>
+            </div>
           </Btn>
           <div className={styles.linksWrapper}>
             <PrimaryNavigation />
