@@ -1,10 +1,11 @@
 @use "styles/Helpers/" as *;
 
 .logo {
-  fill: $darkGrey300;
   transition: fill 0.3s ease;
-}
 
-.logo:hover {
-  fill: $primaryOrange;
+  &:hover {
+    rect {
+      fill: $primaryOrange;
+    }
+  }
 }

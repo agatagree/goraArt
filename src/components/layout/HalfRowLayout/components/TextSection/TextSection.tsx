@@ -22,7 +22,7 @@ export const TextSection: FC<HalfRowTextSectionProps> = ({
           {icon && <img src={icon} alt={title} className={styles.icon}/>}
           <Text variant={titleVariant}>{title}</Text>
         </div>
-        {description && <Text>{description}</Text>}
+        {description}
       </div>
       {isEndingBtn && (
         <div className={styles.btn}>
