@@ -21,7 +21,7 @@
   width: 100%;
   justify-content: space-between;
   @include sm {
-    padding: 0 $spacing16;
+    padding: 0 $spacing16 0 $spacing8;
   }
 }
 
