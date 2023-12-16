@@ -8,4 +8,15 @@
       fill: $primaryOrange;
     }
   }
+
+  @include md {
+    width: $spacing24;
+    height: $spacing24;
+
+    &:hover {
+      rect {
+        fill: black;
+      }
+    }
+  }
 }
