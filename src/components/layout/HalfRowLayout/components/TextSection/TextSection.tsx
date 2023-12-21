@@ -19,7 +19,11 @@ export const TextSection: FC<HalfRowTextSectionProps> = ({
     <div className={styles[textSectionVariant]}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          {icon && <img src={icon} alt={title} className={styles.icon}/>}
+          {icon && (
+            <div className={styles.iconWrapper}>
+              <img src={icon} alt={title} className={styles.icon} />
+            </div>
+          )}
           <Text variant={titleVariant}>{title}</Text>
         </div>
         {description}

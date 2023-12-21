@@ -1,7 +1,7 @@
 {
   "navBar": {
     "gallery": "Gallery",
-    "about": "About",
+    "about": "Artist",
     "contact": "Contact",
     "filter": "Filter",
     "availability": "Availability",
@@ -30,7 +30,7 @@
       "title-2": "Customized paintings",
       "description-2": "Created specially for you, based on selected pattern. Possible color, size, technique modifications.",
       "title-3": "Personalised design",
-      "description-3": "esigned from scratch to match your space and style."
+      "description-3": "Designed from scratch to match your space and style."
     },
     "about": {
       "title": "About me",
@@ -48,7 +48,7 @@
   "single-art-page": {
     "ask-for-price": "Ask for price",
     "interested-in-this-piece?": "Interested in this piece?",
-    "size": "Rozmiar:"
+    "size": "Size"
   },
   "common": {
     "lets-see": "Let's see",

@@ -4,6 +4,7 @@ export enum TextVariant {
   mainHeader = "mainHeader",
   subHeader = "subHeader",
   subHeaderMedium = "subHeaderMedium",
+  subHeaderSmall = "subHeaderSmall",
   basicHeader = "basicHeader",
   smallHeader = "smallHeader",
   mainHeaderSubText = "mainHeaderSubText",

@@ -3,7 +3,7 @@
 .text {
   letter-spacing: 0;
   font-weight: $fontWeights400;
-  line-height: 135%;
+  line-height: $fontLh150;
 
   @include sm {
     font-size: $fontSize16;

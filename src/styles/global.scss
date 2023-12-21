@@ -14,6 +14,7 @@ body {
   overflow-y: scroll;
   font-size: $fontSize16;
   color: $darkGrey300;
+  line-height: $fontLh150;
 }
 
 // SIZES
@@ -30,6 +31,13 @@ body {
 
 .s {
   font-size: $fontSize16;
+  @include sm {
+    font-size: $fontSize20;
+  }
+}
+
+.m {
+  font-size: $fontSize24;
   @include sm {
     font-size: $fontSize20;
   }
