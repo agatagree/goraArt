@@ -1,7 +1,7 @@
 {
   "navBar": {
     "gallery": "Galeria",
-    "about": "O mnie",
+    "about": "Artysta",
     "contact": "Kontakt",
     "filter": "Filtruj",
     "availability": "Dostępność",
@@ -26,17 +26,17 @@
     "offer": {
       "main-title": "Oferta, do wyboru do koloru.",
       "title-1": "Wybór z galerii",
-      "description-1": "Sprawdź galerię dostępnych obrazów i wybierz pracę, która do Ciebie przemawia.",
+      "description-1": "Sprawdź galerię dostępnych obrazów i wybierz pracę, która wzbogaci Twoje wnętrze.",
       "title-2": "Obraz inspirowany",
       "description-2": "Jeśli wybrany obraz z galerii jest niedostępny, zamów pracę inspirowaną w podobnym stylu.",
       "title-3": "Sztuka pod wnętrze",
       "description-3": "Stwórzmy obraz od zera spersonalizowany pod Twoje wnętrze."
     },
     "about": {
-      "title": "O mnie",
-      "description-1": "Jestem absolwentem Akademii Sztuk Pięknych w Gdańsku.W swojej twórczości łączę doświadczenie w projektowaniu i designie z pasją malarską.",
-      "description-2": "To nietypowe połączenie sprawia, że moje prace balansują pomiędzy precyzją, minimalizmem, a spontanicznością i improwizacją.",
-      "description-3": "Pracuję w oparciu o doskonalenie przez lata olejną technikę własną, która charakteryzuje się głębią faktury, wielowarstwowością oraz żywą kolorystyką."
+      "title": "Wojciech Góra",
+      "description-1": "Malarz abstrakcyjny, absolwent Akademii Sztuk Pięknych w Gdańsku. W swojej twórczości łączy doświadczenie w designie z pasją malarską.",
+      "description-2": "To połączenie sprawia, że jego obrazy balansują pomiędzy rzemieślniczą precyzją a artystyczną spontanicznością.",
+      "description-3": "Specjalizuje się w tworzeniu prac, które w swojej przemyślanej formie i kolorystyce uzupełniają i podkreślają charakter wnętrz."
     },
     "contact": {
       "title": "Coś Cię zainteresowało?",
@@ -48,7 +48,7 @@
   "single-art-page": {
     "ask-for-price": "Zapytaj o cenę",
     "interested-in-this-piece?": "Zainteresował Cię ten obraz?",
-    "size": "Rozmiar:"
+    "size": "Rozmiar"
   },
   "common": {
     "lets-see": "Pokaż produkty",

@@ -7,19 +7,21 @@ export const About = () => {
   const { t } = useTranslation();
 
   return (
-    <HalfRowLayout
-      title={t("home-page.about.title")}
-      titleVariant={TextVariant.basicHeader}
-      description={
-        <div className={styles.description}>
-          {t("home-page.about.description-1")} <br />
-          <br /> {t("home-page.about.description-2")} <br />
-          <br /> {t("home-page.about.description-3")}{" "}
-        </div>
-      }
-      imgPath="/assets/aboutImg.png"
-      artTitle={t("common.img-title")}
-      variant={HalfRowLayoutVariant.reverse}
-    />
+    <div className={styles.layout}>
+      <HalfRowLayout
+        title={t("home-page.about.title")}
+        titleVariant={TextVariant.basicHeader}
+        description={
+          <div className={styles.description}>
+            {t("home-page.about.description-1")} <br />
+            <br /> {t("home-page.about.description-2")} <br />
+            <br /> {t("home-page.about.description-3")}{" "}
+          </div>
+        }
+        imgPath="/assets/aboutImg.png"
+        artTitle={t("common.img-title")}
+        variant={HalfRowLayoutVariant.reverse}
+      />
+    </div>
   );
 };

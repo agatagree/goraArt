@@ -1,5 +1,11 @@
 @use "styles/Helpers" as *;
 
+.layout {
+  @include sm {
+    padding-bottom: $spacing8;
+  }
+}
+
 .description {
   width: 480px;
 

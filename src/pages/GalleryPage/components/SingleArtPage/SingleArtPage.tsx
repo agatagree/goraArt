@@ -45,8 +45,8 @@ export const SingleArtPage = () => {
             {t(singleArt.technique, { ns: "dynamic" })} {singleArt.year}
           </Text>
           <Text>
-            {t("single-art-page.size")}: {singleArt.dimensions.width}x
-            {singleArt.dimensions.height}cm
+            {t("single-art-page.size")}: {singleArt.dimensions.width} x 
+            {singleArt.dimensions.height} cm
           </Text>
           <Text>
             {t("common.state")}: {t(singleArt.availability, { ns: "dynamic" })}

@@ -14,17 +14,17 @@
   }
 
   @include sm {
-    padding: $spacing120 $spacing24 $spacing60 $spacing24;
+    padding: $spacing200 $spacing24 $spacing60 $spacing24;
   }
 }
 
 .g120 {
   gap: $spacing120;
   @include md {
-    gap: $spacing80;
+    gap: $spacing160;
   }
   @include sm {
-    gap: $spacing40;
+    gap: $spacing160;
   }
 }
 

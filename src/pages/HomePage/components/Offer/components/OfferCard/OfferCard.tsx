@@ -16,7 +16,7 @@ export const OfferCard: FC<OfferCardProps> = ({ imgPath, id }) => {
         loading="lazy"
       />
       <div className={styles.textContainer}>
-        <Text variant={TextVariant.subHeaderMedium}>
+        <Text variant={TextVariant.subHeaderMedium} size="m">
           {t(`home-page.offer.title-${id}`)}
         </Text>
         <Text>{t(`home-page.offer.description-${id}`)}</Text>
