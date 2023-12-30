@@ -37,12 +37,20 @@
   }
 }
 
+.imgContainerArtFull {
+  @extend .imgContainerArt;
+
+  @include xxxl {
+    height: 100%;
+  }
+}
+
 .artImg {
   width: 100%;
   display: block;
   max-height: 50vh;
   max-width: 50vh;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   align-self: center;
   background-color: $skeleton;
 }
@@ -52,7 +60,7 @@
   height: 100%;
   max-height: 50vh;
   max-width: 50vh;
-  aspect-ratio: 1/1 !important;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   transition: opacity 0.4s ease-in-out;
 
@@ -68,6 +76,13 @@
 .artImgFull {
   max-height: 100%;
   max-width: 100%;
+
+  @include xxxl {
+    width: auto;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
 .artImgSkeleton {

@@ -40,7 +40,11 @@ export const ArtItem: FC<ArtItemProps> = ({
       key={artId}
     >
       <div className={styles.artContent}>
-        <div className={styles.imgContainerArt}>
+        <div
+          className={
+            isFullWidth ? styles.imgContainerArtFull : styles.imgContainerArt
+          }
+        >
           <Btn
             as={Link}
             to={`/gallery/${artId}`}
