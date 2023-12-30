@@ -31,7 +31,6 @@
   flex-wrap: wrap;
   gap: 4px;
   align-items: center;
-  max-width: 260px;
 
   @include sm {
     gap: $spacing8;
