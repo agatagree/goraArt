@@ -6,12 +6,12 @@ export const Banner = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.layout}>
-        <img
-          className={styles.bannerImg}
-          src="/assets/blue-0221-banner.jpg"
-          alt={t("common.img-title") as string}
-          loading="lazy"
-        />
+      <img
+        className={styles.bannerImg}
+        src="/assets/blue-0221-banner.jpg"
+        alt={t("common.title") as string}
+        loading="lazy"
+      />
       <div className={styles.bannerText}>
         <BannerMessage />
       </div>
