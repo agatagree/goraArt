@@ -41,14 +41,12 @@ export const App = () => {
   const metaDescription = t("common.description");
   return (
     <>
-      <HelmetProvider>
-        <Helmet>
-          <title>{t("common.title")}</title>
-          <link rel="canonical" href="https://wgora.com/" />
-          <meta name="description" content={metaDescription} />
-        </Helmet>
-        <RouterProvider router={router} />;
-      </HelmetProvider>
+      <Helmet>
+        <title>{t("common.title")}</title>
+        <link rel="canonical" href="https://wgora.com/" />
+        <meta name="description" content={metaDescription} data-rh="true" />
+      </Helmet>
+      <RouterProvider router={router} />;
     </>
   );
 };
