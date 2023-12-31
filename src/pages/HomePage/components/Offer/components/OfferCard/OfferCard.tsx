@@ -7,13 +7,10 @@ import styles from "./OfferCard.module.scss";
 
 export const OfferCard: FC<OfferCardProps> = ({ imgPath, id }) => {
   const { t } = useTranslation();
-  const imgTitle = t("common.img-title");
+  const imgTitle = t("common.title");
   return (
     <div className={styles.layout}>
-      <Btn
-        as={Link}
-        to={id === 3 ? `/#contact` : `/gallery`}
-      >
+      <Btn as={Link} to={id === 3 ? `/#contact` : `/gallery`}>
         <img
           src={imgPath}
           alt={imgTitle}

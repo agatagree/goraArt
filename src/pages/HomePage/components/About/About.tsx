@@ -19,7 +19,7 @@ export const About = () => {
           </div>
         }
         imgPath="/assets/aboutImg.png"
-        artTitle={t("common.img-title")}
+        artTitle={t("common.title")}
         variant={HalfRowLayoutVariant.reverse}
       />
     </div>

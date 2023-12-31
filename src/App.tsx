@@ -1,3 +1,5 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import "react-loading-skeleton/dist/skeleton.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { MessagePage, RootLayout } from "components/layout";
@@ -35,5 +37,18 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  const { t } = useTranslation();
+  const metaDescription = t("common.description");
+  return (
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>{t("common.title")}</title>
+          <link rel="canonical" href="https://wgora.com/" />
+          <meta name="description" content={metaDescription} />
+        </Helmet>
+        <RouterProvider router={router} />;
+      </HelmetProvider>
+    </>
+  );
 };
