@@ -12,7 +12,7 @@ import styles from "./Selected.module.scss";
 
 export const Selected: FC<SelectedProps> = ({ data }) => {
   const { t } = useTranslation();
-  console.log(data)
+
   return (
     <>
       <SectionTitleLayout
