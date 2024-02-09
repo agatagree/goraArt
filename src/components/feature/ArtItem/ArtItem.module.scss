@@ -40,8 +40,8 @@
 .imgContainerArtFull {
   @extend .imgContainerArt;
 
-  @include xxxl {
-    height: 100%;
+  @include md {
+    height: auto;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import "react-loading-skeleton/dist/skeleton.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";

@@ -72,11 +72,6 @@
     aspect-ratio: auto;
   }
 
-  @include xxxl {
-    width: auto;
-    height: 100%;
-  }
-
   .wrapper {
     max-width: 410px;
   }
