@@ -1,7 +1,7 @@
 @use "styles/Helpers" as *;
 
 .img {
-  height: 80vh;
+  max-height: 80vh;
   max-width: 800px;
   object-fit: contain;
   object-position: center;
