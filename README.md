@@ -1,5 +1,5 @@
 # GORA
-Portfolio website for an artist🎨 Work in progress
+Portfolio website for an artist🎨 check live site [here](https://wgora.com/)
 
 
 
